@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="reporting_res_company" model="ir.ui.view">
+            <field name="name">reporting_res_company</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//page[@name='general_info']" position="after">
+                    <page string="Reporting" name="reporting">
+                        <group name="Reporting">
+                            <field name="commercial_registry" string="Registro mercantil"/>
+                            <field name="generic_text_1_delivery" string="Texto genérico 1 albarán"/>
+                            <field name="generic_text_2_delivery" string="Texto genérico 2 albarán"/>
+                        </group>
+                    </page>
+                    
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

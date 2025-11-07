@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_rep_format" model="ir.actions.act_window">
+            <field name="name">act_aurb_rep_format</field>
+            <field name="res_model">aurb.rep.format</field>
+            <field name="view_mode">list</field>
+        </record>
+        <record id="lst_aurb_rep_format" model="ir.ui.view">
+            <field name="name">lst_aurb_rep_format</field>
+            <field name="model">aurb.rep.format</field>
+            <field name="arch" type="xml">
+                <list editable="top">
+                    <field name="model_id" readonly="1" force_save="1"/>
+                    <field name="user_id" />
+                    <field name="partner_id"/>
+                    <field name="report_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </list>
+            </field>
+        </record>
+
+        <menuitem id="mn_rep_format_action"
+        name="Format"
+        action="act_aurb_rep_format"
+        parent="base.menu_users"
+        sequence="101" />
+    </data>
+</odoo>

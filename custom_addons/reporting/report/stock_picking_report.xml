@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_stock_picking_format_prin">
+        <t t-name="studio_main_report">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <t t-call="reporting.report_stock_picking_format_body" />
+                    <p style="page-break-after: always;" />
+                </t>
+            </t>
+        </t>
+    </template>
+    <template id="report_stock_picking_format_body">
+        <t t-name="studio_report_document">
+            <t t-if="not o" t-set="o" t-value="doc" />
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id" />
+                </t>
+                <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                    <t t-set="company" t-value="o.company_id.sudo()" />
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company" />
+                </t>
+            </t>
+
+            <t t-call="reporting.report_head" />
+            <div class="container o_text_columns">
+
+                <tbody class="sale_tbody">
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+                    <div class="oe_structure" />
+                    <div class="row">
+                        <table border="3" bgcolor="LightGrey" class="table table-bordered o_table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-if="doc.partner_id.lang == 'ca_ES'">ALBARA VENDA
+                                            Nº. </span>
+                                        <span t-elif="doc.partner_id.lang == 'en_GB'">DELIVERY NOTE</span>
+                                        <span t-else="doc.partner_id.lang == 'es_ES'">ALBARAN Nº.</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.name">
+                                            <font style="vertical-align: inherit;">SO0000</font>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span t-if="doc.partner_id.lang == 'ca_ES'">
+                                            DATA&gt;
+                                        </span>
+                                        <span t-elif="doc.partner_id.lang == 'en_GB'">
+                                            DATE
+                                        </span>
+                                        <span t-else="doc.partner_id.lang == 'es_ES'">
+                                            FECHA
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.scheduled_date"
+                                            t-options="{&quot;widget&quot;: &quot;date&quot;}">
+                                            <font style="vertical-align: inherit;">Fecha</font>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span t-if="doc.partner_id.lang == 'ca_ES'" style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">Referencia: </font>
+                            </span>
+                            <span t-elif="doc.partner_id.lang == 'en_GB'">
+                                <font style="vertical-align: inherit;">Referencia: </font>
+                            </span>
+                            <span t-else="doc.partner_id.lang == 'es_ES'">
+                                <font style="vertical-align: inherit;">Referencia: </font>
+                            </span>
+                            <span t-field="doc.origin" style="font-weight: bolder;">
+                                <font style="vertical-align: inherit;">Referencia</font>
+                            </span>
+                        </div>
+                    </div>
+                    <table class="table table-sm o_main_table table-borderless mt-4">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">ARTICLE</font>
+                                        </span>
+                                        <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">ARTICLE </font>
+                                        </span>
+                                        <span t-else="doc.partner_id.lang == 'es_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">ARTÍCULO</font>
+                                        </span>
+                                    </strong>
+                                </td>
+                                <td>
+                                    <strong />
+                                    <strong>
+                                        <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">DESCRIPCIO</font>
+                                        </span>
+                                        <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">DESCRIPTION </font>
+                                        </span>
+                                        <span t-else="doc.partner_id.lang == 'es_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">DESCRIPCIÓN </font>
+                                        </span>
+                                    </strong>
+                                </td>
+                                <td>
+                                    <strong />
+                                    <strong>
+                                        <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">QUANTITAT</font>
+                                        </span>
+                                        <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">QUANTITY </font>
+                                        </span>
+                                        <span t-else="doc.partner_id.lang == 'es_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">CANTIDAD </font>
+                                        </span>
+                                    </strong>
+                                </td>
+                                <td t-if="doc.valorado == True">
+                                    <strong />
+                                    <strong>
+                                        <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">PREU</font>
+                                        </span>
+                                        <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">PRICE</font>
+                                        </span>
+                                        <span t-else="doc.partner_id.lang == 'es_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">PRICE </font>
+                                        </span>
+                                    </strong>
+                                </td>
+                                <td t-if="doc.valorado == True">
+                                    <strong />
+                                    <center>
+                                        <strong>
+                                            <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">DESC% </font>
+                                            </span>
+                                            <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">DISC% </font>
+                                            </span>
+                                            <span t-else="doc.partner_id.lang == 'es_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">DESC% </font>
+                                            </span>
+                                        </strong>
+                                    </center>
+                                </td>
+                                <td t-if="doc.valorado == True">
+                                    <strong />
+                                    <strong>
+                                        <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">IMPORT </font>
+                                        </span>
+                                        <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">AMOUNT </font>
+                                        </span>
+                                        <span t-else="doc.partner_id.lang == 'es_ES'"
+                                            style="font-size: 0.75rem;">
+                                            <font style="vertical-align: inherit;">IMPORTE </font>
+                                        </span>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody style="border-top: 1px solid black;">
+                            <t t-foreach="doc.move_line_ids" t-as="line">
+                                <tr>
+                                    <td>
+                                        <div t-if="line.product_id">
+                                            <span t-field="line.product_id"
+                                                style="font-size: 0.75rem;" />
+                                        </div>
+                                        <div t-if="len(line.product_id) == 0">
+                                            <b>
+                                                <span t-field="line.name"
+                                                    style="font-size: 0.75rem;" />
+                                            </b>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span t-if="line.product_id"
+                                            t-field="line.move_id.sale_line_id.name"
+                                            style="font-size: 0.75rem;" />
+                                    </td>
+                                    <td t-if="line.product_id">
+                                        <span t-field="line.quantity"
+                                            t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
+                                            style="font-size: 0.75rem;" />
+                                    </td>
+                                    <td t-if="doc.valorado == True and line.product_id">
+                                        <span t-field="line.move_id.sale_line_id.price_unit"
+                                            t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
+                                            style="font-size: 0.75rem;" />
+                                    </td>
+                                    <td t-if="doc.valorado == True and line.product_id ">
+                                        <span t-field="line.move_id.sale_line_id.discount"
+                                            t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
+                                            style="font-size: 0.75rem;" />
+                                    </td>
+                                    <td t-if="doc.valorado == True and line.product_id">
+                                        <span t-field="line.move_id.sale_line_id.price_subtotal"
+                                            style="font-size: 0.75rem;" />
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </tbody>
+
+                <div class="clearfix" name="so_total_summary">
+                    <table border="3" class="table table-sm o_main_table table-borderless mt-4"
+                        t-if="doc.valorado == True"
+                        style="BORDER-BOTTOM-COLOR: White; BORDER-TOP-COLOR: Blakc; BORDER-RIGHT-COLOR: White">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <td>
+                                    <center>
+                                        <strong>
+                                            <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">TOTAL BRUTO </font>
+                                            </span>
+                                            <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">TOTAL BRUTO </font>
+                                            </span>
+                                            <span t-else="doc.partner_id.lang == 'es_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">TOTAL BRUTO </font>
+                                            </span>
+                                        </strong>
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <strong>
+                                            <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">BASE
+                                                    IMPONIBLE </font>
+                                            </span>
+                                            <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">BASE </font>
+                                            </span>
+                                            <span t-else="doc.partner_id.lang == 'es_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">BASE
+                                                    IMPONIBLE </font>
+                                            </span>
+                                        </strong>
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <strong>
+                                            <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">IVA </font>
+                                            </span>
+                                            <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">IVA </font>
+                                            </span>
+                                            <span t-else="doc.partner_id.lang == 'es_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">IVA</font>
+                                            </span>
+                                        </strong>
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <strong>
+                                            <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">TOTAL COMANDA
+                                                    EUR</font>
+                                            </span>
+                                            <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">TOTAL PEDIDO
+                                                    EUR</font>
+                                            </span>
+                                            <span t-else="doc.partner_id.lang == 'es_ES'"
+                                                style="font-size: 0.75rem;">
+                                                <font style="vertical-align: inherit;">TOTAL PEDIDO
+                                                    EUR</font>
+                                            </span>
+                                        </strong>
+                                    </center>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="column" style="width: 50%;">
+                            <span t-if="doc.partner_id.lang == 'ca_ES'" style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">Forma de pago </font>
+                            </span>
+                            <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">Forma de pago </font>
+                            </span>
+                            <span t-else="doc.partner_id.lang == 'es_ES'"
+                                style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">Forma de pago </font>
+                            </span>
+
+                        </div>
+                        <div class="column" style="width: 50%;">
+                            <table border="3" class="table table-bordered o_table">
+                                <tr>
+                                    <td>
+                                        <center>
+                                            <strong>
+                                                <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                                    style="font-size: 0.75rem;">
+                                                    <font style="vertical-align: inherit;">CONFORME
+                                                        CLIENTE </font>
+                                                </span>
+                                                <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                                    style="font-size: 0.75rem;">
+                                                    <font style="vertical-align: inherit;">COMO
+                                                        CLIENTE </font>
+                                                </span>
+                                                <span t-else="doc.partner_id.lang == 'es_ES'"
+                                                    style="font-size: 0.75rem;">
+                                                    <font style="vertical-align: inherit;">CONFORME
+                                                        CLIENTE </font>
+                                                </span>
+                                            </strong>
+                                        </center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br />
+                                        <br />
+                                        <br />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="font-size:8px;line-height: auto;text-align:left;">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <t t-call="reporting.report_footer" />
+        </t>
+    </template>
+</odoo>

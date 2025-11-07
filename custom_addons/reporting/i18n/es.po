@@ -1,0 +1,798 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* reporting
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-04 10:38+0000\n"
+"PO-Revision-Date: 2024-03-04 10:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: reporting
+#: model:ir.actions.report,print_report_name:reporting.report_event_registration_badge_stock_picking
+msgid "'Albaran - %s' % (object.name).replace('/','')"
+msgstr "'Albaran - %s' % (object.name).replace('/','')"
+
+#. module: reporting
+#: model:ir.actions.report,print_report_name:reporting.report_event_registration_badge_account_move
+msgid "'Factura - %s' % (object.name).replace('/','')"
+msgstr "'Factura - %s' % (object.name).replace('/','')"
+
+#. module: reporting
+#: model:ir.actions.report,print_report_name:reporting.report_event_registration_badge_sale_order
+msgid "'Pedido - %s' % (object.name).replace('/','')"
+msgstr "'Pedido - %s' % (object.name).replace('/','')"
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_footer
+msgid "(document name)"
+msgstr "Nombre del documento"
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "1.00"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "1.05"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "27.00"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "4.05"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid ""
+"<br/>\n"
+"                                        <span style=\"font-size: 0.75rem;\">\n"
+"                                            <font style=\"vertical-align: inherit;\">\n"
+"                                                <font style=\"vertical-align: inherit;\">NIF: </font>\n"
+"                                            </font>\n"
+"                                        </span>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid ""
+"<br/>\n"
+"                                        <span style=\"font-size: 0.75rem;\">\n"
+"                                            <font style=\"vertical-align: inherit;\">Telf.:  </font>\n"
+"                                        </span>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                            Bimponible</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                            COMANDA </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                            PEDIDO </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                            PRESSUPOST </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                            PRESUPUESTO </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                            QUOTATION </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                        <font style=\"vertical-align: inherit;\">COMANDA\n"
+"                                                            PER:<br/>\n"
+"                             <br/>\n"
+"                                                        </font>\n"
+"                                                    </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                        <font style=\"vertical-align: inherit;\">PEDIDO\n"
+"                                                            POR: </font>\n"
+"                                                    </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                        <font style=\"vertical-align: inherit;\">REQUESTED\n"
+"                                                            BY:</font>\n"
+"                                                    </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                        Bimponible</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid ""
+"<font style=\"vertical-align: inherit;\">\n"
+"                                                <font style=\"vertical-align: inherit;\">NIF</font>\n"
+"                                            </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">AMOUNT </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">ARTICLE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">ARTICLE</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">ARTÍCULO</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">BASE\n"
+"                                                    IMPONIBLE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">BASE\n"
+"                                                    IMPOSABLE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">BASE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">CANTIDAD </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">COMO\n"
+"                                                        CLIENTE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">CONFORME\n"
+"                                                        CLIENTE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "<font style=\"vertical-align: inherit;\">CP </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "<font style=\"vertical-align: inherit;\">CP</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "<font style=\"vertical-align: inherit;\">Ciudad</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">DESC% </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">DESCRIPCIO</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">DESCRIPCIÓN </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">DESCRIPTION </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">DISC% </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "<font style=\"vertical-align: inherit;\">Detalles</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">FACTURA\n"
+"                                                            PROFORMA </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">Fecha</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid "<font style=\"vertical-align: inherit;\">Forma de pagament: </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">Forma de pago </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid "<font style=\"vertical-align: inherit;\">Forma de pago: </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">GROSS TOTAL </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">IMPORT </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">IMPORTE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">IVA </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">IVA</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "<font style=\"vertical-align: inherit;\">Móvil</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">ORDER </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">PRECIO </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">PREU </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">PREU</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">PRICE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">PRICE</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">PRO-FORMA\n"
+"                                                            INVOICE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">Plazos</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">QUANTITAT </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">QUANTITAT</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">QUANTITY </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">Referencia: </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">Referencia</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">SO0000</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">TAX BASE </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">TOTAL BRUT </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "<font style=\"vertical-align: inherit;\">TOTAL BRUTO </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">TOTAL COMANDA\n"
+"                                                    EUR</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">TOTAL ORDER\n"
+"                                                    EUR</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid ""
+"<font style=\"vertical-align: inherit;\">TOTAL PEDIDO\n"
+"                                                    EUR</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "<font style=\"vertical-align: inherit;\">Teléfono</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">Total</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "<font style=\"vertical-align: inherit;\">VAT </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid "<font style=\"vertical-align: inherit;\">VAT</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid "<font style=\"vertical-align: inherit;\">Way to pay: </font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "<font style=\"vertical-align: inherit;\">calle</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "<font style=\"vertical-align: inherit;\">nombre</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "<font style=\"vertical-align: inherit;\">web</font>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid ""
+"<span style=\"font-size: 0.75rem;\">\n"
+"                                <font style=\"vertical-align: inherit;\">/ </font>\n"
+"                            </span>\n"
+"                            <span style=\"font-size: 0.75rem;\">\n"
+"                                <font style=\"vertical-align: inherit;\">M.  </font>\n"
+"                            </span>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid ""
+"<span style=\"font-size: 0.75rem;\">\n"
+"                                <font style=\"vertical-align: inherit;\">T.  </font>\n"
+"                            </span>"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid ""
+"ALBARA VENDA\n"
+"                                            Nº."
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "ALBARAN Nº."
+msgstr ""
+
+#. module: reporting
+#: model:ir.model,name:reporting.model_aurb_rep_format
+msgid "AURB Reporting Format"
+msgstr "Definición de Formatos"
+
+#. module: reporting
+#: model:ir.model,name:reporting.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__company_id
+msgid "Company"
+msgstr "Compañías"
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "DATA&gt;"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "DATE"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "DELIVERY NOTE"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid "FACTURA"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_stock_picking_format_body
+msgid "FECHA"
+msgstr ""
+
+#. module: reporting
+#: model:ir.ui.menu,name:reporting.mn_rep_format_action
+msgid "Format"
+msgstr "Formato"
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__id
+msgid "ID"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid "INVOICE"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model,name:reporting.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_head
+msgid "Logo"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_footer
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__partner_id
+msgid "Partner"
+msgstr "Cliente/Proveedor"
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_footer
+msgid "Registro Mercantil"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.reporting_res_company
+msgid "Registro mercantil"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__report_id
+msgid "Report"
+msgstr "Formato"
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.reporting_res_company
+#: model_terms:ir.ui.view,arch_db:reporting.reporting_sale_order
+#: model_terms:ir.ui.view,arch_db:reporting.reporting_stock_move
+msgid "Reporting"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "Rounding"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model,name:reporting.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"Tax\n"
+"                                                                                            15%"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid ""
+"Tax\n"
+"                                                                                        15%"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid ""
+"Tax\n"
+"                                                                                    15%"
+msgstr ""
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+msgid ""
+"Tax\n"
+"                                                                                15%"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_res_company__generic_text_1_delivery
+#: model_terms:ir.ui.view,arch_db:reporting.reporting_res_company
+msgid "Texto genérico 1 albarán"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_res_company__generic_text_2_delivery
+#: model_terms:ir.ui.view,arch_db:reporting.reporting_res_company
+msgid "Texto genérico 2 albarán"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model,name:reporting.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_aurb_rep_format__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_sale_order__valorado
+#: model:ir.model.fields,field_description:reporting.field_stock_picking__valorado
+#: model_terms:ir.ui.view,arch_db:reporting.reporting_sale_order
+#: model_terms:ir.ui.view,arch_db:reporting.reporting_stock_move
+msgid "Valorado"
+msgstr ""
+
+#. module: reporting
+#: model:ir.actions.report,name:reporting.report_event_registration_badge_account_move
+msgid "account_move_auren_format"
+msgstr "Factura de venta formato Auren"
+
+#. module: reporting
+#: model:ir.actions.act_window,name:reporting.act_aurb_rep_format
+msgid "act_aurb_rep_format"
+msgstr "Definición de Formato"
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.act_aurb_astore_account_move
+#: model_terms:ir.ui.view,arch_db:reporting.reporting_sale_order
+msgid "action_print_default"
+msgstr "Acción de impresión por defecto"
+
+#. module: reporting
+#: model_terms:ir.ui.view,arch_db:reporting.report_account_move_format_body
+#: model_terms:ir.ui.view,arch_db:reporting.report_sales_order_format_body
+msgid "on"
+msgstr ""
+
+#. module: reporting
+#: model:ir.model.fields,field_description:reporting.field_res_company__commercial_registry
+msgid "registro mercantil"
+msgstr "Registro Mercantil"
+
+#. module: reporting
+#: model:ir.actions.report,name:reporting.report_event_registration_badge_sale_order
+msgid "sale_order_auren_format"
+msgstr "Pedido de venta formato Auren"
+
+#. module: reporting
+#: model:ir.actions.report,name:reporting.report_event_registration_badge_stock_picking
+msgid "stock_picking_auren_format"
+msgstr "Albarán de venta formato Auren"
