@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python Debugger: Remote Attach",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 8888
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "C:\\Docker\\odoo_18_project\\recursos\\odoo\\addons",
+                    "remoteRoot": "/var/lib/odoo/odoo/addons"
+                },
+                {
+                    "localRoot": "${workspaceFolder}/custom_addons",
+                    "remoteRoot": "/var/lib/odoo/custom_addons"
+                }
+            ]
+        }
+    ],
+    "logOutput": "dap",
+    "showLog": true
+}

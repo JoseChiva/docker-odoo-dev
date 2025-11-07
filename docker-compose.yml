@@ -1,7 +1,7 @@
 services:
   web:
     container_name: ${ODOO_CONTAINER_NAME}
-    image: odoodev:${ODOO_VERSION}
+    image: odoo:${ODOO_VERSION}
     # Comandos de odoo (actualizar, instalar, herramientas, etc)
     # command: odoo -u <module_name> -d <database_name> --dev=xml,qweb,reload
     depends_on:
@@ -13,11 +13,13 @@ services:
       - ./conf:/etc/odoo
       - odoo-web-data:/var/lib/odoo
       - ${ODOO_SERVER}:/var/lib/odoo/odoo
-      - ${CUSTOM_ADDONS}:/var/lib/odoo/custom_addons
-    enviroment:
+      - ${CUSTOM_ADDONS}:/mnt/extra-addons
+      # - ${CUSTOM_ADDONS}:/var/lib/odoo/custom_addons
+    environment:
       - DEBUGPY=true
       - DEBUGPY_PORT=${DEBUGPY_PORT}
       - DEBUGPY_AUX_PORT=${DEBUGPY_AUX_PORT}
+    entrypoint: ${ENTRYPOINT}
   db:
     container_name: ${PG_CONTAINER_NAME}
     image: postgres:${PG_VERSION}

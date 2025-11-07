@@ -1,0 +1,52 @@
+<odoo>
+    <!-- Vista lista -->
+    <record id="view_hello_world_tree" model="ir.ui.view">
+        <field name="name">hello.world.tree</field>
+        <field name="model">hello.world</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista formulario -->
+    <record id="view_hello_world_form" model="ir.ui.view">
+        <field name="name">hello.world.form</field>
+        <field name="model">hello.world</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <footer>
+                        <button name="action_say_hello"
+                                string="Say Hello"
+                                type="object"
+                                class="btn-primary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción -->
+    <record id="action_hello_world" model="ir.actions.act_window">
+        <field name="name">Hello World</field>
+        <field name="res_model">hello.world</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú raíz -->
+    <menuitem id="menu_hello_world_root"
+            name="Hello World"
+            sequence="10"/>
+
+    <!-- Submenú vinculado a la acción -->
+    <menuitem id="menu_hello_world_submenu"
+            name="Registros"
+            parent="menu_hello_world_root"
+            action="action_hello_world"
+            sequence="10"/>
+</odoo>
