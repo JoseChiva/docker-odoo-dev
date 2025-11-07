@@ -1,0 +1,26 @@
+<odoo>
+    <record id="gamint_view_settings_form" model="ir.ui.view">
+        <field name="name">res.company.gamma.settings</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook" position="inside">
+                <page name="gamma_settings" string="Gamma Settings">
+                    <group string="Conexión Webservice">
+                        <field name="gi_url_base"/>
+                        <field name="gi_user"/>
+                        <field name="gi_password" password="True"/>
+                        <field name="gi_token" readonly="1"/>
+                        <field name="gi_due_data_token_raw" readonly="1"/>
+                    </group>
+                    <group string="Parámetros">
+                        <field name="gi_code_asociate"/>
+                        <field name="gi_supplier"/>
+                        <field name="gi_viewstocksale"/>
+                        <field name="gi_tag_gamma"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Heredar la vista del producto -->
+        <record id="gamint_product_template_form_view" model="ir.ui.view">
+            <field name="name">product.template.form.view.gamint</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+
+                <!-- Insertar el campo justo después de purchase_ok -->
+                <xpath expr="//field[@name='purchase_ok']/.." position="after">
+                    <span class="d-inline-flex">
+                        <field name="gi_mang_gamma" string="Es producto Gamma" invisible="True"/>
+                        <label for="gi_mang_gamma"/>
+                    </span>
+                </xpath>
+
+                <!-- Insertar el stock justo después del campo barcode -->
+                <xpath expr="//field[@name='product_tag_ids']" position="after">
+                    <!-- <field name="gi_show_gamma_stock"/> -->
+                </xpath>
+
+                <!-- Nueva pestaña con los campos de integración -->
+                <xpath expr="//notebook" position="inside">
+                    <page name="gamma_integration" string="Integración Gamma" invisible="gi_mang_gamma==False">
+                        <group>
+                            <field name="gi_code_gamma"/>
+                            <!-- <field name="gi_stock_gamma" readonly="1"/>
+                            <button name="action_get_stock" type="object" string="Obtener Stock Gamma" class="oe_highlight"/> -->
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

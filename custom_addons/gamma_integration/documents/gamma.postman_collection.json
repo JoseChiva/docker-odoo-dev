@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "26881087-4ee2-4459-b49f-bebc4fa6a1e9",
+		"name": "gamma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "1023webserviceG",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "]$GOF=IhBvAIDq7vkMQ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ws.gammaasociados.com/v1/asociado/login?",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"gammaasociados",
+						"com"
+					],
+					"path": [
+						"v1",
+						"asociado",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ws.gammaasociados.com/v1/asociado/stocks?token=4yGtUxu9Q5bFrz2HCt9MlR79YYlyhV",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"gammaasociados",
+						"com"
+					],
+					"path": [
+						"v1",
+						"asociado",
+						"stocks"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "4yGtUxu9Q5bFrz2HCt9MlR79YYlyhV"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ws.gammaasociados.com/v1/asociado/productos?token=4yGtUxu9Q5bFrz2HCt9MlR79YYlyhV",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"gammaasociados",
+						"com"
+					],
+					"path": [
+						"v1",
+						"asociado",
+						"productos"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "4yGtUxu9Q5bFrz2HCt9MlR79YYlyhV"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tarifas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ws.gammaasociados.com/v1/asociado/tarifas?token=4yGtUxu9Q5bFrz2HCt9MlR79YYlyhV",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"gammaasociados",
+						"com"
+					],
+					"path": [
+						"v1",
+						"asociado",
+						"tarifas"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "4yGtUxu9Q5bFrz2HCt9MlR79YYlyhV"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stock item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ws.gammaasociados.com/v1/asociado/stock/.ABONP?token=lQKnXoROKiZVE7rLcadH7bsuDufNOh",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"gammaasociados",
+						"com"
+					],
+					"path": [
+						"v1",
+						"asociado",
+						"stock",
+						".ABONP"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "lQKnXoROKiZVE7rLcadH7bsuDufNOh"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

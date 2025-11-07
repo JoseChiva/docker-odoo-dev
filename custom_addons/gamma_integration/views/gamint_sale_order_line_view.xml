@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_gamma" model="ir.ui.view">
+        <field name="name">sale.order.line.gamma.stock</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="inside">
+                <field name="gi_last_date" column_invisible="1"/>
+                <field name="gi_last_date_now" column_invisible="1"/>
+                <field name="gi_producto_gamma" column_invisible="1" />
+                <button name="action_get_stock" type="object" string="Stock G." class="oe_highlight" invisible="gi_producto_gamma==False"/>
+                <field name="gi_stock_color" widget="html" readonly="1" invisible="gi_last_date!=gi_last_date_now"/>
+                
+            </xpath>
+        </field>
+    </record>
+</odoo>

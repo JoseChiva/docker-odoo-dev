@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="gamint_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.gamint</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="99" />
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <i class="icon mr-2" style="background: url('/gamma_integration/static/description/icon2.png') no-repeat center; background-size: contain; width: 24px; height: 24px;">   </i>
+                    <app data-string="Gamma Integration" id="gamint_settings" string="Gamma Integration" name="gamint_settings">
+                        <div class="app_settings_block" data-string="Gamma Integration" string="Gamma Integration" data-key="gamint_settings">
+                            <!-- Añadimos el icono antes del texto -->
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="icon mr-2" style="background: url('/gamma_integration/static/description/icon2.png') no-repeat center; background-size: contain; width: 24px; height: 24px;"></i>
+                                <span>Gamma Integration</span>
+                            </div>
+                            <block title="General" id="end_inv_settings">
+                                <setting string="Gamma Integration" company_dependent="1">
+                                    <div class="text-muted content-group mt16">
+                                    <group string="Conexión Webservice">
+                                        <field name="gi_url_base"/>
+                                        <field name="gi_user"/>
+                                        <field name="gi_password" password="True"/>
+                                        <field name="gi_token" />
+                                        <field name="gi_due_data_token_raw" />
+                                    </group>
+                                    <group string="Parámetros">
+                                        <field name="gi_code_asociate"/>
+                                        <field name="gi_supplier"/>
+                                        <field name="gi_viewstocksale"/>
+                                        <field name="gi_tag_gamma"/>
+                                    </group>
+                                    </div>
+                                </setting>
+                            </block>
+                        </div>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="gamint_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'Gamma_Integration', 'bin_size': False}</field>
+        </record>
+    </data>
+</odoo>
+
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="gamint_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.gamint</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <div class="app_settings_block" data-string="Gamma Integration" string="Gamma Integration">
+                    <h2>Conexión Webservice</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="gi_url_base"/>
+                                <field name="gi_user"/>
+                                <field name="gi_password" password="True"/>
+                                <field name="gi_token"/>
+                                <field name="gi_due_data_token"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Parámetros</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="gi_code_asociate"/>
+                                <field name="gi_supplier"/>
+                                <field name="gi_viewstocksale"/>
+                                <field name="gi_tag_gamma"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo> -->
