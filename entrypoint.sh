@@ -1,97 +1,30 @@
 #!/bin/bash
 set -e
 
+# Leer contraseña desde archivo si existe
 if [ -v PASSWORD_FILE ]; then
     PASSWORD="$(< $PASSWORD_FILE)"
 fi
 
-# Configuración de conexión a PostgreSQL
-: ${HOST:=${DB_PORT_5432_TCP_ADDR:='db'}}
-: ${PORT:=${DB_PORT_5432_TCP_PORT:=5432}}
-: ${USER:=${DB_ENV_POSTGRES_USER:=${POSTGRES_USER:='odoo'}}}
-: ${PASSWORD:=${DB_ENV_POSTGRES_PASSWORD:=${POSTGRES_PASSWORD:='odoo'}}}
+# Configuración de base de datos (variables de entorno o valores por defecto)
+DB_HOST=${DB_HOST:-${DB_PORT_5432_TCP_ADDR:-db}}
+DB_PORT=${DB_PORT:-${DB_PORT_5432_TCP_PORT:-5432}}
+DB_USER=${DB_USER:-${DB_ENV_POSTGRES_USER:-${POSTGRES_USER:-odoo}}}
+DB_PASSWORD=${DB_PASSWORD:-${DB_ENV_POSTGRES_PASSWORD:-${POSTGRES_PASSWORD:-odoo}}}
 
-DB_ARGS=()
-function check_config() {
-    param="$1"
-    value="$2"
-    if grep -q -E "^\s*\b${param}\b\s*=" "$ODOO_RC" ; then
-        value=$(grep -E "^\s*\b${param}\b\s*=" "$ODOO_RC" | cut -d " " -f3 | sed 's/["\n\r]//g')
-    fi
-    DB_ARGS+=("--${param}")
-    DB_ARGS+=("${value}")
-}
-check_config "db_host" "$HOST"
-check_config "db_port" "$PORT"
-check_config "db_user" "$USER"
-check "db_password" "$PASSWORD"
+# Construir argumentos para wait-for-psql.py
+DB_ARGS=(--db_host "$DB_HOST" --db_port "$DB_PORT" --db_user "$DB_USER" --db_password "$DB_PASSWORD")
 
-wait-for-psql.py ${DB_ARGS[@]} --timeout=30
+# Esperar a que la base de datos esté disponible
+wait-for-psql.py "${DB_ARGS[@]}" --timeout=30
 
-# Si DEBUGPY está activado y debugpy está instalado, arrancamos con depuración
-if [ -n "$DEBUGPY" ] && python3 -c "import debugpy" 2>/dev/null; then
-    echo "Iniciando Odoo con debugpy en el puerto $DEBUGPY_PORT"
-    exec python3 -Xfrozen_modules=off -m debugpy --listen 0.0.0.0:$DEBUGPY_PORT /usr/bin/odoo -c /etc/odoo/odoo.conf --http-port=$DEBUGPY_AUX_PORT "$@" "${DB_ARGS[@]}"
+# Lanzar Odoo con debugpy si DEBUGPY está activado
+if [ -n "$DEBUGPY" ]; then
+    echo "Iniciando Odoo con debugpy en el puerto $DEBUGPY_PORT..."
+    exec python3 -Xfrozen_modules=off -m debugpy \
+        --listen 0.0.0.0:$DEBUGPY_PORT \
+        /usr/bin/odoo -c /etc/odoo/odoo.conf "${DB_ARGS[@]}"
 else
-    echo "Iniciando Odoo sin debugpy"
-    exec odoo "$@" "${DB_ARGS[@]}"
-
-# #!/bin/bash
-
-# set -e
-
-# if [ -v PASSWORD_FILE ]; then
-#     PASSWORD="$(< $PASSWORD_FILE)"
-# fi
-
-# # set the postgres database host, port, user and password according to the environment
-# # and pass them as arguments to the odoo process if not present in the config file
-# : ${HOST:=${DB_PORT_5432_TCP_ADDR:='db'}}
-# : ${PORT:=${DB_PORT_5432_TCP_PORT:=5432}}
-# : ${USER:=${DB_ENV_POSTGRES_USER:=${POSTGRES_USER:='odoo'}}}
-# : ${PASSWORD:=${DB_ENV_POSTGRES_PASSWORD:=${POSTGRES_PASSWORD:='odoo'}}}
-
-# DB_ARGS=()
-# function check_config() {
-#     param="$1"
-#     value="$2"
-#     if grep -q -E "^\s*\b${param}\b\s*=" "$ODOO_RC" ; then
-#         value=$(grep -E "^\s*\b${param}\b\s*=" "$ODOO_RC" |cut -d " " -f3|sed 's/["\n\r]//g')
-#     fi;
-#     DB_ARGS+=("--${param}")
-#     DB_ARGS+=("${value}")
-# }
-# check_config "db_host" "$HOST"
-# check_config "db_port" "$PORT"
-# check_config "db_user" "$USER"
-# check_config "db_password" "$PASSWORD"
-
-# case "$1" in
-#     -- | odoo)
-#         shift
-#         if [[ "$1" == "scaffold" ]] ; then
-#             exec odoo "$@"
-#         else
-#             wait-for-psql.py ${DB_ARGS[@]} --timeout=30
-#             # debugpy solo si la variable está definida
-#             if [ -n "$DEBUGPY" ]; then
-#                 exec python3 -m debugpy --listen 0.0.0.0:$DEBUGPY_PORT /usr/bin/odoo -c /etc/odoo/odoo.conf --http-port=$DEBUGPY_AUX_PORT & odoo "$@" "${DB_ARGS[@]}"
-#             else
-#                 exec odoo "$@" "${DB_ARGS[@]}"
-#             fi
-#         fi
-#         ;;
-#     -*)
-#         wait-for-psql.py ${DB_ARGS[@]} --timeout=30
-#         # debugpy solo si la variable está definida
-#         if [ -n "$DEBUGPY" ]; then
-#             exec python3 -m debugpy --listen 0.0.0.0:$DEBUGPY_PORT /usr/bin/odoo -c /etc/odoo/odoo.conf --http-port=$DEBUGPY_AUX_PORT & odoo "$@" "${DB_ARGS[@]}"
-#         else
-#             exec odoo "$@" "${DB_ARGS[@]}"
-#         fi
-#         ;;
-#     *)
-#         exec "$@"
-# esac
-
-# exit 1
+    echo "Iniciando Odoo normalmente..."
+    exec /usr/bin/odoo -c /etc/odoo/odoo.conf "${DB_ARGS[@]}"
+fi

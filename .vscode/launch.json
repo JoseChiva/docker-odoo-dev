@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
             "name": "Python Debugger: Remote Attach",
             "type": "debugpy",
@@ -19,8 +18,12 @@
                     "remoteRoot": "/var/lib/odoo/odoo/addons"
                 },
                 {
+                    "localRoot": "C:\\Docker\\odoo_18_project\\recursos\\enterprise",
+                    "remoteRoot": "/var/lib/odoo/enterprise"
+                },
+                {
                     "localRoot": "${workspaceFolder}/custom_addons",
-                    "remoteRoot": "/var/lib/odoo/custom_addons"
+                    "remoteRoot": "/mnt/extra-addons"
                 }
             ]
         }
