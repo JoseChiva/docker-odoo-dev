@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="gamint_res_partner_form_view" model="ir.ui.view">
+            <field name="name">res.partner.form.view.gamint</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <button name="action_get_gamma_prices"
+                            type="object"
+                            string="Obtener precios Gamma"
+                            class="oe_highlight"
+                            invisible="not is_gamma_supplier"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

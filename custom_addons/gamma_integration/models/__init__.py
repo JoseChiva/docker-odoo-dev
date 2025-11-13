@@ -5,3 +5,7 @@ from . import gamint_product_template
 from . import gamint_sale_order_line
 from . import gamint_sale_order
 from . import gamint_settings
+from . import gamint_type_price
+from . import gamint_product_supplierinfo
+from . import gamint_res_company
+from . import gamint_res_partner

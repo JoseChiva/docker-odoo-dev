@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Cron para stock -->
     <record id="ir_cron_get_stock_gamma" model="ir.cron">
         <field name="name">Sincronizar stock Gamma</field>
         <field name="model_id" ref="gamma_integration.model_gamma_stock_wizard"/>
@@ -7,6 +8,19 @@
         <field name="code">model.getstock()</field>
         <field name="interval_number">1</field>
         <field name="interval_type">hours</field>
+        <field name="active">True</field>
+    </record>
+
+    <!-- Cron para precios -->
+    <record id="ir_cron_update_prices_gamma" model="ir.cron">
+        <field name="name">Actualizar precios Gamma</field>
+        <field name="model_id" ref="gamma_integration.model_res_company"/>
+        <field name="state">code</field>
+        <field name="code">model.update_supplier_prices()</field>
+        <!-- <field name="code">model.search([]).update_supplier_prices()</field> -->
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="nextcall">2025-11-11 23:00:00</field>
         <field name="active">True</field>
     </record>
 </odoo>

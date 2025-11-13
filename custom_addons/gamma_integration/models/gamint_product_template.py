@@ -20,6 +20,8 @@ class ProductTemplate(models.Model):
         store=True,
     )
     gi_show_gamma_stock = fields.Boolean(string="Mostrar stock Gamma", compute="_compute_show_gamma", store=True)
+    
+    gi_desc = fields.Char(string="Descripción Gamma")
 
     # Marca automáticamente el campo gi_mang_gamma si el producto tiene la etiqueta configurada en gi_tag_gamma
     @api.depends('product_tag_ids')

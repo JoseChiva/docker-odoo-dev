@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_res_company_gamma,res.company.gamma.settings,base.model_res_company,,1,1,1,1
 access_gamma_stock_wizard_user,gamma.stock.wizard user,model_gamma_stock_wizard,base.group_user,1,0,1,0
+access_gi_type_price_user,access_gi_type_price_user,model_gi_type_price,base.group_user,1,1,1,1

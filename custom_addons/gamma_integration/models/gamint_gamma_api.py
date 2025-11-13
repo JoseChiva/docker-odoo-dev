@@ -6,6 +6,9 @@ from odoo.exceptions import UserError
 import logging
 from email.utils import parsedate_to_datetime
 
+import gzip
+import io
+import json
 
 _logger = logging.getLogger(__name__)
 
@@ -25,11 +28,11 @@ class GammaAPI:
 
         # Añado cabeceras
         headers = {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "/",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Connection": "keep-alive",
-        }
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept": "*/*",
+                "Accept-Encoding": "gzip, deflate, br, identity",
+                "Connection": "keep-alive",
+            }
 
         # Envía una solicitud POST a /login con el usuario y contraseña
         auth_url = f"{self.url_base}/login?"
@@ -39,7 +42,12 @@ class GammaAPI:
         }, headers=headers)
 
         if response.status_code == 200:
-            data = response.json()
+            try:
+                data = response.json()
+            except ValueError:
+                _logger.error("La respuesta no es JSON válido: %s", response.text)
+                raise UserError("La respuesta del servidor no es válida. Verifica el formato del contenido.")
+
             token = data.get("token")
             expires_at_str = data.get("caducity")
 
@@ -134,3 +142,20 @@ class GammaAPI:
             return response.json().get("data", {}).get(item_code, {})
         else:
             raise UserError(f"Error al obtener stock del artículo {item_code}")
+        
+
+    # Obtiene la lista de precios por proveedor desde la API de Gamma
+    def get_prices(self):
+        """Obtiene la lista de precios desde la API Gamma."""
+        self._ensure_token()  # Validar token
+        url = f"{self.url_base}/tarifas?token={self.token}"
+        try:
+            response = requests.get(url, timeout=360)
+            if response.status_code == 200:
+                return response.json().get("data", [])
+            else:
+                _logger.error("Error al obtener precios: %s", response.text)
+                raise UserError(f"Error al obtener precios: {response.status_code}")
+        except Exception as e:
+            _logger.exception("Excepción al llamar a la API de precios")
+            raise UserError(f"Error en la conexión con Gamma: {str(e)}")

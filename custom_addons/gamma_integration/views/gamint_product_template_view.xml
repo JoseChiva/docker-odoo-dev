@@ -26,6 +26,7 @@
                     <page name="gamma_integration" string="Integración Gamma" invisible="gi_mang_gamma==False">
                         <group>
                             <field name="gi_code_gamma"/>
+                            <field name="gi_desc"/>
                             <!-- <field name="gi_stock_gamma" readonly="1"/>
                             <button name="action_get_stock" type="object" string="Obtener Stock Gamma" class="oe_highlight"/> -->
                         </group>

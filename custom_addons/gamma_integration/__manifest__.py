@@ -4,7 +4,10 @@
     'depends': [
         'base',
         'sale_management',
-        'stock', 'web'
+        'stock', 
+        'purchase',
+        'web',
+        'contacts',
     ],
     'category': 'Tools',
     'summary': 'Web services Gamma Integration',
@@ -16,9 +19,12 @@
     'auto_install': False,
     'data': [
         'security/ir.model.access.csv',
+        'views/gamint_type_price_view.xml',
         'views/gamint_settings_view.xml',
         'views/gamint_config_settings_view.xml',
         'views/gamint_product_template_view.xml',
+        'views/gamint_product_supplierinfo_view.xml',
+        'views/gamint_res_partner_view.xml',
         'views/gamint_sale_order_head_view.xml',
         'views/gamint_sale_order_line_view.xml',
         'data/gamint_gamma_cron.xml',
