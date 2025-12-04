@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_jouwar_location" model="ir.ui.view">
+            <field name="name">auren_jouwar_location</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='location_id']" position="after">
+                    <group name="auren_jouwar">
+                        <field name="journal_id" string="Journal"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
