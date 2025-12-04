@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_astore_payments_category_pos" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_payments_category_pos</field>
+            <field name="res_model">aurb.astore.payments.category.pos</field>
+            <field name="view_mode">list</field>
+        </record>
+        <record id="lst_aurb_astore_payments_category_pos" model="ir.ui.view">
+            <field name="name">lst_aurb_astore_payments_category_pos</field>
+            <field name="model">aurb.astore.payments.category.pos</field>
+            <field name="arch" type="xml">
+                <list editable="top">
+                    <field name="name" />
+                    <field name="account_id" string="category_account"/>
+                    <field name="journal_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </list>
+            </field>
+        </record>
+    </data>
+</odoo>

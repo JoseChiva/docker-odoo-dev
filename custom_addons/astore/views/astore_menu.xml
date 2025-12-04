@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="mn_astore_main" name="mn_astore" web_icon="astore,static/description/icon.png">
+        <menuitem id="mn_astore_sale_quotations_action" name="mn_quotation" sequence="10"
+                action="sale.action_quotations_with_onboarding" />
+            <menuitem id="mn_astore_sale_order_action" name="mn_sale_order" sequence="11"
+                action="sale.action_orders" />
+            <menuitem id="mn_astore_sale_delivery_action" name="mn_delivery" sequence="12"
+                action="stock.action_picking_tree_outgoing" />
+            <menuitem id="mn_astore_sale_invoice_action" name="mn_invoice" sequence="13"
+                action="account.action_move_out_invoice_type" />
+            <menuitem id="mn_astore_sale_payment_action" name="mn_incoming_payment" sequence="14"
+                action="account.action_account_payments" />
+        <menuitem id="mn_astore_management_pos" name="mn_management_pos" sequence="80">
+            <menuitem id="mn_astore_conf_astore_pos_payments_action" name="mn_payments_pos"
+                sequence="81"
+                action="act_aurb_astore_payments_pos" />
+            <menuitem id="mn_astore_conf_astore_pos_close_action" name="mn_close_pos" sequence="82"
+                action="act_aurb_astore_close_pos" />
+        </menuitem>
+        <menuitem id="mn_astore_configuration" name="mn_configuration" sequence="9999">
+            <menuitem id="mn_astore_conf_astore_setting_action" name="mn_settings" sequence="99991"
+            action="auren_astore_config_settings_action"
+            groups="astore.astore_admin_group" />
+            <menuitem id="mn_astore_conf_astore_pos_action" name="mn_pos" sequence="99992"
+                action="act_aurb_astore_pos"
+                groups="astore.astore_pos_group" />
+            <menuitem id="mn_astore_conf_astore_pos_payments_category_action" name="mn_payment_category_pos" sequence="99994"
+                action="act_aurb_astore_payments_category_pos"
+                groups="astore.astore_admin_group" />
+            <menuitem id="mn_astore_conf_astore_method_payment_action" name="mn_method_payment" sequence="99995"
+                action="act_aurb_astore_method_payment"
+                groups="astore.astore_admin_group" />
+        </menuitem>
+        <menuitem id="mn_astore_process" name="mn_process" sequence="100">
+            <menuitem id="mn_astore_archived_closed_move" name="mn_astore_archived_closed_move" sequence="101"
+            action="act_aurb_astore_archived_closed_move"
+            groups="astore.astore_pos_group" />
+            <menuitem id="mn_astore_conf_astore_pos_move_action" name="mn_move_pos" sequence="99993"
+            action="act_aurb_astore_move_pos" />
+        </menuitem>
+        <menuitem id="mn_astore_report" name="mn_report" sequence="200">
+            <menuitem id="mn_astore_report_amount">
+                <menuitem id="mn_astore_report_sales_amount_pos" name="mn_astore_report_sales_amount_pos" sequence="201"
+                action="act_aurb_astore_view_order_amount_graph"
+                groups="astore.astore_pos_group" />
+                <menuitem id="mn_astore_report_sales_amount_product_pos" name="mn_astore_report_sales_amount_product_pos" sequence="202"
+                action="act_aurb_astore_view_order_product_amount_graph"
+                groups="astore.astore_pos_group" />
+                <!-- Análisis de ventas por cliente -->
+                <menuitem id="mn_astore_report_sales_amount_partner_pos" name="mn_astore_report_sales_amount_partner_pos" sequence="203"
+                action="act_aurb_astore_view_order_partner_amount_graph"
+                groups="astore.astore_pos_group" />
+                <!-- Análisis de ventas por método de pago -->
+                <menuitem id="mn_astore_report_sales_amount_payment_method_pos" name="mn_astore_report_sales_amount_payment_method_pos" sequence="204"
+                action="act_aurb_astore_view_order_payment_method_amount_graph"
+                groups="astore.astore_pos_group" />
+            </menuitem>
+            <menuitem id="mn_astore_report_qty">
+                <menuitem id="mn_astore_report_sales_qty_pos" name="mn_astore_report_sales_qty_pos" sequence="201"
+                action="act_aurb_astore_view_order_qty_graph"
+                groups="astore.astore_pos_group" />
+                <menuitem id="mn_astore_report_sales_qty_product_pos" name="mn_astore_report_sales_qty_product_pos" sequence="202"
+                action="act_aurb_astore_view_order_product_qty_graph"
+                groups="astore.astore_pos_group" />
+            </menuitem>
+            
+
+            
+        </menuitem>
+    </menuitem>
+</odoo>

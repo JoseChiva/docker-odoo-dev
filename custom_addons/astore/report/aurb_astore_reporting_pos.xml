@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="act_aurb_astore_view_order_amount_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_astore_view_order_graph</field>
+        <field name="res_model">sale.report</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': 'pos_id','pivot_measures': ['price_subtotal'],'graph_measure': ['price_subtotal']}</field>
+    </record>
+    <record id="act_aurb_astore_view_order_product_amount_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_astore_view_order_product_graph</field>
+        <field name="res_model">sale.report</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['pos_id','product_id'],'pivot_measures': ['price_subtotal'],'graph_measure': ['price_subtotal']}</field>
+    </record>
+    <record id="act_aurb_astore_view_order_qty_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_astore_view_order_graph</field>
+        <field name="res_model">sale.report</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': 'pos_id','pivot_measures': ['product_uom_qty'],'graph_measure': ['product_uom_qty']}</field>
+    </record>
+    <record id="act_aurb_astore_view_order_product_qty_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_astore_view_order_product_graph</field>
+        <field name="res_model">sale.report</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['pos_id','product_id'],'pivot_measures': ['product_uom_qty'],'graph_measure': ['product_uom_qty']}</field>
+    </record>
+    <!-- Análisis de ventas por cliente -->
+    <record id="act_aurb_astore_view_order_partner_amount_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_astore_view_order_partner_graph</field>
+        <field name="res_model">sale.report</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['pos_id','partner_id'],'pivot_measures': ['price_subtotal'],'graph_measure': ['price_subtotal']}</field>
+    </record>
+    <!-- Análisis de ventas por método de pago -->
+    <record id="act_aurb_astore_view_order_payment_method_amount_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_astore_view_order_payment_method_graph</field>
+        <field name="res_model">account.payment.register</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['pos_id','payment_method_line_id'],'pivot_measures': ['source_amount'],'graph_measure': ['source_amount']}</field>
+    </record>
+
+    <record id="grp_aurb_astore_view_order_graph" model="ir.ui.view">
+         <field name="name">grp_aurb_astore_view_ordert_graph</field>
+         <field name="model">sale.report</field>
+         <field name="arch" type="xml">
+             <graph string="Sales Analysis" stacked="False" type="bar" sample="1">
+                 <field name="pos_id" type="row"/>
+                 <field name="product_id" type="row"/>
+             </graph>
+         </field>
+    </record>
+    <record id="pvt_aurb_astore_view_order_graph" model="ir.ui.view">
+        <field name="name">pvt_aurb_astore_view_order_graph</field>
+        <field name="model">sale.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Sales Analysis" sample="1">
+                <field name="pos_id" type="row"/>
+                <field name="product_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+            </pivot>
+        </field>
+   </record>
+</odoo>

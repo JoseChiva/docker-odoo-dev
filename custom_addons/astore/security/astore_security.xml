@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="astore_group_custom_category" model="ir.module.category">
+        <field name="name">aStore</field>
+    </record>
+    <record id="astore_subgroup_custom_category" model="ir.module.category">
+        <field name="name">ar_access_right</field>
+        <field name="parent_id" ref="astore.astore_group_custom_category"/>
+    </record>
+
+    <record id="astore_user_group" model="res.groups">
+        <field name="name">ar_user</field>
+        <field name="category_id" ref="astore.astore_subgroup_custom_category"/> 
+    </record>
+    <record id="astore_pos_group" model="res.groups">
+        <field name="name">ar_admin_pos</field>
+        <field name="category_id" ref="astore.astore_subgroup_custom_category"/>
+        <field name="implied_ids" eval="[(6, 0, [ref('astore.astore_user_group')])]"/>
+    </record>
+    <record id="astore_admin_group" model="res.groups">
+        <field name="name">ar_admin</field>
+        <field name="category_id" ref="astore.astore_subgroup_custom_category"/>
+        <field name="implied_ids" eval="[(6, 0, [ref('astore.astore_pos_group')])]"/>
+    </record>
+
+    <record id="aurb_astore_method_payment_multi_company_rule" model="ir.rule">
+        <field name="name">aurb_astore_method_payment_multi_company_rule</field>
+        <field name="model_id" ref="model_aurb_astore_method_payment"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="aurb_astore_pos_multi_company_rule" model="ir.rule">
+        <field name="name">aurb_astore_pos_multi_company_rule</field>
+        <field name="model_id" ref="model_aurb_astore_pos"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="aurb_astore_payments_category_pos_multi_company_rule" model="ir.rule">
+        <field name="name">aurb_astore_payments_category_pos_multi_company_rule</field>
+        <field name="model_id" ref="model_aurb_astore_payments_category_pos"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="aurb_astore_move_pos_multi_company_rule" model="ir.rule">
+        <field name="name">aurb_astore_move_pos_multi_company_rule</field>
+        <field name="model_id" ref="model_aurb_astore_move_pos"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="aurb_astore_payments_pos_multi_company_rule" model="ir.rule">
+        <field name="name">aurb_astore_payments_pos_multi_company_rule</field>
+        <field name="model_id" ref="model_aurb_astore_payments_pos"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="aurb_astore_close_pos_multi_company_rule" model="ir.rule">
+        <field name="name">aurb_astore_close_pos_multi_company_rule</field>
+        <field name="model_id" ref="model_aurb_astore_close_pos"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

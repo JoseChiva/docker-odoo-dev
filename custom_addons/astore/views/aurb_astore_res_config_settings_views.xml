@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_astore_res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.auren.astore</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="99" />
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="astore"
+                        id="astore" string="aStore"
+                        name="astore"
+                    >
+                        <div
+                            class="app_settings_block" data-string="aStore"
+                            string="aStore"
+                            data-key="astore"
+                        >
+                            <block title="set_Account" id="end_account_settings">
+                                <setting string="Creación asiento definitivo">
+                                    <div class="text-muted content-group mt16">
+                                        <field name="auto_posted_account_move" />
+                                    </div>
+                                </setting>
+                            </block>
+                            
+                            <block title="Ventas" id="end_sales_settings">
+                                <setting string="Importe máximo factura simplificada">
+                                    <div class="text-muted content-group mt16">
+                                        <field name="max_amount_simplified_invoice" />
+                                    </div>
+                                </setting>
+                                <setting string="Cliente factura simplificada">
+                                    <div class="text-muted content-group mt16">
+                                        <field name="simplified_invoice_partner_id"/>
+                                    </div>
+                                </setting>
+                                <setting string="Importe máximo efectivo">
+                                    <div class="text-muted content-group mt16">
+                                        <field name="max_amount_cash"/>
+                                    </div>
+                                </setting>
+                                <setting string="Botón  de factura directa">
+                                    <div class="text-muted content-group mt16">
+                                        <field name="group_direct_invoice"/>
+                                    </div>
+                                </setting>
+                            </block>
+                        </div>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="auren_astore_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'astore', 'bin_size': False}</field>
+        </record>
+
+        <!-- <menuitem id="fleet_config_settings_menu" name="Settings"
+            parent="fleet.fleet_configuration" sequence="0" action="fleet_config_settings_action"
+            groups="base.group_system"/> -->
+    </data>
+</odoo>

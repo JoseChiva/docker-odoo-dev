@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_astore_account_move" model="ir.ui.view">
+            <field name="name">act_aurb_astore_account_move</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='partner_id']"
+                    position="after">
+                    <field name="user_pos" invisible="True" />
+                    <field name="pos_id" readonly="1" force_save="1" invisible="user_pos!=True"
+                        options="{'no_open': True,'no_create': True}" />
+                </xpath>
+                
+            </field>
+        </record>
+        <record id="astore_account_move_searchview" model="ir.ui.view">
+            <field name="name">astore_account_move_searchview</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='salesperson']"
+                    position="before" >
+                    <separator/>
+                        <filter name="pos_id" context="{'group_by':'pos_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

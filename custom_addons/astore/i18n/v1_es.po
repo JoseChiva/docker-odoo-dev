@@ -1,0 +1,872 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* astore
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-16 10:49+0000\n"
+"PO-Revision-Date: 2024-02-16 10:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_account_payment_method_payment
+msgid "AURB aStore Account Payment Method Payment"
+msgstr "Método de pago TPV del módulo de contabilidad"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_close_pos
+msgid "AURB aStore Cierre TPV"
+msgstr "Gestión de cierre de TPV"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_close_pos_method_payment
+msgid "AURB aStore Close Pos Method Payment"
+msgstr "Método de pago de cierre por TPV"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_method_payment
+msgid "AURB aStore Method Payment"
+msgstr "Método de pago"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_method_payment_currency
+msgid "AURB aStore Method Payment Currency"
+msgstr "Método de pago para efectivo"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_move_pos
+msgid "AURB aStore Movimientos TPV"
+msgstr "Movimientos TPV"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_payments_category_pos
+msgid "AURB aStore Payments Category TPV"
+msgstr "Categoría de entradas/salidas de dinero de TPV"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_payments_pos
+msgid "AURB aStore Payments TPV"
+msgstr "Método de pago"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_pos_payment_method
+msgid "AURB aStore Pos Payment Method"
+msgstr "Método de pago de TPV"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_pos
+msgid "AURB aStore TPV"
+msgstr "Gestión de TPV"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_category_pos__account_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__account_id
+#: model_terms:ir.ui.view,arch_db:astore.auren_astore_res_config_settings_view_form
+msgid "Account"
+msgstr "Contabilidad"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__account_income_id
+msgid "Account Income"
+msgstr "Cuenta contable de banco"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__account_move_id
+msgid "Account Move"
+msgstr "Movimiento"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__account_payment_method_bill_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__account_payment_method_bill_id
+msgid "Account Payment Method Bill"
+msgstr "Billetes"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__account_payment_method_coin_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__account_payment_method_coin_id
+msgid "Account Payment Method Coin"
+msgstr "Monedas"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_account_payment_register__account_payment_method_payment_bill_ids
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__account_payment_method_payment_bill_ids
+msgid "Account Payment Method Payment Bill"
+msgstr "Método de pago para billetes"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_account_payment_register__account_payment_method_payment_coin_ids
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__account_payment_method_payment_coin_ids
+msgid "Account Payment Method Payment Coin"
+msgstr "Método de pago para monedas"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__account_profit_loss_id
+msgid "Account Profit Loss"
+msgstr "Cuenta contable de diferencia"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__active
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__active
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_category_pos__active
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__amount
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__amount
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__amount
+msgid "Amount"
+msgstr "Importe"
+
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__amount_cash
+msgid "Amount Cash"
+msgstr "Importe efectivo"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__amount_cash_total
+msgid "Amount Cash Total"
+msgstr "Importe total efectivo"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__amount_diff
+msgid "Amount Diff"
+msgstr "Diferencia de importe"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__amount_general
+msgid "Amount General"
+msgstr "Importe general"
+
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__amount_income
+msgid "Amount Income"
+msgstr "Importe de salida de efectivo"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__amount_pos
+msgid "Amount Pos"
+msgstr "Importe restante en caja"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.src_aurb_astore_close_pos
+#: model_terms:ir.ui.view,arch_db:astore.src_aurb_astore_move_pos
+#: model_terms:ir.ui.view,arch_db:astore.src_aurb_astore_pos
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: astore
+#. odoo-python
+#: code:addons/astore/models/aurb_astore_account_move.py:0
+#, python-format
+msgid "Auren aStore Payment Register"
+msgstr "Registro de pago"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_res_config_settings__auto_posted_account_move
+msgid "Auto Posted Account Move"
+msgstr "Movimiento publicados a contabilidad"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__account_payment_register__type__bank
+#: model:ir.model.fields.selection,name:astore.selection__aurb_astore_move_pos__type__bank
+msgid "Bank"
+msgstr "Banco"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__aurb_astore_method_payment_currency__type__bill
+msgid "Bill"
+msgstr "Billetes"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__account_payment_register__type__cash
+#: model:ir.model.fields.selection,name:astore.selection__aurb_astore_move_pos__type__cash
+msgid "Cash"
+msgstr "Efectivo"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__category_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_account_payment_register__change_cash
+msgid "Change Cash"
+msgstr "Cambio efectivo"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.auren_astore_res_config_settings_view_form
+msgid "Cliente factura simplificada"
+msgstr "Cliente factura simplificada"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__account_move__type__cls
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__close_pos_id
+msgid "Close Pos"
+msgstr "Cierre de TPV"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__closed
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__close_count
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__code
+msgid "Code"
+msgstr "Código"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__aurb_astore_method_payment_currency__type__coin
+msgid "Coin"
+msgstr "Monedas"
+
+#. module: astore
+#: model:ir.model,name:astore.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.auren_astore_res_config_settings_view_form
+msgid "Creación asiento definitivo"
+msgstr "Creación asiento definitivo"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_category_pos__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__create_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos_payment_method__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_category_pos__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__create_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos_payment_method__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__currency_simbol
+msgid "Currency Simbol"
+msgstr "Símbolo de moneda"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__delivery_count
+msgid "Delivery Count"
+msgstr "Albarán"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_category_pos__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__display_name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos_payment_method__display_name
+msgid "Display Name"
+msgstr "Nombre visual"
+
+#. module: astore
+#: model:ir.model.constraint,message:astore.constraint_aurb_astore_pos_payment_method_pk_astore_pos_payment_method
+msgid "Este metodo de pago ya existe"
+msgstr "Este metodo de pago ya existe"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__from_date
+msgid "From Date"
+msgstr "Desde fecha"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.astore_sale_order_quotation_searchview
+#: model_terms:ir.ui.view,arch_db:astore.astore_sale_order_searchview
+#: model_terms:ir.ui.view,arch_db:astore.src_aurb_astore_payments_pos
+msgid "Group By"
+msgstr "Agrupado por"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_category_pos__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos_payment_method__id
+msgid "ID"
+msgstr "Identificador"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.auren_astore_res_config_settings_view_form
+msgid "Importe máximo efectivo"
+msgstr "Importe máximo efectivo"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.auren_astore_res_config_settings_view_form
+msgid "Importe máximo factura simplificada"
+msgstr "Importe máximo factura simplificada"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__account_move__type__in
+#: model:ir.model.fields.selection,name:astore.selection__aurb_astore_payments_pos__type_move__in
+msgid "In"
+msgstr "Entrada"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__invoice_count
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__journal_id
+msgid "Journal"
+msgstr "Diario contable"
+
+#. module: astore
+#: model:ir.model,name:astore.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_category_pos__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__write_uid
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos_payment_method__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_category_pos__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__write_date
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos_payment_method__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_res_config_settings__max_amount_cash
+msgid "Max Amount Cash"
+msgstr "Importe máximo efectivo"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_res_config_settings__max_amount_simplified_invoice
+msgid "Max Amount Simplified Invoice"
+msgstr "Importe máximo factura simplificada"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__method_payment_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__method_payment_id
+msgid "Method Payment"
+msgstr "Forma de pago"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__method_payment_currency_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__method_payment_currency_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__method_payment_currency_ids
+msgid "Method Payment Currency"
+msgstr "Divisas"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__account_payment_register__type__general
+#: model:ir.model.fields.selection,name:astore.selection__aurb_astore_move_pos__type__general
+msgid "Miscellaneous"
+msgstr "General"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__move_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__move_ids
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__move_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__move_ids
+msgid "Move"
+msgstr "Movimientos"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__move_income_id
+msgid "Move Income"
+msgstr "Asiento de salida de efectivo"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment__name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_category_pos__name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__name
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos_payment_method__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__number
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__number
+msgid "Number"
+msgstr "Numero"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_account_payment_method_payment__order
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos_method_payment__order
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__order
+msgid "Order"
+msgstr "Orden"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__order_count
+msgid "Order Count"
+msgstr "Pedido"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__account_move__type__out
+#: model:ir.model.fields.selection,name:astore.selection__aurb_astore_payments_pos__type_move__out
+msgid "Out"
+msgstr "Salida"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_sale_order__partner_unidentified
+msgid "Partner Unidentified"
+msgstr "Cliente no identificado"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__payment_method_ids
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos_payment_method__payment_method_id
+msgid "Payment Method"
+msgstr "Método de pago"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.src_aurb_astore_payments_pos
+msgid "Payment POS Search"
+msgstr "Búsqueda método de pago TPV"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_account_bank_statement_line__pos_id
+#: model:ir.model.fields,field_description:astore.field_account_move__pos_id
+#: model:ir.model.fields,field_description:astore.field_account_payment__pos_id
+#: model:ir.model.fields,field_description:astore.field_account_payment_register__pos_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__pos_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__pos_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__pos_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__pos_id
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos_payment_method__pos_id
+#: model:ir.model.fields,field_description:astore.field_res_users__pos_id
+#: model:ir.model.fields,field_description:astore.field_sale_order__pos_id
+#: model:ir.model.fields,field_description:astore.field_stock_picking__pos_id
+msgid "Pos"
+msgstr "TPV"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_account_payment_register__pos_method_payment_id
+msgid "Pos Method Payment"
+msgstr "Método de pago TPV"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_close_pos__posted
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__posted
+msgid "Posted"
+msgstr "Publicado"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__account_payment_register__type__purchase
+#: model:ir.model.fields.selection,name:astore.selection__aurb_astore_move_pos__type__purchase
+msgid "Purchase"
+msgstr "Compras"
+
+#. module: astore
+#: model:ir.model,name:astore.model_account_payment_register
+msgid "Register Payment"
+msgstr "Registrar pago"
+
+#. module: astore
+#: model:ir.model.fields.selection,name:astore.selection__account_payment_register__type__sale
+#: model:ir.model.fields.selection,name:astore.selection__aurb_astore_move_pos__type__sale
+msgid "Sales"
+msgstr "Ventas"
+
+#. module: astore
+#: model:ir.model,name:astore.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_archived_closed_move
+msgid ""
+"Se archivaran todos los movimientos entre las fechas seleccionades, está "
+"seguro que desea continuar?"
+msgstr "Se archivaran todos los movimientos entre las fechas seleccionades, está seguro que desea continuar?"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__separator
+msgid "Separator"
+msgstr "Separador"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.auren_astore_config_settings_action
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_res_config_settings__simplified_invoice_partner_id
+msgid "Simplified Invoice Partner"
+msgstr "Factura simplificada"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__stock_location_id
+msgid "Stock Location"
+msgstr "Localización de stock"
+
+#. module: astore
+#: model:ir.model,name:astore.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_archived_close_move__to_date
+msgid "To Date"
+msgstr "Hasta fecha"
+
+#. module: astore
+#: model:ir.model,name:astore.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_account_bank_statement_line__type
+#: model:ir.model.fields,field_description:astore.field_account_move__type
+#: model:ir.model.fields,field_description:astore.field_account_payment__type
+#: model:ir.model.fields,field_description:astore.field_account_payment_register__type
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__type
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_move_pos__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_payments_pos__type_move
+msgid "Type Move"
+msgstr "Tipo de movimiento"
+
+#. module: astore
+#: model:ir.model,name:astore.model_res_users
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_pos__user_ids
+msgid "User"
+msgstr "Usuario"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_account_bank_statement_line__user_pos
+#: model:ir.model.fields,field_description:astore.field_account_move__user_pos
+#: model:ir.model.fields,field_description:astore.field_account_payment__user_pos
+#: model:ir.model.fields,field_description:astore.field_sale_order__user_pos
+#: model:ir.model.fields,field_description:astore.field_stock_picking__user_pos
+msgid "User Pos"
+msgstr "Usuario TPV"
+
+#. module: astore
+#: model:ir.model.fields,field_description:astore.field_aurb_astore_method_payment_currency__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.auren_astore_res_config_settings_view_form
+msgid "Ventas"
+msgstr "Ventas"
+
+#. module: astore
+#: model:ir.model.constraint,message:astore.constraint_aurb_astore_pos_pk_astore_pos
+msgid "Ya existe un TPV con este código/nombre"
+msgstr "Ya existe un TPV con este código/nombre"
+
+#. module: astore
+#: model:ir.module.category,name:astore.astore_group_custom_category
+#: model_terms:ir.ui.view,arch_db:astore.auren_astore_res_config_settings_view_form
+msgid "aStore"
+msgstr "aStore"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_archived_closed_move
+msgid "act_aurb_astore_archived_closed_move"
+msgstr "Acción de archivado de cierres"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_close_pos
+msgid "act_aurb_astore_close_pos"
+msgstr "Gestión cierre de TPV"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_method_payment
+msgid "act_aurb_astore_method_payment"
+msgstr "Gestión métodos de pago"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_move_pos
+msgid "act_aurb_astore_move_pos"
+msgstr "Gestión movimientos"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_payments_category_pos
+msgid "act_aurb_astore_payments_category_pos"
+msgstr "Gestión categoría de pago"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_payments_pos
+msgid "act_aurb_astore_payments_pos"
+msgstr "Gestión método de pago TPV"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_pos
+msgid "act_aurb_astore_pos"
+msgstr "Gestión TPV"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_pos_close_filter
+msgid "act_aurb_astore_pos_close_filter"
+msgstr "Gestió filtro por cierre"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_pos_delivery_filter
+msgid "act_aurb_astore_pos_delivery_filter"
+msgstr "Gestión filtro albarán"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_pos_invoice_filter
+msgid "act_aurb_astore_pos_invoice_filter"
+msgstr "Gestión filtro factura"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_pos_order_filter
+msgid "act_aurb_astore_pos_order_filter"
+msgstr "Gestión filtro pedido"
+
+#. module: astore
+#: model:ir.actions.act_window,name:astore.act_aurb_astore_pos_payment_method
+msgid "act_aurb_astore_pos_payment_method"
+msgstr "Gestión métodos de pagos"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_archived_closed_move
+msgid "action_archived"
+msgstr "Archivar"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_close_pos
+msgid "action_close_load"
+msgstr "Cargar movimientos"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_close_pos
+msgid "action_close_posted"
+msgstr "Publicar asiento"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_payments_pos
+msgid "action_payment_posted"
+msgstr "Publicar asiento"
+
+#. module: astore
+#: model:ir.module.category,name:astore.astore_subgroup_custom_category
+msgid "ar_access_right"
+msgstr "Permisos"
+
+#. module: astore
+#: model:res.groups,name:astore.astore_admin_group
+msgid "ar_admin"
+msgstr "Administrador"
+
+#. module: astore
+#: model:res.groups,name:astore.astore_pos_group
+msgid "ar_admin_pos"
+msgstr "Administrador TPV"
+
+#. module: astore
+#: model:res.groups,name:astore.astore_user_group
+msgid "ar_user"
+msgstr "Usuario"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.astore_res_users_form
+#: model_terms:ir.ui.view,arch_db:astore.astore_res_users_simple_form
+msgid "astore_res_user"
+msgstr "Configuración aStore"
+
+#. module: astore
+#: model:ir.model,name:astore.model_aurb_astore_archived_close_move
+msgid "aurb.astore.archived.close.move"
+msgstr "Archivado de cierres"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_close_pos
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_payment_register
+msgid "bill"
+msgstr "Billetes"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_close_pos
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_payment_register
+msgid "coin"
+msgstr "Monedas"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_method_payment
+msgid "currency"
+msgstr "Billetes/Monedas"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_method_payment
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_pos
+msgid "general_info"
+msgstr "Información general"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_main
+msgid "mn_astore"
+msgstr "aStore"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_archived_closed_move
+msgid "mn_astore_archived_closed_move"
+msgstr "Archivado de cierres"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_conf_astore_pos_close_action
+msgid "mn_close_pos"
+msgstr "Cierre TPV"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_configuration
+msgid "mn_configuration"
+msgstr "Configuración"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_sale_delivery_action
+msgid "mn_delivery"
+msgstr "Albarán"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_sale_payment_action
+msgid "mn_incoming_payment"
+msgstr "Pagos"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_sale_invoice_action
+msgid "mn_invoice"
+msgstr "Facturas"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_management_pos
+msgid "mn_management_pos"
+msgstr "Gestión TPV"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_conf_astore_method_payment_action
+msgid "mn_method_payment"
+msgstr "Método de pago"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_conf_astore_pos_move_action
+msgid "mn_move_pos"
+msgstr "Movimientos TPV"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_conf_astore_pos_payments_category_action
+msgid "mn_payment_category_pos"
+msgstr "Categoría de pagos TPV"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_conf_astore_pos_payments_action
+msgid "mn_payments_pos"
+msgstr "Entradas/Salidas de TPV"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_conf_astore_pos_action
+msgid "mn_pos"
+msgstr "TPV"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_process
+msgid "mn_process"
+msgstr "Procesos"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_sale_quotations_action
+msgid "mn_quotation"
+msgstr "Presupuesto"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_sale_order_action
+msgid "mn_sale_order"
+msgstr "Pedido"
+
+#. module: astore
+#: model:ir.ui.menu,name:astore.mn_astore_conf_astore_setting_action
+msgid "mn_settings"
+msgstr "Ajustes"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_close_pos
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_pos
+msgid "move"
+msgstr "Movimientos"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_pos
+msgid "payment_method"
+msgstr "Métodos de pago"
+
+#. module: astore
+#: model_terms:ir.ui.view,arch_db:astore.frm_aurb_astore_pos
+msgid "users"
+msgstr "Usuarios"

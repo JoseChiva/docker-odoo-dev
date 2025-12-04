@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_astore_payments_pos" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_payments_pos</field>
+            <field name="res_model">aurb.astore.payments.pos</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <record id="src_aurb_astore_payments_pos" model="ir.ui.view">
+            <field name="name">src_aurb_astore_payments_pos</field>
+            <field name="model">aurb.astore.payments.pos</field>
+            <field name="arch" type="xml">
+                <search string="Payment POS Search">
+                    <field name="name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="category_id"/>
+                    <field name="amount"/>
+                    <separator/>
+                    <filter name="posted" domain="[('posted','=',True)]"/>
+                    <filter name="filter_date" date="date"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter name="pos_id" context="{'group_by':'pos_id'}"/>
+                        <filter name="type_move" context="{'group_by':'type_move'}"/>
+                        <filter name="category_id" context="{'group_by':'category_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="lst_aurb_astore_payments_pos" model="ir.ui.view">
+            <field name="name">lst_aurb_astore_payments_pos</field>
+            <field name="model">aurb.astore.payments.pos</field>
+            <field name="arch" type="xml">
+                <list
+                    >
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="pos_id" />
+                    <field name="name" />
+                    <field name="category_id" />
+                    <field name="date" />
+                    <field name="amount" />
+                    <field name="posted" />
+
+                </list>
+            </field>
+        </record>
+        <record id="frm_aurb_astore_payments_pos" model="ir.ui.view">
+            <field name="name">frm_aurb_astore_payments_pos</field>
+            <field name="model">aurb.astore.payments.pos</field>
+            <field name="arch" type="xml">
+                <form >
+                    <header>
+                        <button name="action_payment_posted" string="action_payment_posted" type="object" invisible="posted">
+                        </button>
+                    </header>
+                    <sheet>
+                            <div class="oe_title">
+                                <h1>
+                                    <field name="name" readonly="posted" />
+                                </h1>
+                            </div>
+                            <group name="general_info" >
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="pos_id" readonly="posted"/>
+                                <field name="category_id" readonly="posted"/>
+                                <field name="date" readonly="posted"/>
+                                <field name="type_move"  widget="radio" readonly="posted"/>
+                                <field name="amount" readonly="posted"/>
+                                <field name="move_id" readonly="1"/>
+                                <field name="posted" readonly="1" force_save="1" />
+                            </group>                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

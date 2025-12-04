@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_dashboard_quotation_view" model="ir.actions.act_window">
+            <field name="name">act_dashboard_quotation_view</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_id" ref="astore_sale_order_searchview"/>
+            <field name="view_mode">list</field>
+            <field name="search_view_id" ref="astore_sale_order_searchview"/>
+            <field name="context"></field>
+        </record>
+        <record id="act_dashboard_invoice_view" model="ir.actions.act_window">
+            <field name="name">act_dashboard_invoice_view</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="account.view_out_invoice_tree"/>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="domain">[('move_type', '=', 'out_invoice')]</field>
+            <field name="context">{'default_move_type': 'out_invoice'}</field>
+        </record>
+        <record id="dashboard_form_view" model="ir.ui.view">
+            <field name="name">DashBoard Form</field>
+            <field name="model">board.board</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dashboard">
+                    <board style="1-1-1">
+                        <column>
+                            <row>
+                                <action string="astore_dashboard_sale_pos" name="%(act_aurb_astore_view_order_amount_graph)d"/>
+                            </row>
+                            <row>
+                                <action string="astore_dashboard_sale_pos_product" name="%(act_aurb_astore_view_order_product_amount_graph)d"/>
+                            </row>
+                        </column>
+                        <column>
+                            <row><action string="astore_dashboard_quotation" name="%(act_dashboard_quotation_view)d"/></row>
+                            
+                        </column>
+                            <column> 
+                                <row><action string="astore_dashboard_invoice" name="%(act_dashboard_invoice_view)d"/></row>
+                        </column>
+                    </board>
+                </form>
+            </field>
+        </record>
+        <record id="astore_dashboard" model="ir.actions.act_window">
+            <field name="name">DashBoard</field>
+            <field name="res_model">board.board</field>
+            <field name="view_mode">form</field>
+            <field name="usage">menu</field>
+            <field name="view_id" ref="dashboard_form_view"/>
+        </record>
+        <menuitem id="mn_astore_dashboard_action"
+        name="mn_astore_dashboard_action"
+        action="astore_dashboard"
+        parent="astore.mn_astore_main"
+        sequence="101" />
+    </data>
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- <record id="act_aurb_astore_payment_register" model="ir.actions.act_window">
+<field name="name">Auren aStore Payment Register</field>
+<field name="res_model">account.payment.register</field>
+<field name="view_mode">form</field>
+  </record> -->
+        <record id="frm_aurb_astore_payment_register" model="ir.ui.view">
+            <field name="name">frm_aurb_astore_payment_register</field>
+            <field name="model">account.payment.register</field>
+            <field name="inherit_id" ref="account.view_account_payment_register_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group1']"
+                    position="after">
+                    <group invisible="context.get('invisible_new_field', True)">
+                        <field name="change_cash" invisible="type!='cash'" readonly="1"
+                            force_save="1" />
+                        <field name="pos_id" readonly="1" force_save="1"/>
+                        <field name="type" invisible="True"/>
+                        <field name="pos_method_payment_id" />
+                        <field name="cash_amount" invisible="type!='cash'"/>
+                    </group>
+                    <notebook invisible="context.get('invisible_new_field', True)">
+                        <page name="bill" string="bill" invisible="type!='cash'">
+                                 <field name="account_payment_method_payment_bill_ids" no_label="1">
+                                    <list editable="bottom" create="0" delete="0">
+                                        <field name="method_payment_currency_id" readonly="True" />
+                                        <field name="number" options='{"type":"number","step": 1}'  />
+                                    </list>
+                                </field>
+                        </page>
+                        <page name="coin" string="coin" invisible="type!='cash'">
+                                 <field name="account_payment_method_payment_coin_ids" no_label="1">
+                                    <list editable="bottom" create="0" delete="0">
+                                        <field name="method_payment_currency_id" readonly="True" />
+                                        <field name="number" options='{"type":"number","step": 1}'  />
+                                    </list>
+                                </field>
+                        </page>
+                    </notebook>
+
+                </xpath>
+                <xpath expr="//group[@name='group1']" position="attributes"
+                    active="context.get('invisible_new_field', True)">
+                    <attribute name="invisible">context.get('invisible_new_field', True)!=True</attribute>
+                </xpath>
+                <!-- <xpath expr="//field[@name='journal_id']" position="attributes"
+                active="context.get('invisible_new_field', True)">
+                    <attribute name="invisible">context.get('invisible_new_field', True)!=True</attribute>
+                </xpath>-->
+                <xpath expr="//field[@name='payment_date']" position="attributes"
+                    active="context.get('invisible_new_field', True)">
+                    <attribute name="invisible">context.get('invisible_new_field', True)!=True</attribute>
+                </xpath>
+                <!--<xpath
+                expr="//field[@name='payment_method_line_id']" position="attributes"
+                active="context.get('invisible_new_field', True)">
+                    <attribute name="invisible">context.get('invisible_new_field', True)!=True</attribute>
+                </xpath> -->
+                <xpath expr="//field[@name='payment_difference_handling']" position="attributes"
+                    active="context.get('invisible_new_field', True)">
+                    <attribute name="invisible">context.get('invisible_new_field', True)!=True</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

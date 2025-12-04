@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_astore_close_pos" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_close_pos</field>
+            <field name="res_model">aurb.astore.close.pos</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <record id="lst_aurb_astore_close_pos" model="ir.ui.view">
+            <field name="name">lst_aurb_astore_close_pos</field>
+            <field name="model">aurb.astore.close.pos</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="pos_id" />
+                    <field name="date" />
+                    <field name="posted"/>
+                    <field name="amount" />
+                    <field name="amount_cash" />
+                    <field name="amount_general" />
+                </list>
+            </field>
+        </record>
+        <record id="src_aurb_astore_close_pos" model="ir.ui.view">
+            <field name="name">src_aurb_astore_close_pos</field>
+            <field name="model">aurb.astore.close.pos</field>
+            <field name="arch" type="xml">
+                <search >
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="name"/>
+                    <field name="pos_id"/>
+                    <field name="date"/>
+                    <separator/>
+                    <filter name="posted" domain="[('posted','=',True)]"/>
+                    <filter name="filter_date" date="date"/>
+                    <filter name="iactive" string="Archived" domain="[('active','=',False)]"/>
+                    <separator/>
+                    <group expand="0" >
+                        <filter  name="pos_id" context="{'group_by':'pos_id'}"/>
+                        <filter name="date" context="{'group_by':'date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="frm_aurb_astore_close_pos" model="ir.ui.view">
+            <field name="name">frm_aurb_astore_close_pos</field>
+            <field name="model">aurb.astore.close.pos</field>
+            <field name="arch" type="xml">
+                <form >
+                    <header>
+                        <button name="action_close_load" string="action_close_load" type="object" 
+                            invisible="posted" />
+                        <button name="action_close_posted" string="action_close_posted" type="object" 
+                            invisible="posted" />
+                    </header>
+                    <sheet>
+                        <group name="general_info" >
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="pos_id" readonly="posted" />
+                            <field name="date" readonly="posted" />
+                            <field name="posted" readonly="1" force_save="1" />
+                        </group>
+                        <group name="total">
+                            <group name="move" >
+                                <field name="amount_cash" readonly="1" force_save="1" />
+                                <field name="amount_general" readonly="1" force_save="1" />
+                                <field name="amount" readonly="1" />
+                            </group>
+                            <group name="real" >
+                                <field name="amount_cash_total" readonly="posted" />
+                                <field name="amount_diff" readonly="1" force_save="1" />
+                                <field name="amount_income" readonly="posted" />
+                                <field name="amount_pos" readonly="1" force_save="1"/>
+                            </group>
+                            <group name="result" >
+                                <field name="move_id" readonly="1" force_save="1" />
+                                <field name="move_income_id" readonly="1" force_save="1" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="bill" string="bill" >
+                                <field name="account_payment_method_payment_bill_ids" no_label="1" readonly="posted">
+                                    <list  editable="bottom" create="0" delete="0">
+                                        <field name="method_payment_currency_id" readonly="True" />
+                                        <field name="number" options='{"type":"number","step": 1}' />
+                                    </list>
+                                </field>
+                            </page>
+                            <page name="coin" string="coin"  >
+                                <field name="account_payment_method_payment_coin_ids" no_label="1" readonly="posted">
+                                    <list  editable="bottom" create="0" delete="0">
+                                        <field name="method_payment_currency_id" readonly="True" />
+                                        <field name="number" options='{"type":"number","step": 1}' />
+                                    </list>
+                                </field>
+                            </page>
+                            <page name="move" string="move" >
+                                    <field name="move_ids" readonly="1" force_save="1" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

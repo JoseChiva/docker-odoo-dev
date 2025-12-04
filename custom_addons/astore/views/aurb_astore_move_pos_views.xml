@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_astore_move_pos" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_move_pos</field>
+            <field name="res_model">aurb.astore.move.pos</field>
+            <field name="view_mode">list</field>
+        </record>
+        <record id="lst_aurb_astore_move_pos" model="ir.ui.view">
+            <field name="name">lst_aurb_astore_move_pos</field>
+            <field name="model">aurb.astore.move.pos</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="pos_id" />
+                    <field name="account_move_id" />
+                    <field name="date" />
+                    <field name="amount" />
+                    <field name="type" />
+                    <field name="closed"/> 
+                </list>
+            </field>
+        </record>
+        <record id="src_aurb_astore_move_pos" model="ir.ui.view">
+            <field name="name">src_aurb_astore_move_pos</field>
+            <field name="model">aurb.astore.move.pos</field>
+            <field name="arch" type="xml">
+                <search >
+                    <field name="pos_id"/>
+                    <field name="date"/>
+                    <separator/>
+                    <filter name="closed" domain="[('closed','=',True)]"/>
+                    <filter name="filter_date" date="date"/>
+                    <filter name="iactive" string="Archived" domain="[('active','=',False)]"/>
+                    <separator/>
+                    <group expand="1" >
+                        <filter  name="pos_id" context="{'group_by':'pos_id'}"/>
+                        <filter name="date" context="{'group_by':'date'}"/>
+                        <filter name="type" context="{'group_by':'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

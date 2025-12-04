@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_astore_method_payment" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_method_payment</field>
+            <field name="res_model">aurb.astore.method.payment</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <record id="lst_aurb_astore_method_payment" model="ir.ui.view">
+            <field name="name">lst_aurb_astore_method_payment</field>
+            <field name="model">aurb.astore.method.payment</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name" />
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="currency_simbol" />
+                    <field name="journal_id" />
+                </list>
+            </field>
+        </record>
+        <record id="frm_aurb_astore_method_payment" model="ir.ui.view">
+            <field name="name">frm_aurb_astore_method_payment</field>
+            <field name="model">aurb.astore.method.payment</field>
+            <field name="arch" type="xml">
+                <form >
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group name="general_info" string="general_info" col="2">
+                            <field name="currency_simbol"/>
+                            <field name="journal_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <notebook>
+                            <page name="currency" string="currency" >
+                                    <field name="method_payment_currency_ids" >
+                                        <list editable="bottom">
+                                            <field name="name" />
+                                            <field name="value" />
+                                            <field name="order"/>
+                                            <field name="type"  />
+                                        </list>
+                                    </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_astore_pos_close_filter" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_pos_close_filter</field>
+            <field name="res_model">aurb.astore.close.pos</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('pos_id', '=', active_id)]</field>
+            <field name="context">{}</field>
+        </record>
+        <record id="act_aurb_astore_pos_order_filter" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_pos_order_filter</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('pos_id', '=', active_id)]</field>
+            <field name="context">{}</field>
+        </record>
+        <record id="act_aurb_astore_pos_delivery_filter" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_pos_delivery_filter</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('pos_id', '=', active_id)]</field>
+            <field name="context">{}</field>
+        </record>
+        <record id="act_aurb_astore_pos_invoice_filter" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_pos_invoice_filter</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('pos_id', '=', active_id),('move_type', '=', 'out_invoice')]</field>
+            <field name="context">{}</field>
+        </record>
+        <record id="act_aurb_astore_pos" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_pos</field>
+            <field name="res_model">aurb.astore.pos</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <record id="lst_aurb_astore_pos" model="ir.ui.view">
+            <field name="name">lst_aurb_astore_pos</field>
+            <field name="model">aurb.astore.pos</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name" />
+                    <field name="stock_location_id" />
+                </list>
+            </field>
+        </record>
+        <record id="src_aurb_astore_pos" model="ir.ui.view">
+            <field name="name">src_aurb_astore_pos</field>
+            <field name="model">aurb.astore.pos</field>
+            <field name="arch" type="xml">
+                <search >
+                    <field name="name"/>
+                    <field name="code"/>
+                    <separator/>
+                    <filter name="iactive" string="Archived" domain="[('active','=',False)]"/>
+                </search>
+            </field>
+        </record>
+        <record id="frm_aurb_astore_pos" model="ir.ui.view">
+            <field name="name">frm_aurb_astore_pos</field>
+            <field name="model">aurb.astore.pos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="%(act_aurb_astore_pos_order_filter)d" type="action"
+                                class="o_field_widget o_stat_info" icon="fa-bars"
+                                
+                            >
+                                <field name="order_count" widget="statinfo" />
+
+                            </button>
+                            <button name="%(act_aurb_astore_pos_delivery_filter)d" type="action"
+                                class="o_field_widget o_stat_info" icon="fa-truck"
+                                
+                            >
+                                <field name="delivery_count" widget="statinfo" />
+
+                            </button>
+                            <button name="%(act_aurb_astore_pos_invoice_filter)d" type="action"
+                                class="o_field_widget o_stat_info" icon="fa-money"
+                                
+                            >
+                                <field name="invoice_count" widget="statinfo" />
+                            </button>
+                            <button name="%(act_aurb_astore_pos_close_filter)d" type="action"
+                                class="o_field_widget o_stat_info" icon="fa-close"
+                                
+                            >
+                                <field name="close_count" widget="statinfo" />
+                            </button>
+                            
+
+
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group name="general_info" string="general_info"   col="2">
+                            <field name="active" invisible="1"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="code" />
+                            <field name="separator" />
+                            <field name="stock_location_id" />
+                            <field name="journal_close_id"/>
+                            <field name="account_id" string="pos_account" />
+                            <field name="account_profit_loss_id" />
+                            <field name="account_income_id" />
+                            <field name="method_payment_id_default"/>
+                            <field name="method_payment_id" />
+                        </group>
+                        <notebook>
+                            <page name="move" string="move">
+                                <field name="move_ids" no_label="1">
+                                    <form create="0" delete="0">
+                                        <field name="account_move_id" />
+                                        <field name="date" />
+                                        <field name="amount" />
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="users" string="users">
+                                <field name="user_ids" widget="one2many" no_label="1">
+                                    <form create="0" delete="0">
+                                        <field name="name" />
+                                        <field name="rol_astore"/>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="payment_method" string="payment_method">
+                                <field name="payment_method_ids" widget="one2many" no_label="1">
+                                    <form>
+                                        <field name="payment_method_id" />
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

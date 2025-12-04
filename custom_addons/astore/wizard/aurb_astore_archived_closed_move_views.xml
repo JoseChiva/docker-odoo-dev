@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_astore_archived_closed_move" model="ir.actions.act_window">
+            <field name="name">act_aurb_astore_archived_closed_move</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">aurb.astore.archived.close.move</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="frm_aurb_astore_archived_closed_move" model="ir.ui.view">
+            <field name="name">frm_aurb_astore_archived_closed_move</field>
+            <field name="model">aurb.astore.archived.close.move</field>
+            <field name="arch" type="xml">
+                <form>
+                        <group name="general_info" >
+                            <field name="pos_id"/>
+                            <field name="from_date" />
+                            <field name="to_date" />
+                        </group>
+                        <footer>
+                            <button name="action_archived" string="action_archived" type="object"
+                            confirm="Se archivaran todos los movimientos entre las fechas seleccionades, está seguro que desea continuar?"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

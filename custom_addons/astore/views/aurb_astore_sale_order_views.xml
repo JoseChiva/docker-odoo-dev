@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="astore_sale_order_form" model="ir.ui.view">
+            <field name="name">astore_sale_order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']"
+                    position="after" >
+                    <field name="user_pos" invisible="True" />
+                    <field name="partner_unidentified" invisible="user_pos!=True" force_save="1" readonly="state in ['cancel', 'sale']"/>
+                    <field name="pos_id" invisible="user_pos!=True" readonly="1" force_save="1" options="{'no_open': True,'no_create': True}" />
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="readonly">(partner_unidentified==True)</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm']" position="after" >
+                    <button id="create_invoice_auren" name="create_invoice_auren" string="Factura directa" type="object" class="btn-primary" data-hotkey="i" invisible="state != 'draft'" groups="astore.group_direct_invoice"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="astore_sale_order_quotation_searchview" model="ir.ui.view">
+            <field name="name">astore_sale_order_quotation_searchview</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='filter_create_date']"
+                    position="after" >
+                    <separator/>
+                    <group expand="1" string="Group By">
+                        <filter name="pos_id" context="{'group_by':'pos_id'}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="astore_sale_order_searchview" model="ir.ui.view">
+            <field name="name">astore_sale_order_searchview</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='order_date']"
+                    position="after" >
+                    <separator/>
+                    <group expand="1" string="Group By">
+                        <filter name="pos_id" context="{'group_by':'pos_id'}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
