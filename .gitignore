@@ -56,3 +56,4 @@ __pycache__/
 
 ./custom_addons/.vscode/
 .vscode/
+./custom_addons/gamma_integration/documents/
