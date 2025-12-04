@@ -54,4 +54,5 @@ $RECYCLE.BIN/
 *.py[co]
 __pycache__/
 
-./custom_addons/.vscode/*
+./custom_addons/.vscode/
+.vscode/
