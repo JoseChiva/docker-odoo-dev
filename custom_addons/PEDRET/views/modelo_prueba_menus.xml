@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_main" name="Main menu">
+        <menuitem id="sub_menu1" name="Submenu 1" sequence="10">
+            <!-- <menuitem id="link1_menu_action" action="link1_action" name="Link 1" />
+            <menuitem id="link2_menu_action" action="link2_action" name="Link 2" /> -->
+        </menuitem>
+        <menuitem id="sub_menu2" name="Submenu 2" sequence="20">
+            <!-- <menuitem id="link3_menu_action" action="link3_action" name="Link 3" />
+            <menuitem id="link4_menu_action" action="link4_action" name="Link 4" /> -->
+        </menuitem>
+    </menuitem>
+</odoo>

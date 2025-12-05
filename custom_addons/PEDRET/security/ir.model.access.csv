@@ -1,0 +1,2 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+accs_aurb_sale_picking,accs_aurb_sale_picking,model_aurb_sale_picking,base.group_user,1,1,1,1

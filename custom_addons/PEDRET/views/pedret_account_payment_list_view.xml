@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pedret_account_payment_list_view" model="ir.ui.view">
+            <field name="name">pedret_account_payment_list_view</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='partner_id']"
+                    position="after">
+                    <field name="res_partner_invoice" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="pedret_account_payment_search_view" model="ir.ui.view">
+            <field name="name">pedret_account_payment_search_view</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_search" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//filter[@name='partner']"
+                    position="after">
+                    <filter string="Dirección facturación" name="res_partner_invoice" domain="[]" context="{'group_by': 'res_partner_invoice'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

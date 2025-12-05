@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_otools_sale_order_form" model="ir.ui.view">
+            <field name="name">auren_otools_sale_order_form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='partner_id']"
+                    position="after">
+                    <field name="res_partner_contact" string="Persona de contacto" />
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']"
+                    position="after">
+                    <field name="type_transport" string="Tipo transporte"/>
+                    <field name="num_contract" string="Contracto" readonly="1" force_save="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']"
+                    position="after">
+                    <field name="price_with_var1" string="+Trailer" optional="show" readonly="1"  force_save="1"/>
+                    <field name="price_with_var2" string="+Camion" optional="show" readonly="1"  force_save="1"/>
+                    <field name="price_with_var3" string="+Reparto" optional="show" readonly="1"  force_save="1"/>
+                    <field name="num_contract" string="Num.Contra." optional="show" readonly="1"  force_save="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']"
+                    position="before">
+                    <field name="price_base" readonly="1" force_save="1" optional="show"/>
+                    <field name="add_price_unit" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="auren_otools_sale_order_tree" model="ir.ui.view">
+            <field name="name">auren_otools_sale_order_tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_tree" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='validity_date']"
+                    position="after">
+                    <field name="payment_term_id" optional="show"/>
+                    <field name="num_contract" string="Contracto" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

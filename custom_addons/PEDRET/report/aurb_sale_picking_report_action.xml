@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_report_landscape" model="report.paperformat">
+        <field name="name">Format picking apaisado</field>
+        <field name="default" eval="False" />
+        <field name="disable_shrinking" eval="True" />
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">8</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="dpi">96</field>
+    </record>
+    <record id="report_sale_picking_report_landscape_action" model="ir.actions.report">
+        <field name="name">Picking informe apaisado</field>
+        <field name="model">aurb.sale.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">PEDRET.report_aurb_sale_picking_format_prin</field>
+        <field name="report_file">PEDRET.report_aurb_sale_picking_format_prin</field>
+        <field name="print_report_name">'Picking - %s' % (object.name).replace('/','')</field>
+        <field name="binding_model_id" ref="PEDRET.model_aurb_sale_picking" />
+        <field name="paperformat_id" ref="paperformat_report_landscape" />
+    </record>
+
+</odoo>

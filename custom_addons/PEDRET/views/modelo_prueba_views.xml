@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_modelo_prueba" model="ir.actions.act_window">
+            <field name="name">Preuba</field>
+            <field name="res_model">modelo.prueba</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_modelo_prueba" model="ir.ui.view">
+            <field name="name">Modelo prueba List</field>
+            <field name="model">modelo.prueba</field>
+            <field name="arch" type="xml">
+                <tree string="Prueba List">
+                    <field name="namefield"/>
+                    <field name="descriptionfield"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="report_pedr_head">
+        <div t-attf-class="header o_company_#{company.id}_layout"
+            t-att-style="report_header_style">
+            <div class="container o_text_columns">
+                <div class="row">
+                    <div class="column" style="width: 50%;">
+                        <div class="col-3 mb4">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                                style="max-height: 55px;" alt="Logo" />
+                        </div>
+                        <div>
+                            <t t-if="doc.company_id"><span t-field="doc.company_id" style="font-size: 1.00rem;" /></t>
+                            <t t-if="doc.company_id.street">
+                                <br />
+                                <span t-field="doc.company_id.street" style="font-size: 1.00rem;">
+                                    <font style="vertical-align: inherit;">Detalls</font>
+                                </span>
+                            </t>
+                            <t t-if="doc.company_id.zip">
+                                <br />
+                                <span t-field="doc.company_id.zip" style="font-size: 1.00rem;">
+                                    <font style="vertical-align: inherit;">CP</font>
+                                </span>
+                            </t>
+                            <t t-if="doc.company_id.city">
+                                <span t-field="doc.company_id.city" style="font-size: 1.00rem;">
+                                    <font style="vertical-align: inherit;">Ciutat</font>
+                                </span>
+                            </t>
+                            <t t-if="doc.company_id.state_id and doc.company_id.state_id.name">
+                                <br />
+                                <span t-field="doc.company_id.state_id.name" style="font-size: 1.00rem;">
+                                    <font style="vertical-align: inherit;">Provincia</font>
+                                </span>
+                            </t>
+                            <t t-if="doc.company_id.country_id and doc.company_id.country_id.name">
+                                <br />
+                                <span t-field="doc.company_id.country_id.name" style="font-size: 1.00rem;">
+                                    <font style="vertical-align: inherit;">País</font>
+                                </span>
+                            </t>
+                            <t t-if="doc.company_id.website">
+                                <br />
+                                <span t-field="doc.company_id.website" style="font-size: 1.00rem;">
+                                    <font style="vertical-align: inherit;">Web</font>
+                                </span>
+                            </t>
+                        </div>
+                        <div>
+                            <span style="font-size: 1.00rem;">
+                                <font style="vertical-align: inherit;">T.</font>
+                            </span>
+                            <t t-if="doc.company_id.phone">
+                                <span t-field="doc.company_id.phone" style="font-size: 1.00rem;">
+                                    <font style="vertical-align: inherit;">Telèfon</font>
+                                </span>
+                            </t>
+                            <span style="font-size: 1.00rem;">
+                                <font style="vertical-align: inherit;">/ </font>
+                            </span>
+                            <span style="font-size: 1.00rem;">
+                                <font style="vertical-align: inherit;">M.</font>
+                            </span>
+                            <t t-if="doc.company_id.mobile">
+                                <span t-field="doc.company_id.mobile" style="font-size: 1.00rem;">
+                                    <font style="vertical-align: inherit;">Mòbil</font>
+                                </span>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="column" style="width: 50%;">
+                        <br /><br /><br />
+                        <table border="3" class="table table-bordered o_table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <t t-if="doc.partner_id.complete_name">
+                                            <span t-field="doc.partner_id.complete_name" style="font-size: 1.00rem;">
+                                                <font style="vertical-align: inherit;">Nom</font>
+                                            </span>
+                                        </t>
+                                        <t t-if="doc.partner_id.street">
+                                            <br />
+                                            <span t-field="doc.partner_id.street" style="font-size: 1.00rem;">
+                                                <font style="vertical-align: inherit;">Carrer</font>
+                                            </span>
+                                        </t>
+                                        <t t-if="doc.partner_id.zip">
+                                            <br />
+                                            <span t-field="doc.partner_id.zip" style="font-size: 1.00rem;">
+                                                <font style="vertical-align: inherit;">CP</font>
+                                            </span>
+                                        </t>
+                                        <font style="vertical-align: inherit;">
+                                            <t t-if="doc.partner_id.city">
+                                                <span t-field="doc.partner_id.city" style="font-size: 1.00rem;">
+                                                    <font style="vertical-align: inherit;">Ciutat</font>
+                                                </span>
+                                            </t>
+                                        </font>
+                                        <span style="font-size: 1.00rem;"> - </span>
+                                        <t t-if="doc.partner_id.state_id and doc.partner_id.state_id.name">
+                                            <span t-field="doc.partner_id.state_id.name" style="font-size: 1.00rem;">
+                                                <font style="vertical-align: inherit;" />
+                                            </span>
+                                        </t>
+                                        <t t-if="doc.partner_id.vat">
+                                            <span style="font-size: 1.00rem;">
+                                                <br />
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">NIF:</font>
+                                                </font>
+                                            </span>
+                                            <br />
+                                            <span t-field="doc.partner_id.vat" style="font-size: 1.00rem;">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">NIF:</font>
+                                                </font>
+                                            </span>
+                                        </t>
+                                        <t t-if="doc.partner_id.phone">
+                                            <br />
+                                            <span style="font-size: 1.00rem;">
+                                                <font style="vertical-align: inherit;">Telf.: </font>
+                                            </span>
+                                            <span t-field="doc.partner_id.phone" style="font-size: 1.00rem;">
+                                                <font style="vertical-align: inherit;">Telèfon</font>
+                                            </span>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_pedr_footer">
+        <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            <div class="row" style="font-size: 0.5rem">
+                <t t-if="doc.company_id.commercial_registry">
+                    <span t-field="doc.company_id.commercial_registry">Registro Mercantil</span>
+                </t>
+            </div>
+            <div class="text-center" style="border-top: 1px solid black;">
+
+                <ul class="list-inline mb4">
+                    <t t-if="company.report_footer">
+                        <div style="font-size: 0.5rem" t-field="company.report_footer" />
+                    </t>
+                </ul>
+
+                <div t-if="report_type == 'pdf'" class="text-muted"> Page: <span class="page" /> / <span
+                        class="topage" />
+                </div>
+                <div t-if="report_type == 'pdf' and display_name_in_footer" class="text-muted">
+                    <span t-out="o.name">(document name)</span>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+</odoo>

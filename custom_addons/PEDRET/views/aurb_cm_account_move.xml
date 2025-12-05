@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pedret_account_move_tree" model="ir.ui.view">
+            <field name="name">pedret_account_move_form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='move_type']"
+                    position="after">
+                    <field name="num_contract" string="Contracto"  optional="show"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

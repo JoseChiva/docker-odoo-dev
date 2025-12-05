@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="aurb_pedret_purchase_requisition_form" model="ir.ui.view">
+            <field name="name">aurb_pedret_purchase_requisition_form</field>
+            <field name="model">purchase.requisition</field>
+            <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vendor_id']"
+                    position="after">
+                    <field name="res_partner_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

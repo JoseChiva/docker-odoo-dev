@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report3_aurb_sale_picking_format_prin">
+        <t t-name="studio_main_report">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <t t-call="PEDRET.report3_aurb_sale_picking_format_body" />
+                    <p style="page-break-after: always;" />
+                </t>
+            </t>
+        </t>
+    </template>
+    <template id="report3_aurb_sale_picking_format_body">
+        <t t-name="studio_main_report">
+            <t t-if="not o" t-set="o" t-value="doc" />
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id" />
+                </t>
+                <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                    <t t-set="company" t-value="o.company_id.sudo()" />
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company" />
+                </t>
+            </t>
+
+            <!-- <t t-call="PEDRET.report_head" /> -->
+            <div class="container o_text_columns">
+                <tbody class="sale_tbody">
+                    <div class="page">
+                        <br />
+                        <br />
+                        <div class="oe_structure"> LIBRO DE RUTA : <span t-field="doc.name" /><br />
+                            Fecha de entrega : <span t-field="doc.date" />
+                                <t t-set="partner"
+                                t-value="" />
+                                <t t-set="viaje"
+                                t-value="" />
+                                <t t-set="i"
+                                t-value="0" />
+                                <t
+                                t-foreach="doc.sale_order_line_ids.sorted(key=lambda r: (r.pick_travel_num,r.res_partner_contact.id,r.pick_order))"
+                                t-as="line">
+                                <tbody
+                                    style="border: none;outline: none;border-collapse: collapse;width: 100%;">
+                                    <div t-if="line.pick_print">
+                                        <p>
+                                            <t t-if="viaje!=line.pick_travel_num">
+                                                <b>
+                                                    <span style="font-size: 1.25rem;">VIAJE :</span>
+                                                    <span
+                                                        t-esc="line.pick_travel_num"
+                                                        style="font-size: 1.25rem;" />
+
+                                                    <t t-set="viaje" t-value="line.pick_travel_num" />
+                                                    <t t-set="partner" t-value="" />
+                                                </b>
+                                            </t>
+                                        </p>
+                                        <t t-if="partner!=line.order_id.partner_id.name">
+                                            <t t-set="partner"
+                                                t-value="line.order_id.partner_id.name" />
+                                            <p>
+
+
+                                                <table
+                                                    style="border: none;outline: none;border-collapse: collapse;width: 100%;">
+                                                    <tr style="border-bottom: 2px solid black;">
+                                                        <td
+                                                            style="text-indent: 20px;width: 50%;border: none;">
+                                                            <span
+                                                                t-field="line.order_id.partner_id.parent_id.name"
+                                                                style="font-size: 0.75rem;" />
+                                                        </td>
+                                                        <td
+                                                            style="text-indent: 20px;width: 50%;border: none;">
+                                                            <span
+                                                                t-field="line.order_id.partner_invoice_id.name"
+                                                                style="font-size: 0.75rem;" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                                <table
+                                                    style="border: none;outline: none;border-collapse: collapse;width: 100%;">
+                                                    <tr>
+                                                        <td style="width: 5%;border: none;">
+                                                        </td>
+                                                        <td
+                                                            style="width: 10%;border: none;">
+                                                            <b>
+                                                                <span
+                                                                    style="font-size: 0.75rem;">Entregar
+                            a: </span>
+                                                            </b>
+                                                        </td>
+                                                        <td
+                                                            style="width: 85%;border: none;">
+                                                            <span
+                                                                t-field="line.order_id.partner_shipping_id.street"
+                                                                style="font-size: 0.75rem;" />, <span
+                                                                t-field="line.order_id.partner_shipping_id.city"
+                                                                style="font-size: 0.75rem;" /> ( <span
+                                                                t-field="line.order_id.partner_shipping_id.zip"
+                                                                style="font-size: 0.75rem;" /> ) <br />
+                                                            <span
+                                                                t-field="line.res_partner_contact.title"
+                                                                style="font-size: 0.75rem;" />
+                                                            <span
+                                                                t-field="line.res_partner_contact.name"
+                                                                style="font-size: 0.75rem;" />
+                                                            <span
+                                                                t-field="line.res_partner_contact.phone"
+                                                                style="font-size: 0.75rem;" />
+                                                            <span
+                                                                t-field="line.res_partner_contact.function"
+                                                                style="font-size: 0.75rem;" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+
+                                            </p>
+                                        </t>
+
+                                        <table
+                                            style="border: none;outline: none;border-collapse: collapse;width: 100%;">
+                                            <tr style="border: none;">
+                                                <td style="width: 5%;border: none;">
+                                                </td>
+                                                <td style="width: 20%;border: none;">
+                                                    <p>
+                                                        <t t-if="line.pick_comment!=False">
+                                                            <span t-field="line.pick_comment"
+                                                                style="font-size: 0.75rem;" />
+                                                        </t>
+                                                    </p>
+                                                </td>
+                                                <td style="width: 15%;border: none;">
+                                                    <t t-if="line.product_uom_qty!=False">
+                                                        <span t-field="line.product_uom_qty"
+                                                            t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
+                                                            style="font-size: 0.75rem;" />
+
+                                                    </t>
+
+
+                                                </td>
+                                                <td style="width: 60%;border: none;">
+                                                    <t t-if="line.display_type=='line_note'">
+                                                        <b>
+                                                            <span t-field="line.name"
+                                                                style="font-size: 0.75rem;" />
+                                                        </b>
+                                                    </t>
+                                                    <t t-else="else">
+                                                        <span t-field="line.name"
+                                                            style="font-size: 0.75rem;" />
+                                                    </t>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </tbody>
+
+                            </t>
+
+
+                        </div>
+                    </div>
+                </tbody>
+            </div>
+            <!-- <t t-call="PEDRET.report_footer" /> -->
+        </t>
+
+    </template>
+
+    <template id="report_head">
+        <div t-attf-class="header o_company_#{company.id}_layout"
+            t-att-style="report_header_style">
+            <div class="container o_text_columns">
+                <div class="row">
+                    <div class="column" style="width: 50%;">
+                        <div class="col-3 mb4">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                                style="max-height: 45px;" alt="Logo" />
+                        </div>
+                        <div>
+                            <span t-field="doc.company_id" style="font-size: 0.75rem;" />
+                            <br />
+                            <span t-field="doc.company_id.street" style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">Detalles</font>
+                            </span>
+                            <br />
+                            <span t-field="doc.company_id.zip" style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">CP</font>
+                            </span>
+                            <span t-field="doc.company_id.city" style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">Ciudad</font>
+                            </span>
+                            <br />
+                            <span t-field="doc.company_id.website" style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">web</font>
+                            </span>
+                            <br />
+                        </div>
+                        <div>
+                            <span style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">T.  </font>
+                            </span>
+                            <span t-field="doc.company_id.phone" style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">Teléfono</font>
+                            </span>
+                            <span style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">/ </font>
+                            </span>
+                            <span style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">M.  </font>
+                            </span>
+                            <span t-field="doc.company_id.mobile" style="font-size: 0.75rem;">
+                                <font style="vertical-align: inherit;">Móvil</font>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </template>
+
+    <template id="report_footer">
+        <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+            <div class="row" style="font-size: 0.5rem">
+                <!-- <span t-field="doc.company_id.commercial_registry">Registro Mercantil</span> -->
+            </div>
+            <div class="text-center" style="border-top: 1px solid black;">
+
+                <ul class="list-inline mb4">
+                    <div t-field="company.report_footer" />
+                </ul>
+
+                <div t-if="report_type == 'pdf'" class="text-muted"> Page: <span class="page" /> / <span
+                        class="topage" />
+                </div>
+                <div t-if="report_type == 'pdf' and display_name_in_footer" class="text-muted">
+                    <span t-out="o.name">(document name)</span>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

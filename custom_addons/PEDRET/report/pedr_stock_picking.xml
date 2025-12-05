@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_event_registration_badge_stock_picking" model="ir.actions.report">
+        <field name="name">Entregas PEDRET</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">PEDRET.report_pedr_stock_picking_format_prin</field> <!-- Es el id del template con el prefijo del nombre del modulo-->
+        <field name="report_file">PEDRET.report_pedr_stock_picking_format_prin</field>
+        <field name="print_report_name">'Albaran - %s' % (object.name).replace('/','')</field>
+        <field name="binding_model_id" ref="stock.model_stock_picking"/> <!-- Es el id del modelo con el prefijo 'model_'-->
+    </record>
+</odoo>
