@@ -34,13 +34,13 @@
             <field name="name">Registro de picking</field>
             <field name="model">aurb.sale.picking</field>
             <field name="arch" type="xml">
-                <tree string="Registro de picking">
+                <list string="Registro de picking">
                     <field name="name" />
                     <field name="carrier_id" />
                     <field name="state" />
                     <field name="date" />
                     <field name="sale_order_line_ids" widget="many2many_tags" />
-                </tree>
+                </list>
             </field>
         </record>
         <record id="frm_aurb_sale_picking" model="ir.ui.view">
@@ -67,7 +67,7 @@
                     <notebook>
                         <page name="stock_move" string="Líneas a entregar">
                             <field name="sale_order_line_ids" no_label="1">
-                                <tree editable="bottom" create="0" delete="0">
+                                <list editable="bottom" create="0" delete="0">
                                     <field name="company_id" column_invisible="1" />
                                     <field name="pick_order" widget="handle"/>
                                     <field name="pick_travel_num" string="Viatge"/>
@@ -84,7 +84,7 @@
                                     <field name="pick_comment"/>
                                     <field name="pick_pro_order"/>
                                     
-                                </tree>
+                                </list>
                             </field>
                             <group>
                                 <field name="sale_order_lines_count"/>
