@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="report_event_registration_badge_account_move" model="ir.actions.report">
+    <!-- Reemplazar el informe estándar de facturas con el personalizado SUCONSPA -->
+    <record id="account.account_invoices" model="ir.actions.report">
+        <field name="name">Factura de venta SUCONSPA</field>
+        <field name="report_name">suconspa_adapt.report_suco_account_move_format_prin</field>
+        <field name="report_file">suconspa_adapt.report_suco_account_move_format_prin</field>
+        <field name="print_report_name">('Factura - %s' % (object.name or '')).replace('/','')</field>
+        <field name="binding_model_id" eval="False"/>
+    </record>
+
+    <!-- Desactivar el informe PDF sin pago -->
+    <record id="account.account_invoices_without_payment" model="ir.actions.report">
+        <field name="binding_model_id" eval="False"/>
+    </record>
+
+    <!-- Agregar opción adicional en el menú Descargar -->
+    <record id="report_suco_account_move_additional" model="ir.actions.report">
         <field name="name">Factura de venta SUCONSPA</field>
         <field name="model">account.move</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">suconspa_adapt.report_suco_account_move_format_prin</field> <!-- Es el id del template con el prefijo del nombre del modulo-->
+        <field name="report_name">suconspa_adapt.report_suco_account_move_format_prin</field>
         <field name="report_file">suconspa_adapt.report_suco_account_move_format_prin</field>
         <field name="print_report_name">('Factura - %s' % (object.name or '')).replace('/','')</field>
-        <field name="binding_model_id" ref="account.model_account_move"/> <!-- Es el id del modelo con el prefijo 'model_'-->
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
     </record>
 </odoo>

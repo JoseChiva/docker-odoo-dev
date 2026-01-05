@@ -15,8 +15,13 @@
                     position="attributes">
                     <attribute name="domain" add="['|', ('is_company', '=', True), ('type', '!=', 'contact')]" separator=","/>
                 </xpath>
-
-
+                <xpath expr="//button[@name='action_quotation_send']" position="after">
+                    <button name="%(suconspa_adapt.report_event_registration_badge_sale_order)d" 
+                            string="Imprimir" 
+                            type="action" 
+                            class="btn-primary"
+                            groups="sales_team.group_sale_salesman"/>
+                </xpath>
             </field>
         </record>
     </data>

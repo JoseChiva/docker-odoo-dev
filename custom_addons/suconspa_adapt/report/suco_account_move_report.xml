@@ -26,9 +26,38 @@
                 </t>
             </t>
             <t t-call="suconspa_adapt.report_suco_head" />
-            <div class="container o_text_columns">
+            <style>
+                /* Ensure page top margin applies to all pages (helps wkhtmltopdf and avoids header overlap) */
+                @page { margin: 140px 25px 30px 25px; }
+                /* Local styles for this report only: ensure table headers repeat */
+                @media print {
+                    .suco_invoice .o_main_table thead { display: table-header-group; }
+                    .suco_invoice .o_main_table tbody { display: table-row-group; }
+                }
+                /* Remove extra body margin since @page supplies top margin for all pages */
+                .suco_invoice.report-body-margin { margin-top: 0; padding-top: 6px; }
+                /* Make thead have a white background so it is readable when repeated */
+                .suco_invoice .o_main_table thead { background: #ffffff; }
+                /* Add vertical padding to the repeated thead so it sits below header on subsequent pages */
+                .suco_invoice .o_main_table thead td, .suco_invoice .o_main_table thead th {
+                    padding-top: 150px; /* adjust if needed */
+                }
+                /* Ensure the repeated header doesn't overlap visually */
+                .suco_invoice .o_main_table thead { box-sizing: border-box; }
+                /* Prevent footer info from overlapping with header on new pages */
+                .footer-info-section {
+                    margin-top: 25px;
+                    page-break-inside: avoid;
+                }
+                @media print {
+                    .footer-info-section {
+                        padding-top: 10px;
+                    }
+                }
+            </style>
+            <br /><br /><br /><br /><br /><br /><br /><br />
+            <div class="container o_text_columns suco_invoice report-body-margin">
                 <tbody class="sale_tbody">
-                    <br /><br /><br /><br /><br /><br />
                     <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
                     <t t-set="o" t-value="doc.with_context(lang=doc.partner_id.lang)" />
                     <div class="oe_structure" />
@@ -64,7 +93,7 @@
                                             <span t-else="doc.partner_id.lang == 'es_ES'">FACTURA</span> -->
                                         </strong>
                                     </td>
-                                    <td>
+                                    <td style="text-align: right;">
                                         <strong>
                                             <span t-field="doc.name" style="font-size: 2.00rem; color: red;">
                                                 <font style="vertical-align: inherit;">SO0000</font>
@@ -189,73 +218,46 @@
                             </tr>
                         </thead>
                         <tbody style="border-top: 1px solid black;">
-                            <t t-set="product_delivery" t-value="[]" />
-                            <t t-foreach="doc.invoice_line_ids" t-as="l">
-                                <t t-set="product_delivery"
-                                    t-value="product_delivery+[l.sale_line_ids.move_ids.picking_id]" />
-                            </t>
-                            <t t-foreach="set(product_delivery)" t-as="delivery">
+                            <!-- Build a unique, sorted list of deliveries (pickings) referenced by invoice lines -->
+                            <t t-set="product_delivery" t-value="[p for l in doc.invoice_line_ids for p in l.sale_line_ids.move_ids.picking_id if l.sale_line_ids and l.sale_line_ids.move_ids and l.sale_line_ids.move_ids.picking_id]" />
+                            <t t-set="product_delivery" t-value="sorted({p.id: p for p in product_delivery}.values(), key=lambda p: (p and p.name) or '')" />
+                            
+                            <!-- Show lines grouped by delivery (from sale orders) -->
+                            <t t-foreach="product_delivery" t-as="delivery">
                                 <tr>
                                     <td>
                                         <b>
-                                            <span t-field="delivery.name"
-                                                style="font-size: 1.50rem;" />
+                                            <span t-field="delivery.name" style="font-size: 1.50rem;" />
+                                            <t t-if="delivery.date_done">
+                                                <span style="font-size: 1.50rem;"> - </span>
+                                                <span t-field="delivery.date_done" t-options='{"widget": "date"}' style="font-size: 1.50rem;" />
+                                            </t>
                                         </b>
-                                        <!-- <center
-                                            t-if="delivery.move_ids.sale_line_id.order_id.res_partner_authorized_sales.name">
-                                            <strong>
-                                                <span t-if="doc.partner_id.lang == 'ca_ES'"
-                                                    style="font-size: 0.75rem;">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">COMANDA
-                                                            PER:<br />
-                                                            <br />
-                                                        </font>
-                                                    </font>
-                                                </span>
-                                                <span t-elif="doc.partner_id.lang == 'en_GB'"
-                                                    style="font-size: 0.75rem;">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">REQUESTED
-                                                            BY:</font>
-                                                    </font>
-                                                </span>
-                                                <span t-else="doc.partner_id.lang == 'es_ES'"
-                                                    style="font-size: 0.75rem;">
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">PEDIDO
-                                                            POR: </font>
-                                                    </font>
-                                                </span>
-                                                <span
-                                                    t-field="delivery.move_ids.sale_line_id.order_id.res_partner_authorized_sales.name" />
-                                            </strong>
-                                        </center> -->
                                     </td>
                                     <td>
                                     </td>
                                 </tr>
                                 <t t-foreach="doc.invoice_line_ids" t-as="line">
-                                    <t t-if="delivery.id==line.sale_line_ids.move_ids.picking_id.id">
+                                    <t t-if="delivery.id in line.sale_line_ids.move_ids.picking_id.ids">
                                         <tr style="height: 19.2px;">
-                                            <td class="text-end">
+                                            <td>
                                                 <p>
-                                                    <span t-field="line.name"
-                                                        style="font-size: 1.50rem;" />
+                                                    <span t-field="line.product_id.name"
+                                                        style="font-size: 1.30rem;" />
                                                 </p>
                                             </td>
                                             <td class="text-end">
                                                 <p>
                                                     <span t-field="line.quantity"
                                                         t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
-                                                        style="font-size: 1.50rem;" />
+                                                        style="font-size: 1.30rem;" />
                                                 </p>
                                             </td>
                                             <td class="text-end">
                                                 <p>
                                                     <span t-field="line.price_unit"
                                                         t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
-                                                        style="font-size: 1.50rem;" />
+                                                        style="font-size: 1.30rem;" />
                                                 </p>
                                             </td>
                                             <td class="text-end">
@@ -263,19 +265,61 @@
                                                     <span t-if="line.discount"
                                                         t-field="line.discount"
                                                         t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
-                                                        style="font-size: 1.50rem;" />
+                                                        style="font-size: 1.30rem;" />
                                                     <span t-else="line.discount=False" />
                                                 </p>
                                             </td>
-
                                             <td class="text-end">
                                                 <p>
                                                     <span t-field="line.price_subtotal"
-                                                        style="font-size: 1.50rem;" />
+                                                        style="font-size: 1.30rem;" />
                                                 </p>
                                             </td>
                                         </tr>
                                     </t>
+                                </t>
+                            </t>
+                            
+                            <!-- Show lines without delivery (direct invoices) -->
+                            <t t-foreach="doc.invoice_line_ids" t-as="line">
+                                <t t-if="not line.sale_line_ids or not line.sale_line_ids.move_ids or not line.sale_line_ids.move_ids.picking_id">
+                                    <tr style="height: 19.2px;">
+                                        <td>
+                                            <p>
+                                                <span t-field="line.product_id.name"
+                                                    style="font-size: 1.30rem;" />
+                                            </p>
+                                        </td>
+                                        <td class="text-end">
+                                            <p>
+                                                <span t-field="line.quantity"
+                                                    t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
+                                                    style="font-size: 1.30rem;" />
+                                            </p>
+                                        </td>
+                                        <td class="text-end">
+                                            <p>
+                                                <span t-field="line.price_unit"
+                                                    t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
+                                                    style="font-size: 1.30rem;" />
+                                            </p>
+                                        </td>
+                                        <td class="text-end">
+                                            <p>
+                                                <span t-if="line.discount"
+                                                    t-field="line.discount"
+                                                    t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"
+                                                    style="font-size: 1.30rem;" />
+                                                <span t-else="line.discount=False" />
+                                            </p>
+                                        </td>
+                                        <td class="text-end">
+                                            <p>
+                                                <span t-field="line.price_subtotal"
+                                                    style="font-size: 1.30rem;" />
+                                            </p>
+                                        </td>
+                                    </tr>
                                 </t>
                             </t>
                         </tbody>
@@ -386,7 +430,6 @@
                                                             <t t-foreach="subtotal.get('tax_groups', []) or []" t-as="group">
                                                                 <tr>
                                                                     <td>
-                                                                        <!-- <span style="font-size: 1.50rem;" t-out="group.get('group_name', group.get('tax_group_name', ''))"/> -->
                                                                         <t t-if="group.get('base_amount_currency')">
                                                                             sobre
                                                                             <t t-if="group.get('formatted_tax_group_base_amount')">
@@ -437,108 +480,106 @@
                             </t>
                         </tbody>
                     </table>
-                    <br /><br /><br /><br /><br /><br />
-                    <div class="row">
-                        <div class="column" style="width: 50%;">
-                            <!-- <span t-if="doc.partner_id.lang == 'ca_ES'" style="font-size: 0.75rem;"> -->
-                            <span style="font-size: 1.50rem;">
-                                <font style="vertical-align: inherit;">Forma de pagament: </font>
-                            </span>
-                            <!-- <span t-elif="doc.partner_id.lang == 'en_GB'"
-                                style="font-size: 0.75rem;">
-                                <font style="vertical-align: inherit;">Way to pay: </font>
-                            </span>
-                            <span t-else="doc.partner_id.lang == 'es_ES'"
-                                style="font-size: 0.75rem;">
-                                <font style="vertical-align: inherit;">Forma de pago: </font>
-                            </span> -->
-                            <span t-field="doc.invoice_payment_term_id" style="font-size: 1.50rem;">
-                                <font style="vertical-align: inherit;"></font>
-                            </span>
-                            <br />
-                            <span style="font-size: 1.50rem;">
-                                <font style="vertical-align: inherit;">Data de venciment: </font>
-                            </span>
-                            <span t-field="doc.invoice_date_due" style="font-size: 1.50rem;">
-                                <font style="vertical-align: inherit;"></font>
-                            </span>
-                        </div>
-                        <div class="column" style="width: 50%;">
-                            <table border="3" class="table table-bordered o_table">
-                                <tr>
-                                    <td>
-                                        <center>
-                                            <strong>
-                                                <!-- <span t-if="doc.partner_id.lang == 'ca_ES'"
-                                                    style="font-size: 0.75rem;"> -->
-                                                <span style="font-size: 1.50rem;">
-                                                    <font style="vertical-align: inherit;">CONFORME
-                                                        CLIENTE </font>
+                    <!-- Last page only text -->
+                    <div class="footer-info-section">
+                        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                        <div class="row">
+                            <div class="column" style="width: 50%;">
+                                <!-- <span t-if="doc.partner_id.lang == 'ca_ES'" style="font-size: 0.75rem;"> -->
+                                <span style="font-size: 1.50rem;">
+                                    <font style="vertical-align: inherit;">Forma de pagament: </font>
+                                </span>
+                                <!-- <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                    style="font-size: 0.75rem;">
+                                    <font style="vertical-align: inherit;">Way to pay: </font>
+                                </span>
+                                <span t-else="doc.partner_id.lang == 'es_ES'"
+                                    style="font-size: 0.75rem;">
+                                    <font style="vertical-align: inherit;">Forma de pago: </font>
+                                </span> -->
+                                <span t-field="doc.invoice_payment_term_id" style="font-size: 1.50rem;">
+                                    <font style="vertical-align: inherit;"></font>
+                                </span>
+                                <br />
+                                <span style="font-size: 1.50rem;">
+                                    <font style="vertical-align: inherit;">Data de venciment: </font>
+                                </span>
+                                <span t-field="doc.invoice_date_due" style="font-size: 1.50rem;">
+                                    <font style="vertical-align: inherit;"></font>
+                                </span>
+                                <!-- DADES DEL BANC -->
+                                <div t-if="doc.partner_id.commercial_partner_id.bank_ids" class="ml-auto">
+                                    <br /><br />
+                                    <div class="column" style="width:100%;">
+                                        <span style="font-size:1.50rem;">Dades del banc:</span>
+                                        <!-- Recorrido por las cuentas bancarias del partner comercial -->
+                                        <t t-foreach="doc.partner_id.commercial_partner_id.bank_ids" t-as="bank">
+                                            <div style="font-size:1.50rem;">
+                                                <!-- Número de cuenta/IBAN -->
+                                                <span>
+                                                    <t t-esc="bank.acc_number"/>
                                                 </span>
-                                                <!-- <span t-elif="doc.partner_id.lang == 'en_GB'"
-                                                    style="font-size: 0.75rem;">
-                                                    <font style="vertical-align: inherit;">COMO
-                                                        CLIENTE </font>
+                                            </div>
+                                            <div style="font-size:1.50rem;">
+                                                <span t-if="bank.bank_id">
+                                                    <t t-esc="bank.bank_id.bic"/>
                                                 </span>
-                                                <span t-else="doc.partner_id.lang == 'es_ES'"
-                                                    style="font-size: 0.75rem;">
-                                                    <font style="vertical-align: inherit;">CONFORME
-                                                        CLIENTE </font>
-                                                </span> -->
-                                            </strong>
-                                        </center>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <br />
-                                        <br />
-                                        <br />
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div style="font-size:8px;line-height: auto;text-align:left;">
-                        </div>
-                    </div>
-                    <!-- DADES DEL BANC -->
-                    <div class="row">
-                        <div class="column" style="width: 100%;">
-                            <div t-if="doc.partner_id.commercial_partner_id.bank_ids" class="ml-auto">
-                                <br /><br /><br /><br /><br /><br />
-                                <div class="column" style="width:100%;">
-                                    <span style="font-size:1.50rem;">Dades del banc:</span>
-                                    <!-- Recorrido por las cuentas bancarias del partner comercial -->
-                                    <t t-foreach="doc.partner_id.commercial_partner_id.bank_ids" t-as="bank">
-                                        <div style="font-size:1.50rem;">
-                                            <!-- Número de cuenta/IBAN -->
-                                            <span>
-                                                <t t-esc="bank.acc_number"/>
-                                            </span>
-                                        </div>
-                                        <div style="font-size:1.50rem;">
-                                            <span t-if="bank.bank_id">
-                                                <t t-esc="bank.bank_id.bic"/>
-                                            </span>
-                                        </div>
-                                    </t>
+                                            </div>
+                                        </t>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="column" style="width: 50%;">
+                                <table border="3" class="table table-bordered o_table">
+                                    <tr>
+                                        <td>
+                                            <center>
+                                                <strong>
+                                                    <!-- <span t-if="doc.partner_id.lang == 'ca_ES'"
+                                                        style="font-size: 0.75rem;"> -->
+                                                    <span style="font-size: 1.50rem;">
+                                                        <font style="vertical-align: inherit;">CONFORME
+                                                            CLIENTE </font>
+                                                    </span>
+                                                    <!-- <span t-elif="doc.partner_id.lang == 'en_GB'"
+                                                        style="font-size: 0.75rem;">
+                                                        <font style="vertical-align: inherit;">COMO
+                                                            CLIENTE </font>
+                                                    </span>
+                                                    <span t-else="doc.partner_id.lang == 'es_ES'"
+                                                        style="font-size: 0.75rem;">
+                                                        <font style="vertical-align: inherit;">CONFORME
+                                                            CLIENTE </font>
+                                                    </span> -->
+                                                </strong>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <br />
+                                            <br />
+                                            <br />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style="font-size:8px;line-height: auto;text-align:left;">
+                            </div>
+                        </div>
+                        <br />
+                        <div style="text-align:left; font-size:1.0rem;">
+                            Entrega a compte 30% en el moment de l'acceptació<br/>
+                            Una vegada acceptat el pressupost, no s'admetran cancel·lacions ni devolucions<br/>
+                            Excepció: Marca Gamma 15% de descompte en concepte de gastos (excluïts miralls i mampares)<br/>
+                            Continuació d'obres: En productes que per fabricació tenen to i calibre com paviments, revestiments...<br/>
+                            Suconspa no pot garantir la disposició exacta de les partides adquirides en cas de necessitar més material.<br/>
                         </div>
                     </div>
-                    <br /><br /><br /><br /><br /><br />
                 </div>
             </div>
             <!-- <t t-call="suconspa_adapt.report_suco_footer" /> -->
             <div class="footer" style="width:100%;">
-                <div style="text-align:left; font-size:0.8rem;">
-                    Entrega a compte 30% en el moment de l'acceptació<br/>
-                    Una vegada acceptat el pressupost, no s'admetran cancel·lacions ni devolucions<br/>
-                    Excepció: Marca Gamma 15% de descompte en concepte de gastos (excluïts miralls i mampares)<br/>
-                    Continuació d'obres: En productes que per fabricació tenen to i calibre com paviments, revestiments...<br/>
-                    Suconspa no pot garantir la disposició exacta de les partides adquirides en cas de necessitar més material.<br/>
-                </div>
-                <br/>
                 <t t-if="doc.company_id.commercial_registry">
                     <div style="text-align:center; font-size:0.5rem; margin-top:3px;" >
                         <span t-field="doc.company_id.commercial_registry"/>
