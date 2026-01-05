@@ -22,11 +22,9 @@ class SucoAccountBatchPayment(models.Model):
         - Extrae `MndtId` y `DtOfSgntr` del modelo `sdd.mandate` (si existe) relacionado con
             el `res.partner` del deudor.
         - Adjunta el XML como `ir.attachment` y publica el mensaje en el hilo del lote.
-        - Cambia el estado a `financiada` y oculta el botón si ya está en ese estado.
+        - Cambia el estado a `sent` si está en `draft`. Si ya está en `sent`, regenera el archivo.
         """
         for rec in self:
-            if rec.state == 'sent':
-                raise UserError(_('El lote ya está marcado como Enviado.'))
 
             # Obtener pagos del lote: soportar distintos esquemas de relación
             payments = rec.mapped('payment_ids') if 'payment_ids' in rec._fields else self.env['account.payment'].search([('batch_id', '=', rec.id)])
@@ -119,7 +117,7 @@ class SucoAccountBatchPayment(models.Model):
                 grouped.setdefault(key, []).append(it)
 
             # Intentar obtener MsgId original desde un attachment existente para reutilizarlo
-            base_msg = None
+            fsdd_msg = None
             atts = self.env['ir.attachment'].search([('res_model', '=', 'account.batch.payment'), ('res_id', '=', rec.id)])
             for att in atts:
                 try:
@@ -129,16 +127,15 @@ class SucoAccountBatchPayment(models.Model):
                         start = txt.find('<MsgId>') + len('<MsgId>')
                         end = txt.find('</MsgId>', start)
                         if start and end:
-                            base_msg = txt[start:end]
+                            # Usar directamente el MsgId encontrado (ya tiene el prefijo FSDD)
+                            fsdd_msg = txt[start:end]
                             break
                 except Exception:
                     continue
-            if not base_msg:
-                # Use the same MsgId approach as standard SDD exports (time-based unique id)
+            if not fsdd_msg:
+                # Generar nuevo MsgId con prefijo FSDD (primera vez)
                 import time
-                base_msg = str(time.time())
-
-            fsdd_msg = 'FSDD' + base_msg
+                fsdd_msg = 'FSDD' + str(time.time())
 
             # Registrar claves de grupo detectadas y detalle por grupo en logs
             group_summary = ', '.join([f"{k}: {len(v)} txs, {sum(it['amount'] for it in v):.2f} EUR" for k, v in grouped.items()])
@@ -251,8 +248,24 @@ class SucoAccountBatchPayment(models.Model):
                     etree.SubElement(dbtr, 'Nm').text = it['payment'].partner_id.name or ''
                     addr = etree.SubElement(dbtr, 'PstlAdr')
                     etree.SubElement(addr, 'Ctry').text = (it['payment'].partner_id.country_id.code if it['payment'].partner_id.country_id else '') or ''
-                    # simple address line
-                    etree.SubElement(addr, 'AdrLine').text = (it['payment'].partner_id.contact_address or '')
+                    # Single address line with full address (max 70 chars)
+                    partner = it['payment'].partner_id
+                    address_parts = []
+                    if partner.street:
+                        address_parts.append(partner.street)
+                    if partner.zip:
+                        address_parts.append(partner.zip)
+                    if partner.city:
+                        address_parts.append(partner.city)
+                    if partner.state_id:
+                        address_parts.append(partner.state_id.name)
+                    if partner.country_id:
+                        address_parts.append(partner.country_id.name)
+                    
+                    if address_parts:
+                        full_address = ' '.join(address_parts)
+                        full_address = re.sub(r'[\r\n]+', ' ', full_address)
+                        etree.SubElement(addr, 'AdrLine').text = full_address[:70]
                     # Debtor account
                     dbacct = etree.SubElement(drct, 'DbtrAcct')
                     iddb = etree.SubElement(dbacct, 'Id')
@@ -280,11 +293,15 @@ class SucoAccountBatchPayment(models.Model):
             })
 
             # Publicar resumen y adjunto
-            summary = _("Fichero PAIN.008 de descuento generado y adjuntado. Grupos por vencimiento: %s") % (', '.join([f"{k}: {len(v)} txs, {sum(it['amount'] for it in v):.2f} EUR" for k, v in grouped.items()]))
+            if rec.state == 'sent':
+                summary = _("Fichero PAIN.008 de descuento regenerado. Grupos por vencimiento: %s") % (', '.join([f"{k}: {len(v)} txs, {sum(it['amount'] for it in v):.2f} EUR" for k, v in grouped.items()]))
+            else:
+                summary = _("Fichero PAIN.008 de descuento generado y adjuntado. Grupos por vencimiento: %s") % (', '.join([f"{k}: {len(v)} txs, {sum(it['amount'] for it in v):.2f} EUR" for k, v in grouped.items()]))
             rec.message_post(body=summary, attachment_ids=[attachment.id])
 
-            # Marcar como enviado (comportamiento estándar) y terminar (usar sudo para evitar restricciones de escritura)
-            rec.sudo().write({'state': 'sent'})
+            # Marcar como enviado solo si está en draft (comportamiento estándar)
+            if rec.state == 'draft':
+                rec.sudo().write({'state': 'sent'})
 
         # Recargar la vista para que el botón desaparezca del formulario
         return {'type': 'ir.actions.client', 'tag': 'reload'}
