@@ -7,6 +7,6 @@
         <field name="report_name">reporting.report_sales_order_format_prin</field> <!-- Es el id del template con el prefijo del nombre del modulo-->
         <field name="report_file">reporting.report_sales_order_format_prin</field>
         <field name="print_report_name">'Pedido - %s' % (object.name).replace('/','')</field>
-        <field name="binding_model_id" ref="sale.model_sale_order"/> <!-- Es el id del modelo con el prefijo 'model_'-->
+        <field name="binding_model_id" eval="False"/> <!-- Es el id del modelo con el prefijo 'model_'-->
     </record>
 </odoo>

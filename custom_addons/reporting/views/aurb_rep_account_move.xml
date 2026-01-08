@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <!-- <data>
         <record id="act_aurb_astore_account_move" model="ir.ui.view">
             <field name="name">act_aurb_astore_account_move</field>
             <field name="model">account.move</field>
             <field name="inherit_id" ref="account.view_move_form" />
             <field name="arch" type="xml">
-                <!-- find field description and add the field
-                     new_field after it -->
                 <xpath expr="//button[@name='action_invoice_sent']"
                     position="after">
                     <button name="action_print_default" string="action_print_default" type="object" />
                 </xpath>
-
             </field>
         </record>
-    </data>
+    </data> -->
 </odoo>
