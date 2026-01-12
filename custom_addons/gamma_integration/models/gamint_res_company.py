@@ -22,10 +22,19 @@ class ResCompany(models.Model):
         price_data = gamma.get_prices()
         supplier_id = self.gi_supplier.id
 
+        # Obtener los tipos de precio que existen en Odoo
+        # Solo se procesarán las tarifas para estos tipos
+        existing_price_types = self.env['gi.type.price'].search([]).mapped('code')
+
         # Iteración sobre los datos recibidos
         # Para cada artículo (item) en la lista extrae los datos clave
         for item in price_data:
             cod_articulo = item.get("COD_ARTICULO")             # código del artículo Gamma
+            
+            # FILTRO TEMPORAL: solo procesar el artículo CEYCA002
+            # if cod_articulo != "CEYCA002":
+            #     continue
+            
             descripcion = item.get("DESCRIPCION")               # descripción del artículo
             codigo_tarifa = item.get("COD_TARIFA_AGRUPADA")     # código de la tarifa
             descripcion_tarifa = item.get("DESCRIPCION_TARIFA") # descripción de la tarifa
@@ -57,6 +66,10 @@ class ResCompany(models.Model):
 
             # Para cada tipo
             for tipo, precio, min_qty in precios:
+                # Solo procesar si el tipo de precio existe en Odoo
+                if tipo not in existing_price_types:
+                    continue
+
                 # Si el precio es mayor que 0, procede a crear o actualizar el registro en product.supplierinfo
                 if precio and precio > 0:
                     # Busca en product.supplierinfo un registro que coincida con:
