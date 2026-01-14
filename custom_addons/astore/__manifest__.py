@@ -32,6 +32,8 @@
         'views/aurb_astore_res_config_settings_views.xml',
         'views/aurb_astore_method_payment_views.xml',
         'views/aurb_astore_pos_payment_method_views.xml',
+        'views/aurb_astore_partners_views.xml',
+        'views/aurb_astore_products_views.xml',
         'report/aurb_astore_reporting_pos.xml',
         'wizard/aurb_astore_archived_closed_move_views.xml',
         'security/astore_security.xml',

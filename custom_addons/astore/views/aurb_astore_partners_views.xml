@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Acción para Clientes -->
+        <record id="act_aurb_astore_partner" model="ir.actions.act_window">
+            <field name="name">Clientes</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('customer_rank', '>', 0)]</field>
+            <field name="context">{'default_is_company': True, 'default_customer_rank': 1}</field>
+        </record>
+    </data>
+</odoo>

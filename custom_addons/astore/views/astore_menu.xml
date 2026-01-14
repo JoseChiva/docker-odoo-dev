@@ -11,6 +11,14 @@
                 action="account.action_move_out_invoice_type" />
             <menuitem id="mn_astore_sale_payment_action" name="mn_incoming_payment" sequence="14"
                 action="account.action_account_payments" />
+        <menuitem id="mn_astore_partner_menu" name="Clientes" sequence="20">
+            <menuitem id="mn_astore_partner_action" name="Clientes" sequence="21"
+                action="act_aurb_astore_partner" />
+        </menuitem>
+        <menuitem id="mn_astore_product_menu" name="Productos" sequence="30">
+            <menuitem id="mn_astore_product_action" name="Productos" sequence="31"
+                action="act_aurb_astore_product" />
+        </menuitem>
         <menuitem id="mn_astore_management_pos" name="mn_management_pos" sequence="80">
             <menuitem id="mn_astore_conf_astore_pos_payments_action" name="mn_payments_pos"
                 sequence="81"
