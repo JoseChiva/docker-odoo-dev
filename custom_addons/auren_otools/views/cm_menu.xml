@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="mn_auren_otools_main" name="auren_otools"
+        web_icon="auren_otools,static/description/icon.png"
+    >
+    </menuitem>
+</odoo>

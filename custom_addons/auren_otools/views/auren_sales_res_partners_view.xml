@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_sale_res_partner_form" model="ir.ui.view">
+            <field name="name">auren_sale_res_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='internal_notes']"
+                    position="after">
+                    <page name="auren_otools_discount" string="Descuentos Cabecera" groups="auren_otools.group_head_extended_discount">
+                        <group name="discount_head" string="Cabecera">
+                            <field name="disc_head_1" groups="auren_otools.group_head_extended_discount_1" />
+                            <field name="disc_head_2" groups="auren_otools.group_head_extended_discount_2"/>
+                            <field name="disc_head_3" groups="auren_otools.group_head_extended_discount_3"/>
+                            <field name="disc_head_4" groups="auren_otools.group_head_extended_discount_4"/>
+                            <field name="disc_head_5" groups="auren_otools.group_head_extended_discount_5"/>
+                            <field name="disc_head_6" groups="auren_otools.group_head_extended_discount_6"/>
+                        </group>
+                    </page>
+                    <page name="auren_otools_discount" string="Descuentos Línea" groups="auren_otools.group_extended_discount">
+                        <group name="discount_line" string="Línea">
+                            <field name="disc_1" groups="auren_otools.group_extended_discount_1" />
+                            <field name="disc_2" groups="auren_otools.group_extended_discount_2"/>
+                            <field name="disc_3" groups="auren_otools.group_extended_discount_3"/>
+                            <field name="disc_4" groups="auren_otools.group_extended_discount_4"/>
+                            <field name="disc_5" groups="auren_otools.group_extended_discount_5"/>
+                            <field name="disc_6" groups="auren_otools.group_extended_discount_6"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

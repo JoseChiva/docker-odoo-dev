@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_otools_product_template_uom_" model="ir.ui.view">
+            <field name="name">auren_otools_product_template_uom_</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='uom_po_id']" position="after">
+                    <field name="uom_sale_id" string="Ud. Venta" />
+                </xpath>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page name="Dimensiones" string="Dimensiones" groups="auren_otools.group_dim_inv">
+                        <group name="cm_inv" string="Gestión dimensiones">
+                            <field name="var1_s" groups="auren_otools.group_dim_var1"/> 
+                            <field name="var2_s" groups="auren_otools.group_dim_var2"/>
+                            <field name="var3_s" groups="auren_otools.group_dim_var3"/>
+                        </group>
+                    </page>
+
+                </xpath>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page name="Uom Sale" string="Uds. Venta" groups="auren_otools.group_extended_uom_sale">
+                        <group>
+                            <field name="uom_id" readonly="True"/>                                   
+                        </group>
+                        <field name="uom_sale_factor_ids">
+                            <form string="Product Uom List" editable="bottom" >
+                                <field name="product_id" readonly="True" column_invisible="1"/>
+                                <field name="uom_id" string="Ud. Venta" options="{'no_create': True}"/>
+                                <field name="conversion_factor"/>
+                                <!-- <field name="unit__factor"/> -->
+                                <!-- <field name="formula"/> -->
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page name="Uom Purchase" string="Uds. Compra" groups="auren_otools.group_extended_uom_purchase">
+                        <group>
+                            <field name="uom_id" readonly="True"/>                                   
+                        </group>
+                        <field name="uom_purchase_factor_ids">
+                            <form string="Product Uom List" editable="bottom" >
+                                <field name="product_id" readonly="True" column_invisible="1"/>
+                                <field name="uom_id" string="Ud. Compra" options="{'no_create': True}"/>
+                                <field name="conversion_factor"/>
+                                <!-- <field name="unit__factor"/> -->
+                                <!-- <field name="formula"/> -->
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <field name="auren_property_cost_method" invisible="True"/>
+                    <page name="cost_standard" string="Coste estandard" invisible="auren_property_cost_method!='standard'" groups="auren_otools.group_cost_standard">
+                        <field name="cost_standards_ids" >
+                            <form string="Cost Standard" editable="bottom" >
+                                <field name="product_id" readonly="True" column_invisible="1"/>
+                                <field name="cost_standard_id" string="Nombre coste" />
+                                <field name="cost"/>
+                            </form>
+                        </field>
+                        <group name="total_standard_price">
+                            <field name="standard_price"  readonly="True"/>
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

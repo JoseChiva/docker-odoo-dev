@@ -1,0 +1,9 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+accs_aurb_cm_product_uom_sale,accs_aurb_cm_product_uom_sale,model_aurb_cm_product_uom_sale,base.group_user,1,1,1,1
+accs_aurb_cm_product_uom_purchase,accs_aurb_cm_product_uom_purchase,model_aurb_cm_product_uom_purchase,base.group_user,1,1,1,1
+
+accs_aurb_sale_picking,accs_aurb_sale_picking,model_aurb_sale_picking,base.group_user,1,1,1,1
+
+accs_aurb_cm_cost_standard,accs_aurb_cm_cost_standard,model_aurb_cm_cost_standard,base.group_user,1,1,1,1
+accs_aurb_cm_cost_standard_item,accs_aurb_cm_cost_standard_item,model_aurb_cm_cost_standard_item,base.group_user,1,1,1,1
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_otools_product_category" model="ir.ui.view">
+            <field name="name">auren_otools_product_category</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="extended_ean_product" />
+                    <field name="extended_ean_product_counter" invisible="extended_ean_product==False" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

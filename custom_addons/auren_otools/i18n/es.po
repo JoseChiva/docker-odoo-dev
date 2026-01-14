@@ -1,0 +1,783 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* auren_otools
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-11 12:19+0000\n"
+"PO-Revision-Date: 2024-04-11 12:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_extended_discount_1
+msgid "Activar descuento 1"
+msgstr "Activar descuento 1"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_extended_discount_2
+msgid "Activar descuento 2"
+msgstr "Activar descuento 2"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_extended_discount_3
+msgid "Activar descuento 3"
+msgstr "Activar descuento 3"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_extended_discount_4
+msgid "Activar descuento 4"
+msgstr "Activar descuento 4"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_extended_discount_5
+msgid "Activar descuento 5"
+msgstr "Activar descuento 5"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_extended_discount_6
+msgid "Activar descuento 6"
+msgstr "Activar descuento 6"
+
+#. module: auren_otools
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__type_discount__app
+msgid "Apilado"
+msgstr "Cascada"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_inv
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Artículos con dimensiones"
+msgstr "Artículos con dimensiones"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_aurb_cm_product_uom_purchase
+msgid "Aurb Product Uom Purchase"
+msgstr "Artículo Uom compres"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_aurb_cm_product_uom_sale
+msgid "Aurb Product Uom Sale"
+msgstr "Artículo Uom ventas"
+
+#. module: auren_otools
+#: model:ir.module.category,name:auren_otools.auren_otools_group_custom_category
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Auren Otools"
+msgstr "Auren Otools"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_purchase_order
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_sale_order
+msgid "Cantidad inventario"
+msgstr "Cantidad inventario"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_partner__authorized_sales
+#: model:ir.model.fields,field_description:auren_otools.field_res_users__authorized_sales
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order__res_partner_authorized_sales
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_sale_order
+msgid "Comprador registrado"
+msgstr "Comprador registrado"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Compras"
+msgstr "Compras"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__create_uid
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__create_date
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: auren_otools
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_6__dec
+msgid "Decrementa"
+msgstr "Decrementa"
+
+#. module: auren_otools
+#: model:ir.model.fields,help:auren_otools.field_aurb_cm_product_uom_purchase__uom_id
+msgid ""
+"Default unit of measure used for purchase orders. It must be in the same "
+"category as the default unit of measure."
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,help:auren_otools.field_product_product__uom_sale_id
+#: model:ir.model.fields,help:auren_otools.field_product_template__uom_sale_id
+#: model:ir.model.fields,help:auren_otools.field_res_config_settings__uom_sale
+msgid ""
+"Default unit of measure used for sale orders. It must be in the same "
+"category as the default unit of measure."
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,help:auren_otools.field_aurb_cm_product_uom_sale__uom_id
+msgid ""
+"Default unit of measure. It must be in the same category as the default unit"
+" of measure."
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_1__dec
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_2__dec
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_3__dec
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_4__dec
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_5__dec
+msgid "Descrementa"
+msgstr "Descrementa"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__desc_group_extended_discount_1
+msgid "Descripción descuento 1"
+msgstr "Descripción descuento 1"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__desc_group_extended_discount_2
+msgid "Descripción descuento 2"
+msgstr "Descripción descuento 2"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__desc_group_extended_discount_3
+msgid "Descripción descuento 3"
+msgstr "Descripción descuento 3"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__desc_group_extended_discount_4
+msgid "Descripción descuento 4"
+msgstr "Descripción descuento 4"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__desc_group_extended_discount_5
+msgid "Descripción descuento 5"
+msgstr "Descripción descuento 5"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__desc_group_extended_discount_6
+msgid "Descripción descuento 6"
+msgstr "Descripción descuento 6"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_partner__disc_1
+#: model:ir.model.fields,field_description:auren_otools.field_res_users__disc_1
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__disc_1
+msgid "Descuento 1"
+msgstr "Descuento 1"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_partner__disc_2
+#: model:ir.model.fields,field_description:auren_otools.field_res_users__disc_2
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__disc_2
+msgid "Descuento 2"
+msgstr "Descuento 2"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_partner__disc_3
+#: model:ir.model.fields,field_description:auren_otools.field_res_users__disc_3
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__disc_3
+msgid "Descuento 3"
+msgstr "Descuento 3"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_partner__disc_4
+#: model:ir.model.fields,field_description:auren_otools.field_res_users__disc_4
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__disc_4
+msgid "Descuento 4"
+msgstr "Descuento 4"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_partner__disc_5
+#: model:ir.model.fields,field_description:auren_otools.field_res_users__disc_5
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__disc_5
+msgid "Descuento 5"
+msgstr "Descuento 5"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_partner__disc_6
+#: model:ir.model.fields,field_description:auren_otools.field_res_users__disc_6
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__disc_6
+msgid "Descuento 6"
+msgstr "Descuento 6"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_extended_discount
+msgid "Descuento de venta ampliado"
+msgstr "Descuento de venta ampliado"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__journal_for_location
+msgid "Diario contable por almacén"
+msgstr "Diario contable por almacén"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Diario contable por ubicación"
+msgstr Diario contable por ubicación"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Dimensiones"
+msgstr "Dimensiones"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var_readonly_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var_readonly_s
+msgid "Dimensiones sólo lectura"
+msgstr "Dimensiones sólo lectura"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__display_name
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__display_name
+msgid "Display Name"
+msgstr "Nombre visual"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_sale_order
+msgid "Factor UoM"
+msgstr "Factor UoM"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_purchase_order
+msgid "Factor Uom"
+msgstr "Factor Uom"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__unit__factor
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__unit__factor
+msgid "Factor de conversión dimensiones"
+msgstr "Factor de conversión dimensiones"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__conversion_factor
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__conversion_factor
+msgid "Factor de conversión entre unidades"
+msgstr "Factor de conversión entre unidades"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Facturación"
+msgstr "Facturación"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__formula
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__formula
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__formula
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__formula_s
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__formula
+#: model:ir.model.fields,field_description:auren_otools.field_stock_move__formula
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Fórmula"
+msgstr "Fórmula"
+
+#. module: auren_otools
+#: model:ir.model.fields,help:auren_otools.field_aurb_cm_product_uom_purchase__formula
+#: model:ir.model.fields,help:auren_otools.field_aurb_cm_product_uom_sale__formula
+#: model:ir.model.fields,help:auren_otools.field_purchase_order_line__formula
+#: model:ir.model.fields,help:auren_otools.field_res_config_settings__formula_s
+#: model:ir.model.fields,help:auren_otools.field_sale_order_line__formula
+#: model:ir.model.fields,help:auren_otools.field_stock_move__formula
+msgid "Fórmula de calculo entre dimensiones Ejemplo : var1*var2/var3"
+msgstr "Fórmula de calculo entre dimensiones Ejemplo : var1*var2/var3"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_purchase
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_sales
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Gestión con dimensiones"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_var1_purchase
+msgid "Gestión con dimensiones purchase var1"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_var2_purchase
+msgid "Gestión con dimensiones purchase var2"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_var3_purchase
+msgid "Gestión con dimensiones purchase var3"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_var1_sales
+msgid "Gestión con dimensiones sales var1"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_var2_sales
+msgid "Gestión con dimensiones sales var2"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_var3_sales
+msgid "Gestión con dimensiones sales var3"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_var1
+msgid "Gestión con dimensiones var1"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_var2
+msgid "Gestión con dimensiones var2"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__group_dim_var3
+msgid "Gestión con dimensiones var3"
+msgstr ""
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Gestión de descuentos ampliada"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__sale_autorization_management
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Gestión de registro de compradores"
+msgstr ""
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Gestión dimensiones"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__id
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__id
+msgid "ID"
+msgstr "Identificador"
+
+#. module: auren_otools
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_6__inc
+msgid "Incrementa"
+msgstr "Incrementa"
+
+#. module: auren_otools
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_1__inc
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_2__inc
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_3__inc
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_4__inc
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__operation_discount_5__inc
+msgid "Incremente"
+msgstr "Incrementa"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Inventario"
+msgstr ""
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Inventario UoM Ampliada"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__inventory_uom_expanded_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__inventory_uom_expanded_s
+msgid "Inventario Uom Ampliada"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_stock_location
+msgid "Inventory Locations"
+msgstr "Ubicaciones de inventario"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_stock_location__journal_id
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_location
+msgid "Journal"
+msgstr "Diario contable"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__write_uid
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__write_date
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var1_s
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Nombre dimensión 1"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var2_s
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Nombre dimensión 2"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var3_s
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Nombre dimensión 3"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__operation_discount_1
+msgid "Operación descuento 1"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__operation_discount_2
+msgid "Operación descuento 2"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__operation_discount_3
+msgid "Operación descuento 3"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__operation_discount_4
+msgid "Operación descuento 4"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__operation_discount_5
+msgid "Operación descuento 5"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__operation_discount_6
+msgid "Operación descuento 6"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_product_template
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__product_id
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: auren_otools
+#: model:ir.actions.act_window,name:auren_otools.act_product_uom
+msgid "Product Uom"
+msgstr "Producto Uom"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Product Uom List"
+msgstr "Lista de productos Uom"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.lst_product_uom
+msgid "Product Uom Sale List"
+msgstr "Lista de productos Uom ventas"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de compra"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea de orden de compra"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__qty_inventory
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__qty_inventory
+msgid "Quantity Inventory"
+msgstr "Cantidad de inventarió"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de orden de venta"
+
+#. module: auren_otools
+#: model:ir.actions.act_window,name:auren_otools.auren_cm_config_settings_action
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de stock"
+
+#. module: auren_otools
+#: model:ir.model.fields.selection,name:auren_otools.selection__res_config_settings__type_discount__sum
+msgid "Sumado"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__type_discount
+msgid "Tipo"
+msgstr ""
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Ud. Compra"
+msgstr ""
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Ud. Venta"
+msgstr ""
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Uds. Compra"
+msgstr ""
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Uds. Venta"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__unit
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__unit
+msgid "Unidades"
+msgstr ""
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "UoM de cálculo fórmula"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__uom_id
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__uom_id
+msgid "Uom"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__uom_purchase_factor_ids
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__uom_purchase_factor_ids
+msgid "Uom Purchase Factor"
+msgstr "Factor de compras Uom"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__uom_sale_id
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__uom_sale_id
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__uom_sale
+msgid "Uom Sale"
+msgstr "Uom venta"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__uom_sale_factor_ids
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__uom_sale_factor_ids
+msgid "Uom Sale Factor"
+msgstr "Factor de ventas Uom"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Ventas"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_var_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_var_s
+msgid "Visualizar Campos Conversión dim"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_qtyi_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_qtyi_s
+msgid "Visualizar Cantidad UoM en Documentos"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_uom_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_uom_s
+msgid "Visualzar Factor de Conversión en Documentos"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.module.category,name:auren_otools.auren_otools_subgroup_custom_category
+msgid "ar_access_right"
+msgstr "Permisos"
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.auren_otools_admin_group
+msgid "ar_admin"
+msgstr "Administrador"
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.auren_otools_user_group
+msgid "ar_user"
+msgstr "Usuario"
+
+#. module: auren_otools
+#: model:ir.ui.menu,name:auren_otools.mn_auren_otools_main
+msgid "auren_otools"
+msgstr "Auren oTools"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__conversion_factor
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__conversion_factor
+#: model:ir.model.fields,field_description:auren_otools.field_stock_move__conversion_factor
+msgid "conversion_factor"
+msgstr "Factor de conversión"
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_inv
+msgid "group_dim_inv"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_purchase
+msgid "group_dim_purchase"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_sales
+msgid "group_dim_sales"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_var1
+msgid "group_dim_var1"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_var1_purchase
+msgid "group_dim_var1_purchase"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_var1_sales
+msgid "group_dim_var1_sales"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_var2
+msgid "group_dim_var2"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_var2_purchase
+msgid "group_dim_var2_purchase"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_var2_sales
+msgid "group_dim_var2_sales"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_var3
+msgid "group_dim_var3"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_var3_purchase
+msgid "group_dim_var3_purchase"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_dim_var3_sales
+msgid "group_dim_var3_sales"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_extended_discount
+msgid "group_extended_discount"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_extended_discount_1
+msgid "group_extended_discount_1"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_extended_discount_2
+msgid "group_extended_discount_2"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_extended_discount_3
+msgid "group_extended_discount_3"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_extended_discount_4
+msgid "group_extended_discount_4"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_extended_discount_5
+msgid "group_extended_discount_5"
+msgstr ""
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.group_extended_discount_6
+msgid "group_extended_discount_6"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__unit__factor
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__unit__factor
+#: model:ir.model.fields,field_description:auren_otools.field_stock_move__unit__factor
+msgid "unit__factor"
+msgstr "Factor de unidad"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__var1_s
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__var1_s
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__var1
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__var1
+msgid "var1"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__var2_s
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__var2_s
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__var2
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__var2
+msgid "var2"
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__var3_s
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__var3_s
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__var3
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__var3
+msgid "var3"
+msgstr ""

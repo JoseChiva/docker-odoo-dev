@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_otools_res_partner" model="ir.ui.view">
+            <field name="name">auren_otools_res_partner</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='vat']"
+                    position="after">
+                    <field name="authorized_sales" invisible="type!='contact' or is_company" />
+                </xpath>
+                <xpath expr="//page[@name='contact_addresses']//field[@name='child_ids']/form/sheet/group//field[@name='name']"
+                    position="after">
+                    <!-- invisible="type!='contact' or is_company" -->
+                    <field name="is_company" invisible="True"/>
+                    <field name="authorized_sales"  invisible="type!='contact' or is_company" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

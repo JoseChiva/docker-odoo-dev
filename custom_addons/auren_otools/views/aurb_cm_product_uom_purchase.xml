@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_product_uom_purchase" model="ir.actions.act_window">
+            <field name="name">Product Uom Purchase</field>
+            <field name="res_model">aurb.cm.product.uom.purchase</field>
+            <field name="view_mode">list</field>
+        </record>
+        <record id="lst_product_uom_purchase" model="ir.ui.view">
+            <field name="name">Product Uom Purchase</field>
+            <field name="model">aurb.cm.product.uom.purchase</field>
+            <field name="arch" type="xml">
+                <list string="Product Uom Sale List" editable="bottom" >
+                    <field name="product_id" />
+                    <field name="uom_id"/>
+                    <field name="conversion_factor"/>
+                    <!-- <field name="unit__factor"/> -->
+                    <!-- <field name="formula"/> -->
+                </list>
+            </field>
+        </record>
+        <menuitem id="mn_product_uom_purchase"
+        name="Uom Product Purchase"
+        action="act_product_uom_purchase"
+        parent="stock.menu_stock_inventory_control"
+        sequence="150" />
+    </data>
+</odoo>

@@ -1,0 +1,457 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* auren_otools
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-13 10:28+0000\n"
+"PO-Revision-Date: 2024-02-13 10:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__inventory_var_a
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Artículos con dimensiones"
+msgstr "Article amb dimensiones"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_aurb_cm_product_uom_purchase
+msgid "Aurb Product Uom Purchase"
+msgstr "Unitats de mesura de compra per article"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_aurb_cm_product_uom_sale
+msgid "Aurb Product Uom Sale"
+msgstr "Unitats de mesura de venta per article"
+
+#. module: auren_otools
+#: model:ir.module.category,name:auren_otools.auren_otools_group_custom_category
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Auren Otools"
+msgstr "Auren Otools"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_purchase_order
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_sale_order
+msgid "Cantidad inventario"
+msgstr "Quantitat inventari"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_partner__authorized_sales
+#: model:ir.model.fields,field_description:auren_otools.field_res_users__authorized_sales
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order__res_partner_authorized_sales
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_sale_order
+msgid "Comprador registrado"
+msgstr "Comprador registrat"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Compras"
+msgstr "Compres"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paràmetres de configuració"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_res_partner
+msgid "Contact"
+msgstr "Contacte"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__create_uid
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__create_uid
+msgid "Created by"
+msgstr "Creat per"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__create_date
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__create_date
+msgid "Created on"
+msgstr "Creat en"
+
+#. module: auren_otools
+#: model:ir.model.fields,help:auren_otools.field_aurb_cm_product_uom_purchase__uom_id
+msgid ""
+"Default unit of measure used for purchase orders. It must be in the same "
+"category as the default unit of measure."
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,help:auren_otools.field_product_product__uom_sale_id
+#: model:ir.model.fields,help:auren_otools.field_product_template__uom_sale_id
+#: model:ir.model.fields,help:auren_otools.field_res_config_settings__uom_sale
+msgid ""
+"Default unit of measure used for sale orders. It must be in the same "
+"category as the default unit of measure."
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,help:auren_otools.field_aurb_cm_product_uom_sale__uom_id
+msgid ""
+"Default unit of measure. It must be in the same category as the default unit"
+" of measure."
+msgstr ""
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__journal_for_location
+msgid "Diario contable por almacén"
+msgstr "Diari comptable per magatzem"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Diario contable por ubicación"
+msgstr "Diari comptable per ubicació"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Dimensiones"
+msgstr "Dimensions"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var_readonly_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var_readonly_s
+msgid "Dimensiones sólo lectura"
+msgstr "Dimensions solament de lectura"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__display_name
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__display_name
+msgid "Display Name"
+msgstr "Nom visual"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_sale_order
+msgid "Factor UoM"
+msgstr "Factor UoM"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_purchase_order
+msgid "Factor Uom"
+msgstr "Factor Uom"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__unit__factor
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__unit__factor
+msgid "Factor de conversión dimensiones"
+msgstr "Factor de conversió dimensions"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__conversion_factor
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__conversion_factor
+msgid "Factor de conversión entre unidades"
+msgstr "Factor de conversió entre unitats"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Facturación"
+msgstr "Facturació"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__formula
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__formula
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__formula
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__formula_s
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__formula
+#: model:ir.model.fields,field_description:auren_otools.field_stock_move__formula
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Fórmula"
+msgstr "Fórmula"
+
+#. module: auren_otools
+#: model:ir.model.fields,help:auren_otools.field_aurb_cm_product_uom_purchase__formula
+#: model:ir.model.fields,help:auren_otools.field_aurb_cm_product_uom_sale__formula
+#: model:ir.model.fields,help:auren_otools.field_purchase_order_line__formula
+#: model:ir.model.fields,help:auren_otools.field_res_config_settings__formula_s
+#: model:ir.model.fields,help:auren_otools.field_sale_order_line__formula
+#: model:ir.model.fields,help:auren_otools.field_stock_move__formula
+msgid "Fórmula de calculo entre dimensiones Ejemplo : var1*var2/var3"
+msgstr "Fórmula de càlcul entre dimensions exemple : var1*var2/var3"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__inventory_var_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__inventory_var_s
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Gestión con dimensiones"
+msgstr "Gestió amb dimensions"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__sale_autorization_management
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Gestión de registro de compradores"
+msgstr "Gestió de comprador registrat"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Gestión dimensiones"
+msgstr "Gestió dimensions"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__id
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__id
+msgid "ID"
+msgstr "idientificador"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Inventario"
+msgstr "Inventari"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Inventario UoM Ampliada"
+msgstr "Inventari UoM ampliat"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__inventory_uom_expanded_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__inventory_uom_expanded_s
+msgid "Inventario Uom Ampliada"
+msgstr "Inventari Uom ampliat"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_stock_location
+msgid "Inventory Locations"
+msgstr "Ubicacions d'inventari"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_stock_location__journal_id
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_location
+msgid "Journal"
+msgstr "Diari comptable"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_account_move
+msgid "Journal Entry"
+msgstr "Assentament comptable"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__write_uid
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualizació feta per"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__write_date
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualizació feta en"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var1_s
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Nombre dimensión 1"
+msgstr "Nom dimensió 1"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var2_s
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Nombre dimensión 2"
+msgstr "Nom dimensió 2"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__var3_s
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Nombre dimensión 3"
+msgstr "Nom dimensió 3"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_product_template
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__product_id
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__product_id
+msgid "Product"
+msgstr "Producte"
+
+#. module: auren_otools
+#: model:ir.actions.act_window,name:auren_otools.act_product_uom
+msgid "Product Uom"
+msgstr "Producte Uom"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Product Uom List"
+msgstr "Llista de productes Uom"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.lst_product_uom
+msgid "Product Uom Sale List"
+msgstr "Llista de productes Uom ventes"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_purchase_order
+msgid "Purchase Order"
+msgstr "Comanda de compra"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línia de la comanda de compra"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__qty_inventory
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__qty_inventory
+msgid "Quantity Inventory"
+msgstr "Quantitat d'inventari"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_sale_order
+msgid "Sales Order"
+msgstr "Comandes"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línia comanda de venda"
+
+#. module: auren_otools
+#: model:ir.actions.act_window,name:auren_otools.auren_cm_config_settings_action
+msgid "Settings"
+msgstr "Ajustos"
+
+#. module: auren_otools
+#: model:ir.model,name:auren_otools.model_stock_move
+msgid "Stock Move"
+msgstr "Moviment d'estoc"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Ud. Compra"
+msgstr "Ud. Compra"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Ud. Venta"
+msgstr "Ud. Venta"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Uds. Compra"
+msgstr "Uds. Compra"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_otools_product_template_uom_
+msgid "Uds. Venta"
+msgstr "Uds. Venta"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__unit
+msgid "Unidades"
+msgstr "Unitats"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "UoM de cálculo fórmula"
+msgstr "UoM de càlcul de fórmula"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_purchase__uom_id
+#: model:ir.model.fields,field_description:auren_otools.field_aurb_cm_product_uom_sale__uom_id
+msgid "Uom"
+msgstr "Uom"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__uom_purchase_factor_ids
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__uom_purchase_factor_ids
+msgid "Uom Purchase Factor"
+msgstr "Uom factor de compra"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__uom_sale_id
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__uom_sale_id
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__uom_sale
+msgid "Uom Sale"
+msgstr "Uom Venta"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__uom_sale_factor_ids
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__uom_sale_factor_ids
+msgid "Uom Sale Factor"
+msgstr "Uom factor de venta"
+
+#. module: auren_otools
+#: model_terms:ir.ui.view,arch_db:auren_otools.auren_cm_res_config_settings_view_form
+msgid "Ventas"
+msgstr "Ventes"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_var_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_var_s
+msgid "Visualizar Campos Conversión dim"
+msgstr "Visualitzar camps de conversió dimensió"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_qtyi_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_qtyi_s
+msgid "Visualizar Cantidad UoM en Documentos"
+msgstr "Visualitzar quantitat UoM en documents"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_uom_p
+#: model:ir.model.fields,field_description:auren_otools.field_res_config_settings__intfield_uom_s
+msgid "Visualzar Factor de Conversión en Documentos"
+msgstr "Visualitzar factor de conversió en documents"
+
+#. module: auren_otools
+#: model:ir.module.category,name:auren_otools.auren_otools_subgroup_custom_category
+msgid "ar_access_right"
+msgstr "Permisos"
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.auren_otools_admin_group
+msgid "ar_admin"
+msgstr "Administrador"
+
+#. module: auren_otools
+#: model:res.groups,name:auren_otools.auren_otools_user_group
+msgid "ar_user"
+msgstr "Usuari"
+
+#. module: auren_otools
+#: model:ir.ui.menu,name:auren_otools.mn_auren_otools_main
+msgid "auren_otools"
+msgstr "auren_otools"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__conversion_factor
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__conversion_factor
+#: model:ir.model.fields,field_description:auren_otools.field_stock_move__conversion_factor
+msgid "conversion_factor"
+msgstr "Conversió factor"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__unit__factor
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__unit__factor
+#: model:ir.model.fields,field_description:auren_otools.field_stock_move__unit__factor
+msgid "unit__factor"
+msgstr "Unitat de factor"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__var1_s
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__var1_s
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__var1
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__var1
+msgid "var1"
+msgstr "var1"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__var2_s
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__var2_s
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__var2
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__var2
+msgid "var2"
+msgstr "var2"
+
+#. module: auren_otools
+#: model:ir.model.fields,field_description:auren_otools.field_product_product__var3_s
+#: model:ir.model.fields,field_description:auren_otools.field_product_template__var3_s
+#: model:ir.model.fields,field_description:auren_otools.field_purchase_order_line__var3
+#: model:ir.model.fields,field_description:auren_otools.field_sale_order_line__var3
+msgid "var3"
+msgstr "var3"

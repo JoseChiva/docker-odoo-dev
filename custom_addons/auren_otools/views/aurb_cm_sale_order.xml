@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_otools_sale_order" model="ir.ui.view">
+            <field name="name">auren_otools_sale_order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='partner_id']"
+                    position="after">
+                    <field name="res_partner_authorized_sales" string="Comprador registrado" />
+                    <field name="res_partner_contact" string="Persona de contacto" />
+                    
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/form//field[@name='product_uom_qty']"
+                    position="before" groups="auren_otools.group_dim_sales">
+                    <field name="unit" groups="auren_otools.group_dim_sales" optional="show" />
+                    <field name="var1" groups="auren_otools.group_dim_var1_sales" optional="show"/>
+                    <field name="var2" groups="auren_otools.group_dim_var2_sales" optional="show"/>
+                    <field name="var3" groups="auren_otools.group_dim_var3_sales" optional="show"/>
+                    <field name="qty_inventory" string="Cantidad inventario" readonly="True" groups="auren_otools.group_extended_uom_sale_qty" optional="show" force_save="1"/>
+                    <field name="conversion_factor" string="Factor UoM" readonly="True" groups="auren_otools.group_extended_uom_sale_con" optional="show" force_save="1"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

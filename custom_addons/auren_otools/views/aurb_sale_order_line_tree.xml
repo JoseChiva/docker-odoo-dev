@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="aurb_sale_order_line_tree" model="ir.ui.view">
+            <field name="name">aurb_sale_order_line_tree</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_order_line_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='qty_delivered']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+                <xpath expr="//field[@name='qty_invoiced']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+                <xpath expr="//field[@name='qty_to_invoice']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

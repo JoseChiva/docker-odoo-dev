@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="auren_otools_group_custom_category" model="ir.module.category">
+            <field name="name">Auren Otools</field>
+        </record>
+        <record id="auren_otools_subgroup_custom_category" model="ir.module.category">
+            <field name="name">ar_access_right</field>
+            <field name="parent_id" ref="auren_otools.auren_otools_group_custom_category"/>
+        </record>
+    
+        <record id="auren_otools_user_group" model="res.groups">
+            <field name="name">ar_user</field>
+            <field name="category_id" ref="auren_otools.auren_otools_subgroup_custom_category"/> 
+        </record>
+        <record id="auren_otools_admin_group" model="res.groups">
+            <field name="name">ar_admin</field>
+            <field name="category_id" ref="auren_otools.auren_otools_subgroup_custom_category"/>
+            <field name="implied_ids" eval="[(6, 0, [ref('auren_otools.auren_otools_user_group')])]"/>
+        </record>
+    
+     
+</odoo>

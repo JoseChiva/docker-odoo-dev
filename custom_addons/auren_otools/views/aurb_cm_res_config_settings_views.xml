@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_cm_res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.auren.cm</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="99" />
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="auren_otools"
+                        id="auren_otools" string="Auren Otools"
+                        name="auren_otools"
+                    >
+                        <div
+                            class="app_settings_block" data-string="Auren Otools"
+                            string="Auren Otools"
+                            data-key="auren_otools"
+                        >
+                            <block title="Inventario" id="end_inv_settings">
+                                <setting string="Artículos con dimensiones">
+
+                                    <field name="group_dim_inv" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_dim_inv">
+                                        <group>
+                                            <field name="var1_s" string="Nombre dimensión 1" />
+                                            <field name="group_dim_var1" invisible="True" />
+                                            <field name="var2_s" string="Nombre dimensión 2" />
+                                            <field name="group_dim_var2" invisible="True" />
+                                            <field name="var3_s" string="Nombre dimensión 3" />
+                                            <field name="group_dim_var3" invisible="True" />
+                                            <field name="formula_s" string="Fórmula" />
+                                            <field name="uom_sale"
+                                                string="UoM de cálculo fórmula" />
+                                            <field name="formula_s_2" string="Fórmula" />
+                                            <field name="uom_sale_2"
+                                                string="UoM de cálculo fórmula 2" />
+                                            <field name="formula_s_3" string="Fórmula" />
+                                            <field name="uom_sale_3"
+                                                string="UoM de cálculo fórmula 3" />
+                                            <field name="formula_s_4" string="Fórmula" />
+                                            <field name="uom_sale_4"
+                                                string="UoM de cálculo fórmula 4" />
+                                        </group>
+                                    </div>
+                                </setting>
+                                <setting string="Gestión EAN automático" company_dependent="1">
+                                    <field name="extended_ean_product" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not extended_ean_product">
+                                        <group>
+                                            <field name="extended_ean_product_country"/>
+                                            <field name="extended_ean_product_company" />
+                                            <field name="extended_ean_product_counter"/>
+                                        </group>
+                                    </div>
+                                </setting>
+                                <setting string="Cost standard">
+                                    <field name="group_cost_standard" />
+                                </setting>
+
+                            </block>
+                            <block title="Compras"
+                                id="end_purchase_settings"
+                            >
+                                <setting string="Inventario UoM Ampliada">
+                                    <field name="group_extended_uom_purchase" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_extended_uom_purchase">
+                                        <group>
+                                            <field name="group_extended_uom_purchase_con" />
+                                            <field name="group_extended_uom_purchase_qty" />
+                                        </group>
+                                    </div>
+
+                                </setting>
+                                <setting string="Gestión con dimensiones"
+                                    invisible="not group_dim_inv">
+                                    <field name="group_dim_purchase" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_dim_purchase">
+                                        <group>
+                                            <field name="group_dim_var1_purchase" invisible="True"
+                                                force_save="1" />
+                                            <field name="group_dim_var2_purchase" invisible="True"
+                                                force_save="1" />
+                                            <field name="group_dim_var3_purchase" invisible="True"
+                                                force_save="1" />
+                                            <field name="var_readonly_p" />
+                                        </group>
+                                    </div>
+                                </setting>
+                            </block>
+                            <block title="Ventas" id="end_sale_settings">
+                                <setting string="Inventario UoM Ampliada">
+                                    <field name="group_extended_uom_sale" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_extended_uom_sale">
+                                        <group>
+                                            <field name="group_extended_uom_sale_con" />
+                                            <field name="group_extended_uom_sale_qty" />
+                                        </group>
+                                    </div>
+                                </setting>
+                                <setting string="Gestión con dimensiones"
+                                    invisible="not group_dim_inv">
+
+                                    <field name="group_dim_sales" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_dim_sales">
+                                        <group>
+                                            <field name="group_dim_var1_sales" invisible="True"
+                                                force_save="1" />
+                                            <field name="group_dim_var2_sales" invisible="True"
+                                                force_save="1" />
+                                            <field name="group_dim_var3_sales" invisible="True"
+                                                force_save="1" />
+                                            <field name="var_readonly_s" />
+                                        </group>
+                                    </div>
+                                    <!-- <div class="text-muted content-group mt16"
+                                            invisible="not group_dim_sales">
+                                            <group>
+                                                <field name="var1_s" string="Nombre dimensión 1" />
+                                                <field name="var2_s" string="Nombre dimensión 2" />
+                                                <field name="var3_s" string="Nombre dimensión 3" />
+                                                <field name="formula_s" string="Formula" />
+                                            </group>
+
+                                        </div> -->
+                                </setting>
+                                <setting string="Gestión de registro de compradores">
+                                    <field name="sale_autorization_management" />
+                                </setting>
+                                <setting string="Gestión de descuentos ampliada">
+
+                                    <field name="group_extended_discount" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_extended_discount">
+                                        <field
+                                            name="type_discount" invisible="True" />
+
+                                        <group col="1">
+                                            <group>
+                                                <field name="group_extended_discount_1" />
+                                                <field name="desc_group_extended_discount_1"
+                                                    invisible="group_extended_discount_1!=True" />
+                                                <field name="operation_discount_1"
+                                                    invisible="group_extended_discount_1!=True" />
+                                            </group>
+                                            <group>
+                                                <field name="group_extended_discount_2" />
+                                                <field name="desc_group_extended_discount_2"
+                                                    invisible="group_extended_discount_2!=True" />
+                                                <field name="operation_discount_2"
+                                                    invisible="group_extended_discount_2!=True" />
+                                            </group>
+                                            <group>
+                                                <field name="group_extended_discount_3" />
+                                                <field name="desc_group_extended_discount_3"
+                                                    invisible="group_extended_discount_3!=True" />
+                                                <field name="operation_discount_3"
+                                                    invisible="group_extended_discount_3!=True" />
+                                            </group>
+                                            <group>
+                                                <field name="group_extended_discount_4" />
+                                                <field name="desc_group_extended_discount_4"
+                                                    invisible="group_extended_discount_4!=True" />
+                                                <field name="operation_discount_4"
+                                                    invisible="group_extended_discount_4!=True" />
+                                            </group>
+                                            <group>
+                                                <field name="group_extended_discount_5" />
+                                                <field name="desc_group_extended_discount_5"
+                                                    invisible="group_extended_discount_5!=True" />
+                                                <field name="operation_discount_5"
+                                                    invisible="group_extended_discount_5!=True" />
+                                            </group>
+                                            <group>
+                                                <field
+                                                    name="group_extended_discount_6" />
+                                                <field
+                                                    name="desc_group_extended_discount_6"
+                                                    invisible="group_extended_discount_6!=True" />
+                                                <field name="operation_discount_6"
+                                                    invisible="group_extended_discount_6!=True" />
+                                            </group>
+                                        </group>
+                                    </div>
+                                </setting>
+
+                                <setting string="Gestión de descuentos ampliada cabecera">
+
+                                    <field name="group_head_extended_discount" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_head_extended_discount">
+                                        
+                                        <field
+                                            name="type_discount" invisible="True" />
+
+                                        <group col="1">
+                                            <group>
+                                                <field name="add_vat_line_discount"/>
+                                                <field name="group_head_extended_discount_1" />
+                                                <field name="desc_group_head_extended_discount_1"
+                                                    invisible="group_head_extended_discount_1!=True" />
+                                                <field
+                                                    name="product_discount_1_id"
+                                                    invisible="group_head_extended_discount_1!=True" />
+                                                <field name="operation_head_discount1"
+                                                    invisible="group_head_extended_discount_1!=True" />
+                                            </group>
+                                            <group>
+                                                <field name="group_head_extended_discount_2" />
+                                                <field name="desc_group_head_extended_discount_2"
+                                                    invisible="group_head_extended_discount_2!=True" />
+                                                <field
+                                                    name="product_discount_2_id"
+                                                    invisible="group_head_extended_discount_2!=True" />
+                                                <field name="operation_head_discount2"
+                                                    invisible="group_head_extended_discount_2!=True" />
+                                            </group>
+                                            <group>
+                                                <field name="group_head_extended_discount_3" />
+                                                <field name="desc_group_head_extended_discount_3"
+                                                    invisible="group_head_extended_discount_3!=True" />
+                                                <field
+                                                    name="product_discount_3_id"
+                                                    invisible="group_head_extended_discount_3!=True" />
+                                                <field name="operation_head_discount3"
+                                                    invisible="group_head_extended_discount_3!=True" />
+                                            </group>
+                                            <group>
+                                                <field name="group_head_extended_discount_4" />
+                                                <field name="desc_group_head_extended_discount_4"
+                                                    invisible="group_head_extended_discount_4!=True" />
+                                                <field
+                                                    name="product_discount_4_id"
+                                                    invisible="group_head_extended_discount_4!=True" />
+                                                <field name="operation_head_discount4"
+                                                    invisible="group_head_extended_discount_4!=True" />
+                                            </group>
+                                            <group>
+                                                <field name="group_head_extended_discount_5" />
+                                                <field name="desc_group_head_extended_discount_5"
+                                                    invisible="group_head_extended_discount_5!=True" />
+                                                <field
+                                                    name="product_discount_5_id"
+                                                    invisible="group_head_extended_discount_5!=True" />
+                                                <field name="operation_head_discount5"
+                                                    invisible="group_head_extended_discount_5!=True" />
+                                            </group>
+                                            <group>
+                                                <field
+                                                    name="group_head_extended_discount_6" />
+                                                <field
+                                                    name="desc_group_head_extended_discount_6"
+                                                    invisible="group_head_extended_discount_6!=True" />
+                                                <field
+                                                    name="product_discount_6_id"
+                                                    invisible="group_head_extended_discount_6!=True" />
+                                                <field name="operation_head_discount6"
+                                                    invisible="group_head_extended_discount_6!=True" />
+                                            </group>
+                                        </group>
+                                    </div>
+                                </setting>
+                                <setting string="Picking ampliado">
+                                    <field name="group_picking" />
+                                </setting>
+
+
+                            </block>
+                            <block title="Facturación" id="end_invoicing_settings">
+                                <setting string="Diario contable por ubicación">
+                                    <field name="journal_for_location" />
+                                </setting>
+                            </block>
+                        </div>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="auren_cm_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'auren_otools', 'bin_size': False}</field>
+        </record>
+
+        <!-- <menuitem id="fleet_config_settings_menu" name="Settings"
+            parent="fleet.fleet_configuration" sequence="0" action="fleet_config_settings_action"
+            groups="base.group_system"/> -->
+    </data>
+</odoo>
