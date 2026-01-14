@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="frm_auren_man_mrp_workorder_tree_view" model="ir.ui.view">
+            <field name="name">frm_auren_man_mrp_workorder_tree_view</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">           
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

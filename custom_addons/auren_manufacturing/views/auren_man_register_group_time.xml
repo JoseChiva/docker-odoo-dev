@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_auren_man_register_group_time_" model="ir.actions.act_window">
+            <field name="name">Registro de agrupación de tiempos</field>
+            <field name="res_model">auren.man.register.group.time</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'search_default_imygroup': 1}</field>
+        </record>
+        <record id="src_auren_man_register_group_time_" model="ir.ui.view">
+            <field name="name">Registro de agrupación de tiempos</field>
+            <field name="model">auren.man.register.group.time</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="company_id" groups="base.group_multi_company" />
+                    <field name="employee_assigned_id" />
+                    <field name="state" />
+                    <separator />
+                    <filter name="imygroup" string="Mis agrupaciones"
+                        domain="[('employee_assigned_id.user_id','=',uid)]" />
+                    <filter name="iactive" string="Archived" domain="[('active','=',False)]" />
+                    <filter name="ipend" string="Pendientes" domain="[('state','=','pend')]" />
+                    <filter name="istart" string="Iniciadas" domain="[('state','=','start')]" />
+                    <filter name="iend" string="Finalizadas" domain="[('state','=','end')]" />
+                    <separator />
+                    <group expand="0">
+                        <filter name="Estado" context="{'group_by':'state'}" />
+                        <filter name="loss_id" context="{'group_by':'loss_id'}" />
+                        <filter name="workcenter_id" context="{'group_by':'workcenter_id'}" />
+                        <filter name="employee_assigned_id"
+                            context="{'group_by':'employee_assigned_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="lst_auren_man_register_group_time_" model="ir.ui.view">
+            <field name="name">Registro de agrupación de tiempos</field>
+            <field name="model">auren.man.register.group.time</field>
+            <field name="arch" type="xml">
+                <list string="Routing Work Centers">
+                    <field name="name" />
+                    <field name="employee_assigned_id" />
+                    <field name="state" />
+                    <field name="loss_id" />
+                    <field name="date_start" />
+                    <field name="date_end" />
+                    <field name="duration" />
+                    <field name="workorder_ids" widget="many2many_tags" />
+                    <field name="workcenter_prod_ids" />
+                    <button name="start_time" string="INICIAR" type="object"
+                        invisible="state not in ('pend','reg')"
+                        class="btn btn-success text-uppercase" />
+                    <!-- invisible="account_type in ('asset_cash', 'liability_credit_card') or
+                    internal_group == 'off_balance'" -->
+                    <button name="end_time" string="PARAR" type="object"
+                        invisible="state not in ('start')" class="btn btn-warning text-uppercase" />
+                    <button name="close_time" string="CERRAR" type="object"
+                        invisible="state not in ('reg')" class="btn btn-danger text-uppercase" />
+                </list>
+            </field>
+        </record>
+        <record id="frm_auren_man_register_group_time_" model="ir.ui.view">
+            <field name="name">Registro de agrupación de tiempos</field>
+            <field name="model">auren.man.register.group.time</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="start_time" string="INICIAR" type="object"
+                            invisible="state not in ('pend','reg')"
+                            class="btn btn-success text-uppercase" />
+                        <!-- invisible="account_type in ('asset_cash', 'liability_credit_card') or
+                    internal_group == 'off_balance'" -->
+                        <button name="end_time" string="PARAR" type="object"
+                            invisible="state not in ('start')"
+                            class="btn btn-warning text-uppercase" />
+                        <button name="close_time" string="CERRAR" type="object"
+                            invisible="state not in ('reg')" class="btn btn-danger text-uppercase" />
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="state!='pend'" />
+                        </h1>
+                    </div>
+                    <group name="general_info">
+                        <field name="employee_assigned_id" readonly="state!='pend'" />
+                        <field name="workcenter_id" readonly="state!='pend'" />
+                        <field name="loss_id" readonly="state!='pend'" />
+                        <field name="date_start" readonly="state!='pend'" />
+                        <field name="date_end" readonly="state!='pend'" />
+                        <field name="duration" readonly="state!='pend'" />
+
+                    </group>
+                    <notebook>
+                        <page name="work_order" string="Operaciones a realizar">
+                            <field name="workorder_ids" no_label="1" readonly="state!='pend'">
+                                <form editable="bottom" create="0" delete="0">
+                                    <field name="production_id" />
+                                    <field name="name" />
+                                    <field name="description"/>
+                                    <field name="qty_remaining"/>
+                                    <field name="time_start" sum="Total Setup time"/>
+                                    <field name="time_stop" sum="Total Cleanup time"/>
+                                    <field name="x_numop"/>
+                                    <field name="x_minop"/>
+                                    <field name="duration_expected"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="workcenter_productivity" string="Tiempos registrados">
+                            <field name="workcenter_prod_ids" no_label="1"
+                                readonly="1" force_save="1">
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <menuitem id="menu_auren_man_register_group_time_action"
+            name="Registro de tiempo agrupado"
+            action="act_auren_man_register_group_time_"
+            parent="mrp.menu_mrp_manufacturing"
+            sequence="150" />
+    </data>
+
+
+</odoo>

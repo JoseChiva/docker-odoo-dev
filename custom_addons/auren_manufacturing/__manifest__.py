@@ -1,0 +1,22 @@
+{
+    'name': "auren_otools_manufacturing",
+    'version': '17.1.4',
+    'depends': ['base', 'mrp', 'auren_otools'],
+    'category': 'Category',
+    'description': "Módulo de adaptaciones de producción",
+    'website': 'https://www.auren.com/',
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'data': [
+        'security/ir.model.access.csv',
+        'views/inherit_mrp_bom_view.xml',
+        'views/inherit_mrp_routing_workcenter_view.xml',
+        'views/auren_man_template_mrp_routing_workcenter_view.xml',
+        'views/auren_man_mrp_production_form_view.xml',
+        'views/auren_man_mrp_workorder_view.xml',
+        'views/auren_man_register_group_time.xml',
+        'wizard/auren_man_repartimiento_tiempo_view.xml',
+    ],
+    'license': 'LGPL-3',
+}

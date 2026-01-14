@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_auren_man_repartimiento_tiempo" model="ir.actions.act_window">
+            <field name="name">Repartimiento de tiempo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">auren.man.repartimiento.tiempo</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="frm_auren_man_repartimiento_tiempo" model="ir.ui.view">
+            <field name="name">frm_auren_man_repartimiento_tiempo</field>
+            <field name="model">auren.man.repartimiento.tiempo</field>
+            <field name="arch" type="xml">
+                <form>
+                        <group name="general_info" >
+                            <field name="mrp_production_id" readonly='True' force_save='True'/>
+                            <field name="employee_assigned_id"/>
+                            <field name="loss_id"/>
+                            <field name="time_total"/>
+                        </group>
+                        <footer>
+                            <button name="action_repartimiento_tiempos" string="Repartir tiempo" type="object"
+                            confirm="Se procederá a la creación de tiempo repartiendo por %, está seguro que desea continuar?"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

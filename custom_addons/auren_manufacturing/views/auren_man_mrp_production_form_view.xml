@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="frm_auren_man_mrp_production_form_view" model="ir.ui.view">
+            <field name="name">frm_auren_man_mrp_production_form_view</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='operations']" position="inside">
+                    <button name="action_repartimiento_tiempos"
+                        invisible="state in ['draft']"
+                        string="Repartimiento automático de tiempo" type="object" />
+                </xpath>
+                <xpath expr="//page[@name='components']/field[@name='move_raw_ids']/tree/field[@name='quantity']" position="before">
+                    <field name="unit_ua" force_save="1" groups="auren_otools.group_dim_inv"/>
+                    <field name="var1" force_save="1" groups="auren_otools.group_dim_var1"/>
+                    <field name="var2" force_save="1" groups="auren_otools.group_dim_var2"/>
+                    <field name="var3" force_save="1" groups="auren_otools.group_dim_var3"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="frm_auren_man_mrp_production_workorder_tree_view" model="ir.ui.view">
+            <field name="name">frm_auren_man_mrp_production_workorder_tree_view</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='qty_remaining']"
+                    position="after">
+                    <field name="description"  force_save="1" readonly="state in ['cancel', 'done', 'progress']" optional="show"/>
+                    <field name="time_start" sum="Total Setup time" force_save="1" readonly="state in ['cancel', 'done', 'progress']" optional="show"/>
+                    <field name="time_stop" sum="Total Cleanup time" force_save="1" readonly="state in ['cancel', 'done', 'progress']" optional="show"/>
+                    <field name="x_numop" force_save="1" readonly="state in ['cancel', 'done', 'progress']" optional="show"/>
+                    <field name="x_minop" force_save="1" readonly="state in ['cancel', 'done', 'progress']" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+        <!-- <record id="frm_auren_man_mrp_production_workorder_form_view_inherit" model="ir.ui.view">
+            <field name="name">frm_auren_man_mrp_production_workorder_form_view_inherit</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='workcenter_id']"
+                    position="after">
+                    <field name="description"  readonly="state in ['cancel', 'done', 'progress']"/>
+                    <field name="time_start" readonly="state in ['cancel', 'done', 'progress']"/>
+                    <field name="time_stop" readonly="state in ['cancel', 'done', 'progress']"/>
+                    <field name="x_numop" readonly="state in ['cancel', 'done', 'progress']"/>
+                    <field name="x_minop" readonly="state in ['cancel', 'done', 'progress']"/>
+                </xpath>
+            </field>
+        </record> -->
+        
+    </data>
+</odoo>
