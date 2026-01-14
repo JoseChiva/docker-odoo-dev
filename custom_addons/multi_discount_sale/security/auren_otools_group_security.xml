@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="group_extended_discount" model="res.groups">
+            <field name="name">group_extended_discount</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+
+        </record>
+        <record id="group_extended_discount_1" model="res.groups">
+            <field name="name">group_extended_discount_1</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_extended_discount_2" model="res.groups">
+            <field name="name">group_extended_discount_2</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_extended_discount_3" model="res.groups">
+            <field name="name">group_extended_discount_3</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_extended_discount_4" model="res.groups">
+            <field name="name">group_extended_discount_4</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_extended_discount_5" model="res.groups">
+            <field name="name">group_extended_discount_5</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_extended_discount_6" model="res.groups">
+            <field name="name">group_extended_discount_6</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        
+        <record id="group_head_extended_discount" model="res.groups">
+            <field name="name">group_head_extended_discount</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+            
+        </record>
+        <record id="group_head_extended_discount_1" model="res.groups">
+            <field name="name">group_head_extended_discount_1</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+        <record id="group_head_extended_discount_2" model="res.groups">
+            <field name="name">group_head_extended_discount_2</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+        <record id="group_head_extended_discount_3" model="res.groups">
+            <field name="name">group_head_extended_discount_3</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+        <record id="group_head_extended_discount_4" model="res.groups">
+            <field name="name">group_head_extended_discount_4</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>   
+        <record id="group_head_extended_discount_5" model="res.groups">
+            <field name="name">group_head_extended_discount_5</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>   
+        <record id="group_head_extended_discount_6" model="res.groups">
+            <field name="name">group_head_extended_discount_6</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>   
+    </data>
+</odoo>

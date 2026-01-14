@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="multi_discount_sale_sale_order_form" model="ir.ui.view">
+            <field name="name">multi_discount_sale_sale_order_form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/list//field[@name='discount']"
+                 position="before">
+                 <field name="disc_1" groups="multi_discount_sale.group_extended_discount_1" optional="show"/>
+                 <field name="disc_2" groups="multi_discount_sale.group_extended_discount_2" optional="show"/>
+                 <field name="disc_3" groups="multi_discount_sale.group_extended_discount_3" optional="show"/>
+                 <field name="disc_4" groups="multi_discount_sale.group_extended_discount_4" optional="show"/>
+                 <field name="disc_5" groups="multi_discount_sale.group_extended_discount_5" optional="show"/>
+                 <field name="disc_6" groups="multi_discount_sale.group_extended_discount_6" optional="show"/>
+                 <field name="type_disc" optional="hide" force_save="1" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
