@@ -109,6 +109,24 @@ class AurbaStoreAccountPaymentRegister(models.TransientModel):
                     record.amount = record.amount+diff
                     record.change_cash = -diff
 
+    def action_create_payments(self):
+        """
+        Sobrescribe el método estándar para actualizar el preferred_payment_method_line_id
+        de la factura con el payment_method_line_id seleccionado en el wizard antes de crear el pago.
+        Así el pago se crea con el método de pago correcto.
+        """
+        # Actualizar el preferred_payment_method_line_id de las facturas vinculadas al wizard
+        if self.payment_method_line_id and hasattr(self, 'line_ids'):
+            # Obtener las facturas desde las líneas del wizard
+            invoices = self.line_ids.mapped('move_id')
+            if invoices:
+                # Actualizar el método de pago preferido en cada factura
+                for invoice in invoices:
+                    invoice.preferred_payment_method_line_id = self.payment_method_line_id.id
+        
+        # Llamar al método padre para crear los pagos con el método estándar
+        return super(AurbaStoreAccountPaymentRegister, self).action_create_payments()
+
 
 def get_list_currency(currencies, self):
     lines_bill = []
