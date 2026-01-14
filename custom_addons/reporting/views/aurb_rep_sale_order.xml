@@ -14,10 +14,10 @@
                         
                     </page>
                 </xpath>
-                <!-- <xpath expr="//button[@name='action_cancel']"
+                <xpath expr="//button[@name='action_cancel']"
                     position="after" >
                     <button name="action_print_default" string="action_print_default" type="object"/>
-                </xpath> -->
+                </xpath>
             </field>
         </record>
     </data>
