@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="extended_uom_sale_order" model="ir.ui.view">
+            <field name="name">extended_uom_sale_order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/list//field[@name='product_uom_qty']"
+                    position="before" groups="extended_uom.group_dim_sales">
+                    <field name="unit" groups="extended_uom.group_dim_sales" optional="show" />
+                    <field name="var1" groups="extended_uom.group_dim_var1_sales" optional="show"/>
+                    <field name="var2" groups="extended_uom.group_dim_var2_sales" optional="show"/>
+                    <field name="var3" groups="extended_uom.group_dim_var3_sales" optional="show"/>
+                    <field name="qty_inventory" string="Cantidad inventario" readonly="True" groups="extended_uom.group_extended_uom_sale_qty" optional="show" force_save="1"/>
+                    <field name="conversion_factor" string="Factor UoM" readonly="True" groups="extended_uom.group_extended_uom_sale_con" optional="show" force_save="1"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

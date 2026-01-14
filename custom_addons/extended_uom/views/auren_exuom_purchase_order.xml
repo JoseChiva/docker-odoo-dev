@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="extended_uom_purchase_order" model="ir.ui.view">
+            <field name="name">extended_uom_purchase_order</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='order_line']/list//field[@name='product_qty']"
+                    position="before">
+                    <field name="unit" groups="extended_uom.group_dim_purchase" optional="show"/>
+                    <field name="var1" groups="extended_uom.group_dim_var1_purchase" optional="show"/>
+                    <field name="var2" groups="extended_uom.group_dim_var2_purchase" optional="show"/>
+                    <field name="var3" groups="extended_uom.group_dim_var3_purchase" optional="show"/>
+                    <field name="qty_inventory" string="Cantidad inventario" readonly="True" groups="extended_uom.group_extended_uom_purchase_qty" optional="show" force_save="1"/>
+                    <field name="conversion_factor" string="Factor Uom" readonly="True" groups="extended_uom.group_extended_uom_purchase_con" optional="show" force_save="1"/>
+                    <field name="unit_scadal" string="Cant. Esc." readonly="True" groups="extended_uom.group_extended_uom_scandal" optional="show" force_save="1"/>
+                    <field name="uom_scandal_id" string="UdE" readonly="True" groups="extended_uom.group_extended_uom_scandal" optional="show" force_save="1"/>
+                    <field name="unit_factor_scandal" string="FactE" readonly="True" groups="extended_uom.group_extended_uom_scandal" optional="show" force_save="1"/>
+
+
+
+                    
+                    
+                    <!-- <field name="unit__factor" string="Conversión dim" readonly="True" /> -->
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

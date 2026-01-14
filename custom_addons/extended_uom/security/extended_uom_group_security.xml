@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="group_dim_inv" model="res.groups">
+            <field name="name">group_dim_inv</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_dim_sales" model="res.groups">
+            <field name="name">group_dim_sales</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_dim_var1" model="res.groups">
+            <field name="name">group_dim_var1</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_dim_var2" model="res.groups">
+            <field name="name">group_dim_var2</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_dim_var3" model="res.groups">
+            <field name="name">group_dim_var3</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+
+        <record id="group_dim_var1_sales" model="res.groups">
+            <field name="name">group_dim_var1_sales</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_dim_var2_sales" model="res.groups">
+            <field name="name">group_dim_var2_sales</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_dim_var3_sales" model="res.groups">
+            <field name="name">group_dim_var3_sales</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+
+        <record id="group_dim_purchase" model="res.groups">
+            <field name="name">group_dim_purchase</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_dim_var1_purchase" model="res.groups">
+            <field name="name">group_dim_var1_purchase</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_dim_var2_purchase" model="res.groups">
+            <field name="name">group_dim_var2_purchase</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_dim_var3_purchase" model="res.groups">
+            <field name="name">group_dim_var3_purchase</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+
+        <record id="group_extended_uom_sale" model="res.groups">
+            <field name="name">group_extended_uom_sale</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+
+        <record id="group_extended_uom_sale_qty" model="res.groups">
+            <field name="name">group_extended_uom_sale_qty</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_extended_uom_sale_con" model="res.groups">
+            <field name="name">group_extended_uom_sale_con</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+
+
+        <record id="group_extended_uom_purchase" model="res.groups">
+            <field name="name">group_extended_uom_purchase</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_extended_uom_purchase_qty" model="res.groups">
+            <field name="name">group_extended_uom_purchase_qty</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_extended_uom_purchase_con" model="res.groups">
+            <field name="name">group_extended_uom_purchase_con</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="group_extended_uom_scandal" model="res.groups">
+            <field name="name">group_extended_uom_scandal</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+    </data>
+</odoo>

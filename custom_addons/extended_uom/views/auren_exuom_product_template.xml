@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="extended_uom_product_template_uom_" model="ir.ui.view">
+            <field name="name">extended_uom_product_template_uom_</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     new_field after it -->
+                <xpath expr="//field[@name='uom_po_id']" position="after">
+                    <field name="uom_sale_id" string="Ud. Venta" />
+                    <field name="uom_scandal_id" string="Ud. Escandallo" />
+                </xpath>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page name="Dimensiones" string="Dimensiones" groups="extended_uom.group_dim_inv">
+                        <group name="cm_inv" string="Gestión dimensiones">
+                            <field name="var1_s" groups="extended_uom.group_dim_var1"/> 
+                            <field name="var2_s" groups="extended_uom.group_dim_var2"/>
+                            <field name="var3_s" groups="extended_uom.group_dim_var3"/>
+                        </group>
+                    </page>
+
+                </xpath>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page name="Uom Sale" string="Uds. Venta" groups="extended_uom.group_extended_uom_sale">
+                        <group>
+                            <field name="uom_id" readonly="True"/>                                   
+                        </group>
+                        <field name="uom_sale_factor_ids">
+                            <list string="Product Uom List" editable="bottom" >
+                                <field name="product_id" readonly="True" column_invisible="1"/>
+                                <field name="uom_id" string="Ud. Venta" options="{'no_create': True}"/>
+                                <field name="conversion_factor"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page name="Uom Purchase" string="Uds. Compra" groups="extended_uom.group_extended_uom_purchase">
+                        <group>
+                            <field name="uom_id" readonly="True"/>                                   
+                        </group>
+                        <field name="uom_purchase_factor_ids">
+                            <list string="Product Uom List" editable="bottom" >
+                                <field name="product_id" readonly="True" column_invisible="1"/>
+                                <field name="uom_id" string="Ud. Compra" options="{'no_create': True}"/>
+                                <field name="conversion_factor"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page name="Uom Scandal" string="Uds. Escandallo" groups="extended_uom.group_extended_uom_scandal">
+                        <group>
+                            <field name="uom_id" readonly="True"/>                                   
+                        </group>
+                        <field name="uom_scandal_factor_ids">
+                            <list string="Product Uom List" editable="bottom" >
+                                <field name="product_id" readonly="True" column_invisible="1"/>
+                                <field name="uom_id" string="Ud. Compra" options="{'no_create': True}"/>
+                                <field name="conversion_factor"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

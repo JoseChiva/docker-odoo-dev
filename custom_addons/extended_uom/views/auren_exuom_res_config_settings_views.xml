@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="auren_cm_res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.auren.cm</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="99" />
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="extended_uom"
+                        id="extended_uom" string="Extended Uom"
+                        name="extended_uom"
+                    >
+                        <div
+                            class="app_settings_block" data-string="Extended Uom"
+                            string="Extended Uom"
+                            data-key="extended_uom"
+                        >
+                            <block title="Inventario" id="end_inv_settings">
+                                <setting string="Artículos con dimensiones">
+
+                                    <field name="group_dim_inv" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_dim_inv">
+                                        <group>
+                                            <field name="var1_s" string="Nombre dimensión 1" />
+                                            <field name="group_dim_var1" invisible="True" />
+                                            <field name="var2_s" string="Nombre dimensión 2" />
+                                            <field name="group_dim_var2" invisible="True" />
+                                            <field name="var3_s" string="Nombre dimensión 3" />
+                                            <field name="group_dim_var3" invisible="True" />
+                                            <field name="formula_s" string="Fórmula" />
+                                            <field name="uom_sale"
+                                                string="UoM de cálculo fórmula" />
+                                            <field name="formula_s_2" string="Fórmula" />
+                                            <field name="uom_sale_2"
+                                                string="UoM de cálculo fórmula 2" />
+                                            <field name="formula_s_3" string="Fórmula" />
+                                            <field name="uom_sale_3"
+                                                string="UoM de cálculo fórmula 3" />
+                                            <field name="formula_s_4" string="Fórmula" />
+                                            <field name="uom_sale_4"
+                                                string="UoM de cálculo fórmula 4" />
+                                        </group>
+                                    </div>
+                                </setting>
+                                
+                                <setting string="Scandal UoM Ampliada">
+                                    <field name="group_extended_uom_scandal" />
+                                </setting>
+
+                            </block>
+                            <block title="Compras"
+                                id="end_purchase_settings"
+                            >
+                                <setting string="Inventario UoM Ampliada">
+                                    <field name="group_extended_uom_purchase" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_extended_uom_purchase">
+                                        <group>
+                                            <field name="group_extended_uom_purchase_con" />
+                                            <field name="group_extended_uom_purchase_qty" />
+                                        </group>
+                                    </div>
+
+                                </setting>
+                                <setting string="Gestión con dimensiones"
+                                    invisible="not group_dim_inv">
+                                    <field name="group_dim_purchase" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_dim_purchase">
+                                        <group>
+                                            <field name="group_dim_var1_purchase" invisible="True"
+                                                force_save="1" />
+                                            <field name="group_dim_var2_purchase" invisible="True"
+                                                force_save="1" />
+                                            <field name="group_dim_var3_purchase" invisible="True"
+                                                force_save="1" />
+                                            <field name="var_readonly_p" />
+                                        </group>
+                                    </div>
+                                </setting>
+                            </block>
+                            <block title="Ventas" id="end_sale_settings">
+                                <setting string="Inventario UoM Ampliada">
+                                    <field name="group_extended_uom_sale" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_extended_uom_sale">
+                                        <group>
+                                            <field name="group_extended_uom_sale_con" />
+                                            <field name="group_extended_uom_sale_qty" />
+                                        </group>
+                                    </div>
+                                </setting>
+                                <setting string="Gestión con dimensiones"
+                                    invisible="not group_dim_inv">
+
+                                    <field name="group_dim_sales" />
+                                    <div class="text-muted content-group mt16"
+                                        invisible="not group_dim_sales">
+                                        <group>
+                                            <field name="group_dim_var1_sales" invisible="True"
+                                                force_save="1" />
+                                            <field name="group_dim_var2_sales" invisible="True"
+                                                force_save="1" />
+                                            <field name="group_dim_var3_sales" invisible="True"
+                                                force_save="1" />
+                                            <field name="var_readonly_s" />
+                                        </group>
+                                    </div>
+                                </setting>
+                            </block>
+                        </div>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="auren_cm_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'extended_uom', 'bin_size': False}</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+accs_auren_exuom_product_uom_sale,accs_auren_exuom_product_uom_sale,model_auren_exuom_product_uom_sale,base.group_user,1,1,1,1
+accs_auren_exuom_product_uom_purchase,accs_auren_exuom_product_uom_purchase,model_auren_exuom_product_uom_purchase,base.group_user,1,1,1,1
+accs_auren_exuom_product_uom_scandal,accs_auren_exuom_product_uom_scandal,model_auren_exuom_product_uom_scandal,base.group_user,1,1,1,1
