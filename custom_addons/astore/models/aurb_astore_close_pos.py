@@ -131,12 +131,12 @@ class AurbastoreCloseTpv(models.Model):
                         Command.create({
                             "name": text,
                             "account_id": account_id_debit,
-                            "debit": amount,
+                            "credit": amount,
                         }),
                         Command.create({
                             "name": text,
                             "account_id": account_id_credit,
-                            "credit": amount,
+                            "debit": amount,
                         }),
                     ],
                 })

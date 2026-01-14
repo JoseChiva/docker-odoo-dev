@@ -1,6 +1,6 @@
 {
     'name': 'auren_astore',
-    'version': '18.1.7',
+    'version': '18.1.8',
     'depends': [
         'base',
         'sale',
