@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+accs_aurb_cst_cost_standard,accs_aurb_cst_cost_standard,model_aurb_cst_cost_standard,base.group_user,1,1,1,1
+accs_aurb_cst_cost_standard_item,accs_aurb_cst_cost_standard_item,model_aurb_cst_cost_standard_item,base.group_user,1,1,1,1
+
