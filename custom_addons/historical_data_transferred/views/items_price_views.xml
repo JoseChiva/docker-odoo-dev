@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_items_price" model="ir.actions.act_window">
+            <field name="name">items price</field>
+            <field name="res_model">aurb.hdt.items.price</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_items_price" model="ir.ui.view">
+            <field name="name">items price List</field>
+            <field name="model">aurb.hdt.items.price</field>
+            <field name="arch" type="xml">
+                <tree string="items List">
+                    <field name="empresa_id" />
+                    <field name="codigo_id" />
+                    <field name="precio_std_1" />
+                    <field name="precio_std_2"/>
+                    <field name="precio_std_3"/>
+                    <field name="precio_std_4"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

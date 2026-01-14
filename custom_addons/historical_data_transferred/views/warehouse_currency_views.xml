@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_warehouse_currency" model="ir.actions.act_window">
+            <field name="name">Warehouse Currecny</field>
+            <field name="res_model">aurb.hdt.warehouse.currency</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_warehouse_currency" model="ir.ui.view">
+            <field name="name">Warehouse Currency List</field>
+            <field name="model">aurb.hdt.warehouse.currency</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouse List">
+                    <field name="empresa_id" />
+                    <field name="almacen_id" />
+                    <field name="moneda_ref_id" />
+                    <field name="moneda_cons_id"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_exercices" model="ir.actions.act_window">
+            <field name="name">Exercices</field>
+            <field name="res_model">aurb.hdt.exercices</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_exercices" model="ir.ui.view">
+            <field name="name">Exercices List</field>
+            <field name="model">aurb.hdt.exercices</field>
+            <field name="arch" type="xml">
+                <tree string="Exercices List">
+                    <field name="empresa_id" />
+                    <field name="ejercicio" />
+                    <field name="fecinicio" />
+                    <field name="fecfinal" />
+                    <field name="estado" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

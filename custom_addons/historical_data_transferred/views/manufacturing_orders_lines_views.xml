@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_hdt_manufacturing_orders_lines" model="ir.actions.act_window">
+            <field name="name">Manufacturing Orders Lines Filter</field>
+            <field name="res_model">aurb.hdt.manufacturing.orders.lines</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_manufacturing_orders_lines" model="ir.ui.view">
+            <field name="name">Manufacturing Orders Lines List</field>
+            <field name="model">aurb.hdt.manufacturing.orders.lines</field>
+            <field name="arch" type="xml">
+                <tree string="Manufacturing Orders Lines List">
+                    <field name="empresa_id" />
+                    <field name="ejercicio_id"/>
+                    <field name="tipo_movimiento"/>
+                    <field name="documento_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="src_hdt_manufacturing_orders_lines" model="ir.ui.view">
+            <field name="name">Manufacturing Orders Lines Search</field>
+            <field name="model">aurb.hdt.manufacturing.orders.lines</field>
+            <field name="arch" type="xml">
+                <search string="Manufacturing Orders Lines Search">
+                    <field name="name"/>
+                    <field name="tipo_movimiento"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

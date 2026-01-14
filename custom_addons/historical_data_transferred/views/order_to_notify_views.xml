@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_order_to_notify" model="ir.actions.act_window">
+            <field name="name">Order to notify</field>
+            <field name="res_model">aurb.hdt.order.to.notify</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_order_to_notify" model="ir.ui.view">
+            <field name="name">Order to notify List</field>
+            <field name="model">aurb.hdt.order.to.notify</field>
+            <field name="arch" type="xml">
+                <tree string="Order to notify List">
+                    <field name="empresa_id" />
+                    <field name="ejercicio_id" />
+                    <field name="almacen_id" />
+                    <field name="doc" />
+                    <field name="observacion" />
+                    <field name="faviso" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

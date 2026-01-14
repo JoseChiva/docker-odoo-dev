@@ -1,0 +1,4 @@
+empresa,almacen,moneda_ref,moneda_cons,subcta_compen,subcta_tr,diario_tr,concepto_tr,empresa_id,almacen_id,moneda_ref_id,moneda_cons_id,name
+1,1,9,,,,,,1,1_1,9,,1_1_9
+19,1,9,,,,,,19,19_1,9,,19_1_9
+19,1,,,,,,,19,19_1,,,

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_warehouse" model="ir.actions.act_window">
+            <field name="name">Warehouse</field>
+            <field name="res_model">aurb.hdt.warehouse</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_warehouse" model="ir.ui.view">
+            <field name="name">Warehouse List</field>
+            <field name="model">aurb.hdt.warehouse</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouse List">
+                    <field name="empresa_id" />
+                    <field name="nombre" />
+                    <field name="direccion" />
+                    <field name="poblacion"/>
+                    <field name="provincia"/>
+                    <field name="pais"/>
+                    <field name="cp"/>
+                    <field name="telefonos"/>
+                </tree>
+            </field>
+        </record>
+        <record id="frm_hdt_warehouse" model="ir.ui.view">
+            <field name="name">aur.hdt.warehouse.form</field>
+            <field name="model">aurb.hdt.warehouse</field>
+            <field name="arch" type="xml">
+                <form string="Warehouse Form">
+                    <sheet>
+                        <group>
+                            <field name="almacen" />
+                            <field name="nombre" />
+                            <field name="direccion" />
+                            <field name="poblacion" />
+                            <field name="pais" />
+                            <field name="provincia" />
+                            <field name="cp" />
+                            <field name="telefonos" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

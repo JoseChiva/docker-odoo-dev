@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_aurb_stock_movements" model="ir.actions.act_window">
+            <field name="name">act_aurb_stock_movements</field>
+            <field name="res_model">aurb.hdt.delivery.lines</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="src_aurb_stock_movements" model="ir.ui.view">
+            <field name="name">src_aurb_stock_movements</field>
+            <field name="model">aurb.hdt.delivery.lines</field>
+            <field name="arch" type="xml">
+                <search >
+                    <field name="empresa_id" groups="base.group_multi_company"/>
+                    <field name="name"/>
+                    <field name="document_lines_id"/>
+                    <field name="fecha_documento"/>
+                    <separator/>
+                    <filter name="filter_date" date=",'fecha_documento'"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="auren_hdt_group_custom_category" model="ir.module.category">
+        <field name="name">Historical Data Transferred</field>
+    </record>
+    <record id="auren_hdt_subgroup_custom_category" model="ir.module.category">
+        <field name="name">Permisos</field>
+        <field name="parent_id" ref="historical_data_transferred.auren_hdt_group_custom_category"/>
+    </record>
+
+    <record id="auren_hdt_user_group" model="res.groups">
+        <field name="name">Usuario</field>
+        <field name="category_id" ref="historical_data_transferred.auren_hdt_subgroup_custom_category"/> 
+    </record>
+    <record id="auren_hdt_admin_group" model="res.groups">
+        <field name="name">Administrador</field>
+        <field name="category_id" ref="historical_data_transferred.auren_hdt_subgroup_custom_category"/>
+        <field name="implied_ids" eval="[(6, 0, [ref('historical_data_transferred.auren_hdt_user_group')])]"/>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_pos_cumulative" model="ir.actions.act_window">
+            <field name="name">POS cumulative</field>
+            <field name="res_model">aurb.hdt.pos.cumulative</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_pos_cumulative" model="ir.ui.view">
+            <field name="name">POS cumulative List</field>
+            <field name="model">aurb.hdt.pos.cumulative</field>
+            <field name="arch" type="xml">
+                <tree string="POS cumulative List">
+                    <field name="empresa_id"/>
+                    <field name="ejercicio_id"/>
+                    <field name="almacen_id"/>
+                    <field name="fecha"/>
+                    <field name="cambio" />
+                    <field name="recaudacion" />
+                    <field name="efectivo" />
+                    <field name="ingreso" />
+                    <field name="moneda_id" />
+                    <field name="tpv_id"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_order_sales_manual_description" model="ir.actions.act_window">
+            <field name="name">Pedido venta manual description</field>
+            <field name="res_model">aurb.hdt.document.lines.manual.desc</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_tipo_doc_pv': True}</field>
+        </record>
+        <record id="act_hdt_order_purchase_manual_description" model="ir.actions.act_window">
+            <field name="name">Pedido compra manual description</field>
+            <field name="res_model">aurb.hdt.document.lines.manual.desc</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_tipo_doc_pc': True}</field>
+        </record>
+        <record id="act_hdt_order_budget_manual_description" model="ir.actions.act_window">
+            <field name="name">Presupuesto líneas manual description</field>
+            <field name="res_model">aurb.hdt.document.lines.manual.desc</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_tipo_doc_pp': True}</field>
+        </record>
+        <record id="lst_hdt_manual_description" model="ir.ui.view">
+            <field name="name">Order manual desc</field>
+            <field name="model">aurb.hdt.document.lines.manual.desc</field>
+            <field name="arch" type="xml">
+                <tree string="Pedido de venta lines List">
+                    <field name="empresa_id" />
+                    <field name="ejercicio"/>
+                    <field name="documento_id"/>
+                    <field name="descripcion" />
+                </tree>
+            </field>
+        </record>
+        <record id="src_hdt_manual_description" model="ir.ui.view">
+            <field name="name">Order manual desc Search</field>
+            <field name="model">aurb.hdt.document.lines.manual.desc</field>
+            <field name="arch" type="xml">
+                <search string="Manual description Search">
+                    <field name="name"/>
+                    <field name="tipo_doc"/>
+                    <filter string="Pedido venta" name="tipo_doc_pv" domain="[('tipo_doc', '=', 'PV')]"/>
+                    <filter string="Pedido compra" name="tipo_doc_pc" domain="[('tipo_doc', '=', 'PC')]"/>
+                    <filter string="Presupuesto" name="tipo_doc_pp" domain="[('tipo_doc', '=', 'PP')]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

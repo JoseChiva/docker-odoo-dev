@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_default_printer" model="ir.actions.act_window">
+            <field name="name">Default printer</field>
+            <field name="res_model">aurb.hdt.default.printer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_default_printer" model="ir.ui.view">
+            <field name="name">Default printer List</field>
+            <field name="model">aurb.hdt.default.printer</field>
+            <field name="arch" type="xml">
+                <tree string="Default printer List">
+                    <field name="empresa_id"/>
+                    <field name="usuario"/>
+                    <field name="tipo_doc" />
+                    <field name="impresora" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

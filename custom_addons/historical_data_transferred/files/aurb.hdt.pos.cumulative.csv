@@ -1,0 +1,4 @@
+empresa,ejercicio,almacen,fecha,cambio,recaudacion,efectivo,ingreso,moneda,cambio_mon,cambio_euro,tpv,empresa_id,ejercicio_id,almacen_id,moneda_id,tpv_id,name
+1,2012,,2012-10-15,,0.00000,0.00000,,9,1.000000,,1,1,1_2012,1_,9,1_1,1_1_2012-10-15
+1,2012,,2012-12-30,,0.00000,0.00000,,9,1.000000,,1,1,1_2012,1_,9,1_1,1_1_2012-12-30
+1,2013,,2013-02-13,,0.00000,0.00000,,9,1.000000,,1,1,1_2013,1_,9,1_1,1_1_2013-02-13

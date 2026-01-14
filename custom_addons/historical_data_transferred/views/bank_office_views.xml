@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_bank_office" model="ir.actions.act_window">
+            <field name="name">Bank Office</field>
+            <field name="res_model">aurb.hdt.bank.office</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_bank_office" model="ir.ui.view">
+            <field name="name">Bank Office List</field>
+            <field name="model">aurb.hdt.bank.office</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Office List">
+                    <field name="ccc1_id"/>
+                    <field name="ccc2"/>
+                    <field name="nombre" />
+                    <field name="direccion"/>
+                    <field name="poblacion"/>
+                    <field name="cp"/>
+                    <field name="telefono"/>
+                    <field name="swift"/>
+                    <field name="iban"/>
+                </tree>
+            </field>
+        </record>
+        <record id="frm_hdt_bank_office" model="ir.ui.view">
+            <field name="name">aur.hdt.bank.office.form</field>
+            <field name="model">aurb.hdt.bank.office</field>
+            <field name="arch" type="xml">
+                <form string="Bank Office Form">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="nombre" />
+                            <field name="direccion" />
+                            <field name="poblacion" />
+                            <field name="pais" />
+                            <field name="provincia" />
+                            <field name="cp" />
+                            <field name="telefono" />
+                            <field name="fax" />
+                            <field name="p_contacto" />
+                            <field name="iban" />
+                            <field name="swift" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

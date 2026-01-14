@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_pos_account_payment_method" model="ir.actions.act_window">
+            <field name="name">POS account payment method</field>
+            <field name="res_model">aurb.hdt.pos.account.payment.method</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_pos_account_payment_method" model="ir.ui.view">
+            <field name="name">POS account payment method List</field>
+            <field name="model">aurb.hdt.pos.account.payment.method</field>
+            <field name="arch" type="xml">
+                <tree string="POS account payment method List">
+                    <field name="empresa_id"/>
+                    <field name="almacen_id"/>
+                    <field name="codigo_pago_id" />
+                    <field name="subcta_id"/>
+                    <field name="concepto"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

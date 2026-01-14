@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_order_lines_sales" model="ir.actions.act_window">
+            <field name="name">Pedido líneas venta</field>
+            <field name="res_model">aurb.hdt.order.lines</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="context">{'search_default_tipo_movimiento_pv': True}</field>
+        </record>
+        <record id="act_hdt_order_purchase_lines" model="ir.actions.act_window">
+            <field name="name">Pedido líneas compra</field>
+            <field name="res_model">aurb.hdt.order.lines</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="context">{'search_default_tipo_movimiento_pc': True}</field>
+        </record>
+        <record id="act_hdt_order_budget_lines" model="ir.actions.act_window">
+            <field name="name">Presupuesto líneas</field>
+            <field name="res_model">aurb.hdt.order.lines</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="context">{'search_default_tipo_movimiento_pp': True}</field>
+        </record>
+        <record id="act_hdt_order_lines_pivot" model="ir.ui.view">
+            <field name="name">aurb.order.lines.pivot</field>
+            <field name="model">aurb.hdt.order.lines</field>
+            <field name="arch" type="xml">
+                <pivot string="Prueba 1" sample="1">
+                    <field name="fecha_documento" interval="month" type="col"/>
+                    <field name="subcta" type="row"/>
+                    <field name="articulo" type="row"/>
+                    <field name="cantidad" type="measure"/>
+                </pivot>
+            </field>
+       </record>
+        <record id="lst_hdt_order_lines" model="ir.ui.view">
+            <field name="name">Pedido de venta lines List</field>
+            <field name="model">aurb.hdt.order.lines</field>
+            <field name="arch" type="xml">
+                <tree string="Pedido de venta lines List">
+                    <field name="empresa_id" />
+                    <field name="ejercicio"/>
+                    <field name="linea_pedido"/>
+                    <field name="articulo"/>
+                    <field name="subcta"/>
+                    <field name="pedido_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="src_hdt_order_lines" model="ir.ui.view">
+            <field name="name">Pedido líneas Search</field>
+            <field name="model">aurb.hdt.order.lines</field>
+            <field name="arch" type="xml">
+                <search string="Pedido líneas Search">
+                    <field name="name"/>
+                    <field name="tipo_movimiento"/>
+                    <filter string="Pedido venta líneas" name="tipo_movimiento_pv" domain="[('tipo_movimiento', '=', 'PV')]"/>
+                    <filter string="Pedido compra líneas" name="tipo_movimiento_pc" domain="[('tipo_movimiento', '=', 'PC')]"/>
+                    <filter string="Presupuesto líneas" name="tipo_movimiento_pp" domain="[('tipo_movimiento', '=', 'PP')]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

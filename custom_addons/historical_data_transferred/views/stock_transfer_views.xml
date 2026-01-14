@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_hdt_stock_transfer" model="ir.actions.act_window">
+            <field name="name">Stock Transfer Filter</field>
+            <field name="res_model">aurb.hdt.stock.transfer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_stock_transfer" model="ir.ui.view">
+            <field name="name">Stock Transfer List</field>
+            <field name="model">aurb.hdt.stock.transfer</field>
+            <field name="arch" type="xml">
+                <tree string="Stock transfer List">
+                    <field name="empresa_id" />
+                    <field name="ejercicio_id"/>
+                    <field name="almacen_o_id"/>
+                    <field name="documento"/>
+                </tree>
+            </field>
+        </record>
+        <record id="src_hdt_stock_transfer" model="ir.ui.view">
+            <field name="name">Stock Transfer Search</field>
+            <field name="model">aurb.hdt.stock.transfer</field>
+            <field name="arch" type="xml">
+                <search string="Stock Transfer Search">
+                    <field name="name"/>
+                    <field name="tipo_doc"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

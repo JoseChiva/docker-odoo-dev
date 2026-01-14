@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_country_ce" model="ir.actions.act_window">
+            <field name="name">country ce</field>
+            <field name="res_model">aurb.hdt.country.ce</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_country_ce" model="ir.ui.view">
+            <field name="name">Country Ce List</field>
+            <field name="model">aurb.hdt.country.ce</field>
+            <field name="arch" type="xml">
+                <tree string="country Ce List">
+                    <field name="pais_id" />
+                    <field name="ce" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

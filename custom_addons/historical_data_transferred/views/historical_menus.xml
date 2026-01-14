@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="mn_hdt_main" name="Historical Data Transferred">
+        <menuitem id="mn_hdt_items" name="Items" sequence="001">
+            <menuitem id="mn_hdt_item" name="Item" sequence="0011" action="act_hdt_items"/>
+            <menuitem id="mn_hdt_item_desc" name="Item Desc" sequence="0012" action="act_hdt_items_desc" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_item_price" name="Item Price" sequence="0013" action="act_hdt_items_price" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_item_batch" name="Item batch" sequence="0014" action="act_hdt_items_batch" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_item_batch_piece" name="Item batch Piece" sequence="0015" action="act_hdt_items_batch_piece" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_item_batch_incident" name="Item batch incident" sequence="0016" action="act_hdt_items_batch_incident" groups="historical_data_transferred.auren_hdt_admin_group"/>
+        </menuitem>
+        <menuitem id="mn_hdt_order_sales" name="Sales" sequence="100">
+            <menuitem id="mn_hdt_order_sales_budget" name="Budget" sequence="110">
+                <menuitem id="mn_hdt_order_sales_budget_head" name="Sales Budget Head" sequence="111" action="act_hdt_order_budget"/>
+                <menuitem id="mn_hdt_order_sales_budget_lines" name="Sales Budget Lines" sequence="112" action="act_hdt_order_budget_lines" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_order_sales_budget_mandesc" name="Sales Budget Manual Description" sequence="113" action="act_hdt_order_budget_manual_description" groups="historical_data_transferred.auren_hdt_admin_group"/>    
+                <menuitem id="mn_hdt_order_sales_budget_notes" name="Sales Budget Observaciones" sequence="114" action="act_hdt_document_budget_notes" groups="historical_data_transferred.auren_hdt_admin_group"/>    
+                <menuitem id="mn_hdt_order_sales_budget_notes_lines" name="Sales Budget Observaciones Lines" sequence="115" action="act_hdt_order_budget_notes_lines" groups="historical_data_transferred.auren_hdt_admin_group"/>   
+                <menuitem id="mn_hdt_order_sales_budget_notes_lines_measures" name="Sales Budget Manual Measures Lines" sequence="116" action="act_hdt_order_budget_manual_description" groups="historical_data_transferred.auren_hdt_admin_group"/>   
+            </menuitem>
+            <menuitem id="mn_hdt_order_sales_sales_order" name="Sales Order" sequence="120">
+                <menuitem id="mn_hdt_order_sales_order_head" name="Sales Order" sequence="121" action="act_hdt_order_sales"/>
+                <menuitem id="mn_hdt_order_sales_order_lines" name="Sales Order Lines" sequence="122" action="act_hdt_order_lines_sales" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_order_sales_order_mandesc" name="Sales Order Manual Description" sequence="123" action="act_hdt_order_sales_manual_description" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_order_sales_order_notes" name="Sales Order Observaciones" sequence="124" action="act_hdt_document_sales_notes" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_order_sales_order_notes_lines" name="Sales Order Observaciones Lines" sequence="125" action="act_hdt_order_sales_notes_lines" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_order_sales_order_notes_lines_measures" name="Sales Order Manual Measures Lines" sequence="126" action="act_hdt_order_sales_manual_description" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            </menuitem>
+            <menuitem id="mn_hdt_delivery_sales" name="Delivery" sequence="130">
+                <menuitem id="mn_hdt_delivery_sales_head" name="Sales Delivery" sequence="131" action="act_hdt_delivery_sales"/>
+                <menuitem id="mn_hdt_delivery_sales_lines" name="Sales Delivery Lines" sequence="132" action="act_hdt_delivery_lines_sales" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <!-- <menuitem id="mn_hdt_delivery_sales_mandesc" name="Sales Delivery Manual Description" sequence="133" action="act_hdt_order_budget_manual_description"/>    
+                <menuitem id="mn_hdt_delivery_sales_notes" name="Sales Delivery Observaciones" sequence="134" action="act_hdt_document_budget_notes"/>    
+                <menuitem id="mn_hdt_delivery_sales_notes_lines" name="Sales Delivery Observaciones Lines" sequence="135" action="act_hdt_order_budget_notes_lines"/>   
+                <menuitem id="mn_hdt_delivery_sales_notes_lines" name="Sales Delivery Manual Measures Lines" sequence="136" action="act_hdt_order_budget_manual_description"/>    -->
+            </menuitem>
+            <menuitem id="mn_hdt_invoice_sales" name="Invoices" sequence="140">
+                <menuitem id="mn_hdt_invoice_sales_head" name="Sales Invoice" sequence="141" action="act_hdt_invoice_sales"/>
+            </menuitem>
+        </menuitem>
+        <menuitem id="mn_hdt_order_purchase" name="Purchase" sequence="200">
+            <menuitem id="mn_hdt_order_purchase_order" name="Purchase Order" sequence="210">
+                <menuitem id="mn_hdt_order_purchase_order_head" name="Purchase Order" sequence="211" action="act_hdt_order_purchase"/>
+                <menuitem id="mn_hdt_order_purchase_order_lines" name="Purchase Order Lines" sequence="212" action="act_hdt_order_purchase_lines" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_order_purchase_order_mandesc" name="Purchase Order Manual Description" sequence="213" action="act_hdt_order_purchase_manual_description" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_order_purchase_order_notes" name="Purchase Order Observaciones" sequence="214" action="act_hdt_document_purchase_notes" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_order_purchase_order_notes_lines" name="Purchase Order Observaciones Lines" sequence="215" action="act_hdt_order_purchase_notes_lines" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_order_purchase_order_notes_lines_measures" name="Purchase Order Manual Measures Lines" sequence="215" action="act_hdt_order_purchase_manual_description" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            </menuitem>
+            <menuitem id="mn_hdt_delivery_purchase" name="Delivery" sequence="220">
+                <menuitem id="mn_hdt_delivery_purchase_head" name="Purchase Delivery Head" sequence="221" action="act_hdt_delivery_purchase"/>
+                <menuitem id="mn_hdt_delivery_purchase_lines" name="Purchase Delivery Lines" sequence="222" action="act_hdt_delivery_purchase_lines" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <!--<menuitem id="mn_hdt_delivery_sales_mandesc" name="Sales Delivery Manual Description" sequence="133" action="act_hdt_order_budget_manual_description"/>    
+                <menuitem id="mn_hdt_delivery_sales_notes" name="Sales Delivery Observaciones" sequence="134" action="act_hdt_document_budget_notes"/>    
+                <menuitem id="mn_hdt_delivery_sales_notes_lines" name="Sales Delivery Observaciones Lines" sequence="135" action="act_hdt_order_budget_notes_lines"/>   
+                <menuitem id="mn_hdt_delivery_sales_notes_lines" name="Sales Delivery Manual Measures Lines" sequence="136" action="act_hdt_order_budget_manual_description"/>    -->
+            </menuitem>
+        </menuitem>
+        <menuitem id="mn_hdt_automatic_purchases" name="Automatic purchases" sequence="500">
+            <menuitem id="mn_hdt_order_relationship" name="Order relationship" sequence="501" action="act_hdt_order_relationship"/>
+            <menuitem id="mn_hdt_order_to_notify" name="Order to notify" sequence="502" action="act_hdt_order_to_notify"/>
+            <menuitem id="mn_hdt_order_preparation_status" name="Order preparation status" sequence="503" action="act_hdt_order_preparation_status"/>
+        </menuitem>
+        <menuitem id="mn_hdt_pos" name="POS" sequence="700">
+            <menuitem id="mn_hdt_pos_m" name="POS" sequence="701" action="act_hdt_pos"/>
+            <menuitem id="mn_hdt_pos_payment_method" name="Payment method" sequence="702" action="act_hdt_pos_payment_method"/>
+            <menuitem id="mn_hdt_pos_account_payment_method" name="Account payment method" sequence="703" action="act_hdt_pos_account_payment_method"/>
+            <menuitem id="mn_hdt_pos_assignment" name="Assignment" sequence="704" action="act_hdt_pos_assignment"/>
+            <menuitem id="mn_hdt_pos_payment_method_by_pos" name="Payment method by POS" sequence="705" action="act_hdt_pos_payment_method_by_pos"/>
+            <menuitem id="mn_hdt_default_printer" name="Default printer" sequence="706" action="act_hdt_default_printer"/>
+            <menuitem id="mn_hdt_pos_documents" name="POS Documents" sequence="707" action="act_hdt_pos_documents"/>
+            <menuitem id="mn_hdt_pos_collecions" name="POS Collections" sequence="708" action="act_hdt_pos_collections"/>
+            <menuitem id="mn_hdt_pos_cumulative" name="POS Cumulatives" sequence="709" action="act_hdt_pos_cumulative"/>
+            <menuitem id="mn_hdt_pos_cash_count" name="POS Cash count" sequence="710" action="act_hdt_pos_cash_count"/>
+        </menuitem>
+        <menuitem id="mn_hdt_stock" name="Stock" sequence="800">
+            <menuitem id="mn_hdt_stock_transfer" name="Stock Transfer" sequence="801" action="act_hdt_stock_transfer"/>
+            <menuitem id="mn_hdt_stock_transfer_lines" name="Stock Transfer Lines" sequence="802" action="act_hdt_stock_transfer_lines" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_manufacturing_orders" name="Manufacturing Orders" sequence="803" action="act_hdt_manufacturing_orders" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_manufacturing_orders_lines" name="Manufacturing Orders Lines" sequence="804" action="act_hdt_manufacturing_orders_lines" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_stock_movements_s" name="Stock movements" sequence="805" action="act_aurb_stock_movements" groups="historical_data_transferred.auren_hdt_admin_group"/>
+        </menuitem>
+        <menuitem id="mn_hdt_payments" name="Payments" sequence="1000">
+            <menuitem id="mn_hdt_incoming_payments" name="Incoming Payments" sequence="1001" action="act_hdt_incoming_payments"/>
+            <menuitem id="mn_hdt_incoming_payments_traceability" name="Incoming Payments Traceability" sequence="1002" action="act_hdt_incoming_payments_traceability" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_incoming_payments_effect" name="Incoming Payments Effect" sequence="1003" action="act_hdt_incoming_payments_effect" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_incoming_payments_original" name="Incoming Payments Original" sequence="1004" action="act_hdt_incoming_payments_original" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_outcoming_payments" name="Outcoming Payments" sequence="1006" action="act_hdt_outcoming_payments" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_outcoming_payments_traceability" name="Outcoming Payments Traceability" sequence="1007" action="act_hdt_outcoming_payments_traceability" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_outcoming_payments_effect" name="Outcoming Payments Effect" sequence="1008" action="act_hdt_outcoming_payments_effect" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_outcoming_payments_tpv" name="Outcoming Payments TPV" sequence="1009" action="act_hdt_outcoming_payments_tpv" groups="historical_data_transferred.auren_hdt_admin_group"/>
+        </menuitem>
+        <menuitem id="mn_hdt_reports" name="Reports" sequence="1100">
+            <menuitem id="mn_hdt_partner_amount" name="Sales by customer" sequence="1101" action="act_aurb_hdt_view_delivery_partner_amount_graph"/>
+            <menuitem id="mn_hdt_item_amount" name="Sales by item" sequence="1102" action="act_aurb_hdt_view_delivery_item_amount_graph"/>
+            <menuitem id="mn_hdt_accounting_entry_debit_amount" name="Debit amount by account entry" sequence="1103" action="act_aurb_hdt_view_accounting_entry_debit_amount_graph"/>
+            <menuitem id="mn_hdt_accounting_entry_credit_amount" name="Credit amount by account entry" sequence="1104" action="act_aurb_hdt_view_accounting_entry_credit_amount_graph"/>
+            <menuitem id="mn_hdt_stock_movements" name="Stock movements" sequence="1105" action="act_aurb_hdt_view_stock_movements_graph"/>
+        </menuitem>
+        <menuitem id="mn_hdt_configuration" name="Configuration" sequence="9000">
+            <menuitem id="mn_hdt_company_action" name="Empresas" sequence="9010" action="act_hdt_company"/>
+            <menuitem id="mn_hdt_document_action" name="Document" sequence="9030" action="act_hdt_document" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            
+            <menuitem id="mn_hdt_document_total_action" name="Document total" sequence="9031" action="aurb_hdt_document_total_action" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_document_tax_action" name="Document tax" sequence="9032" action="aurb_hdt_document_tax_action" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            
+            <menuitem id="mn_hdt_warehouse_action" name="Warehouse" sequence="9020" action="act_hdt_warehouse"/>
+            <menuitem id="mn_hdt_exercises_action" name="Exercises" sequence="90210" action="act_hdt_exercices"/>
+            <menuitem id="mn_hdt_languages_action" name="Language" sequence="90220" action="act_hdt_languages"/>
+            <menuitem id="mn_hdt_warehouse_currency_action" name="Warehouse Currency" sequence="9030" action="act_hdt_warehouse_currency" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_warehouse_pricelist_action" name="Warehouse Price List" sequence="9040" action="act_hdt_warehouse_pricelist" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_warehouse_location_action" name="Warehouse Location" sequence="9050" action="act_hdt_warehouse_location" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            <menuitem id="mn_hdt_vehicle" name="Vehicle" sequence="9060" action="act_hdt_vehicle"/>
+            <menuitem id="mn_hdt_accounting" name="Accounting" sequence="9070">
+                <menuitem id="mn_hdt_subaccounts" name="Subaccounts" sequence="90710" action="act_hdt_subaccounts"/>
+                <menuitem id="mn_hdt_accounting_entries" name="Accounting entries" sequence="90720" action="act_hdt_accounting_entries"/>
+            </menuitem>
+            <menuitem id="mn_hdt_sellers" name="Sellers" sequence="9080">
+                <menuitem id="mn_hdt_seller" name="Seller" sequence="90810" action="act_hdt_seller"/>
+                <menuitem id="mn_hdt_seller_commission" name="Seller commission" sequence="90820" action="act_hdt_seller_commission" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_seller_cumulative" name="Seller cumulative" sequence="90830" action="act_hdt_seller_cumulative" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            </menuitem>
+            <menuitem id="mn_hdt_partners" name="Partners" sequence="9090">
+                <menuitem id="mn_hdt_partner" name="Partner" sequence="90910" action="act_hdt_partners" />
+                <menuitem id="mn_hdt_partners_cards" name="Partner Cards" sequence="90920" action="act_hdt_partners_cards" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_partners_risk" name="Partner Risk" sequence="90930" action="act_hdt_partners_risk" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_partners_payment_terms" name="Partner Payment Terms" sequence="90940" action="act_hdt_partners_payment_terms" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_partners_account" name="Partner Account" sequence="90950" action="act_hdt_partners_account" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_partners_contact" name="Partner Contact" sequence="90960" action="act_hdt_partners_contact" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_partners_comments" name="Partner Comments" sequence="90970" action="act_hdt_partners_comments" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_partners_address" name="Partner Address" sequence="90980" action="act_hdt_partners_address" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_partners_manual" name="Partner Manual" sequence="90990" action="act_hdt_partners_manual" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            </menuitem>
+            <menuitem id="mn_hdt_banks" name="Banks" sequence="9120">
+                <menuitem id="mn_hdt_bank" name="Bank" sequence="91210" action="act_hdt_bank"/>
+                <menuitem id="mn_hdt_bank01" name="Bank (more info)" sequence="91220" action="act_hdt_bank01" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_bank_entity" name="Bank Entity" sequence="91230" action="act_hdt_bank_entity" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_bank_office" name="Bank Office" sequence="91240" action="act_hdt_bank_office"/>
+            </menuitem>
+            <menuitem id="mn_hdt_currencys" name="Currency" sequence="9130">
+                <menuitem id="mn_hdt_currency" name="Currency" sequence="91310" action="act_hdt_currency"/>
+                <menuitem id="mn_hdt_currency_subaccount" name="Currency Subacocunt" sequence="91320" action="act_hdt_currency_subaccount" groups="historical_data_transferred.auren_hdt_admin_group"/>
+                <menuitem id="mn_hdt_currency_change" name="Currency Change" sequence="91330" action="act_hdt_currency_change" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            </menuitem>
+            <menuitem id="mn_hdt_countrys" name="Countrys" sequence="9140">
+                <menuitem id="mn_hdt_country" name="Country" sequence="91410" action="act_hdt_country"/>
+                <menuitem id="mn_hdt_country_ce" name="Country Ce" sequence="91420" action="act_hdt_country_ce" groups="historical_data_transferred.auren_hdt_admin_group"/>
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>

@@ -1,0 +1,11 @@
+moneda,descripcion,descripcion_ab,n_decimales,uem,triangula,dec_linea,name
+1,Ptas,PTA,0,S,S,0,1
+2,Dolars,$,2,N,N,5,2
+3,Liras Italianas,LIT,0,S,S,0,3
+4,Francos,FRA,2,S,S,2,4
+5,Marco alemán,DM,2,S,S,5,5
+6,EURO,EU,2,N,N,2,6
+11,11,11,,,,,11
+10,rublo,rub,,,,,10
+9,EURO,EUR,2,S,S,2,9
+7,LIBRAS ESTERLINAS,LUK,2,N,N,3,7

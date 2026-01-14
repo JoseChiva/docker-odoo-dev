@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_order_preparation_status" model="ir.actions.act_window">
+            <field name="name">Order preparation status</field>
+            <field name="res_model">aurb.hdt.order.preparation.status</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_order_preparation_status" model="ir.ui.view">
+            <field name="name">Order preparation status List</field>
+            <field name="model">aurb.hdt.order.preparation.status</field>
+            <field name="arch" type="xml">
+                <tree string="Order preparation status List">
+                    <field name="empresa_id" />
+                    <field name="ejercicio_id" />
+                    <field name="almacen_id" />
+                    <field name="tipo_movimiento" />
+                    <field name="pedido" />
+                    <field name="od_linea" />
+                    <field name="tipo" />
+                    <field name="fecha_entrada" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

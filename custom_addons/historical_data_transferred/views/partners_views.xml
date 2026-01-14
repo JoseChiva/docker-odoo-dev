@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_partners" model="ir.actions.act_window">
+            <field name="name">Partners</field>
+            <field name="res_model">aurb.hdt.partners</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_partners" model="ir.ui.view">
+            <field name="name">Partners List</field>
+            <field name="model">aurb.hdt.partners</field>
+            <field name="arch" type="xml">
+                <tree string="Partners List">
+                    <field name="empresa_id" />
+                    <field name="subcta_id" />
+                    <field name="linea_producto" />
+                    <field name="subcta_contable"/>
+                    <field name="subcta_facturacion"/>
+                    <field name="fecha_alta"/>
+                    <field name="fecha_baja"/>
+                </tree>
+            </field>
+        </record>
+        <record id="frm_hdt_partners" model="ir.ui.view">
+            <field name="name">aur.hdt.partners.form</field>
+            <field name="model">aurb.hdt.partners</field>
+            <field name="arch" type="xml">
+                <form string="Partners Form">
+                    <header></header>
+                    <sheet>
+                        <group>
+                            <!--<page name="clientes" string="Clientes">-->
+                                <group>
+                                    <field name="subcta" string="Cliente"/>
+                                    <field name="linea_producto" string="Línea Producto"/>
+                                    <field name="name" string="Título" />
+                                </group>
+                            <!--</page>-->
+                        </group>    
+                        <notebook>
+                            <page name="direcciones" string="Direcciones">
+                                <field name="direcciones_ids">
+                                    <tree>
+                                        <field name="orden" string="Orden"/>
+                                        <field name="idioma" string="Idioma"/>
+                                        <field name="tipus" string="Tipo"/>
+                                        <field name="nombre_comercial" string="Nombre comercial"/>
+                                        <field name="nombre_comercial2" string="Nombre comercial 2"/>
+                                        <field name="direccion" string="Dirección"/>
+                                        <field name="direccion2" string="Dirección 2"/>
+                                        <field name="codigo_postal" string="CP"/>
+                                        <field name="poblacion" string="Población"/>
+                                        <field name="provincia" string="Provincia"/>
+                                        <field name="dni_nif" string="DNI/NIF"/>
+                                        <field name="telefonos" string="Teléfono"/>
+                                        <field name="contacte" string="Persona contacto"/>
+                                    </tree>                                 
+                                </field>
+                            </page>
+                            <page name="contabilidad" string="Condiciones Comer.">
+                                <field name="contabilidad_ids">
+                                    <tree>
+                                        <field name="linea_producto" string="Línea Producto"/>
+                                        <field name="tarifa" string="Tarifa"/>
+                                        <field name="agencia_transporte" string="Agencia Transporte"/>
+                                        <field name="portes" string="Portes"/>
+                                        <field name="tipo_iva" string="Tipo IVA"/>
+                                        <field name="tipo_iva_alt" string="Tipo IVA Alternativo"/>
+                                        <field name="albaran_valorado" string="Albarán valorado"/>
+                                        <field name="albaran_factura" string="Albarán factura"/>
+                                        <field name="intervalo_factura" string="Intervalo factura"/>
+                                        <field name="copias_albaran" string="Copias albarán"/>
+                                        <field name="copias_factura" string="Copias factura"/>
+                                        <field name="descuento_p_pago" string="Dto P.pago"/>
+                                        <field name="descuento_2" string="Descuento 2"/>
+                                        <field name="descripcion_dto_2" string="Descripción Dto 2"/>
+                                        <field name="descuento_3" string="Descuento 3"/>
+                                        <field name="descripcion_dto_3" string="Descripción Dto 3"/>
+                                        <field name="cargo_financiero" string="Cargo financiero"/>
+                                        <field name="cargo_fin_dias" string="Cargo fin dias"/>
+                                        <field name="cl_circ_oferta" string="Cl. Circ. oferta"/>
+                                        <field name="cargo_2" string="Cargo 2"/>
+                                        <field name="descripcion_car_2" string="Descripción cargo 2"/>
+                                        <field name="irpf" string="IRPF"/>
+                                        <field name="aplic_irpf" string="Aplicación IRPF"/>
+                                        <field name="vendedor_1" string="Vendedor 1"/>
+                                        <field name="vendedor_2" string="Vendedor 2"/>
+                                        <field name="vendedor_3" string="Vendedor 3"/>
+                                    </tree>                                 
+                                </field>
+                            </page>
+                            <page name="formaspago" string="Formas Pago">
+                                <field name="formas_pago_ids">
+                                    <tree>
+                                        <field name="linea_producto" string="Línea Producto"/>
+                                        <field name="tipo_forma_pago" string="Tipo forma pago"/>
+                                        <field name="numero_recibos" string="Número recibos"/>
+                                        <field name="primer_intervalo" string="Primer intervalo"/>
+                                        <field name="otros_intervalos" string="Otros intervalos"/>
+                                        <field name="dia_fijo_pago_1" string="Día fijo pago 1"/>
+                                        <field name="dia_fijo_pago_2" string="Día fijo pago 2"/>
+                                        <field name="entidad_bancaria" string="Entidad"/>
+                                        <field name="numero_cuenta" string="Número cuenta"/>
+                                        <field name="dc" string="Dígito control"/>
+                                        <field name="ccc1" string="CCC1"/>
+                                        <field name="ccc2" string="CCC2"/>
+                                        <field name="iban" string="IBAN"/>
+                                        <field name="swift" string="Código Swift"/>
+                                        <field name="subcta_banco_remes" string="Subcuenta remesa"/>
+                                    </tree>                                 
+                                </field>
+                            </page>
+                            <page name="otrosdatos" string="Otros Datos">
+                                <group>
+                                    <field name="subcta_contable" string="Subcuenta contable"/>
+                                    <field name="subcta_facturacion" string="Subcuenta facturación"/>
+                                    <field name="zona_comercial" string="Zona comercial" />
+                                    <field name="categoria" string="Cat. línea dto. familia"/>
+                                    <field name="categoria_rappel" string="Categoría rappel"/>
+                                    <field name="categoria_oferta" string="Categoría oferta"/>
+                                    <field name="ficha_cerrada" string="Ficha cerrada"/>
+                                    <field name="fecha_alta" string="Fecha alta"/>
+                                    <field name="fecha_baja" string="Fecha baja"/>
+                                    <field name="subcta_contra" string="Subcuenta contrapartida"/>
+                                </group>
+                            </page>
+                            <page name="claves" string="Claves">
+                                <field name="manual_ids">
+                                    <tree>
+                                        <field name="subcta_id" string="Subcuenta"/>
+                                        <field name="claveman" string="Clave"/>
+                                    </tree>                                 
+                                </field>
+                            </page>
+                            <page name="observaciones" string="Observaciones">
+                                <field name="observaciones_ids">
+                                    <tree>
+                                        <field name="tipo_obs" string="Tipo"/>
+                                        <field name="numero_obs" string="Número"/>
+                                        <field name="observacion" string="Observacion"/>
+                                        <field name="dataalta" string="Fecha alta"/>
+                                        <field name="usuarientrada" string="Usuario"/>
+                                    </tree>                                 
+                                </field>
+                            </page>
+                            <page name="personacontacto" string="Persona Contacto">
+                                <field name="contactos_ids">
+                                    <tree>
+                                        <field name="contacto" string="Contacto"/>
+                                        <field name="persona_contacto" string="Persona contacto"/>
+                                        <field name="telefono" string="Teléfono"/>
+                                        <field name="fax" string="Fax"/>
+                                        <field name="observaciones" string="Observaciones"/>
+                                    </tree>                                 
+                                </field>
+                            </page>
+                            <page name="riesgos" string="Riesgos">
+                                <field name="riesgo_ids">
+                                    <tree>
+                                        <field name="linea_producto" string="Línea Producto"/>
+                                        <field name="moneda_id" string="Moneda"/>
+                                        <field name="limite_credito" string="Límite crédito"/>
+                                        <field name="riesgo_cartera" string="Riesgo cartera"/>
+                                        <field name="riesgo_pedidos" string="Riesgo pedidos"/>
+                                        <field name="fecha_u_compra" string="Fecha última compra"/>
+                                    </tree>                                 
+                                </field>
+                            </page>
+                            <page name="tarjetas" string="Num. Tarjeta">
+                                <field name="num_tarjeta_ids">
+                                    <tree>
+                                        <field name="num_tarjeta" string="Núm. Tarjeta"/>
+                                        <field name="tipo_doc" string="Tipo documento"/>
+                                    </tree>                                 
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

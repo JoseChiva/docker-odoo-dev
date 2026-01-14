@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_keys" model="ir.actions.act_window">
+            <field name="name">Keys</field>
+            <field name="res_model">aurb.hdt.keys</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_keys" model="ir.ui.view">
+            <field name="name">Keys List</field>
+            <field name="model">aurb.hdt.keys</field>
+            <field name="arch" type="xml">
+                <tree string="Keys List">
+                    <field name="empresa_id" />
+                    <field name="clave" />
+                    <field name="descripcion" />
+                    <field name="valor" />
+                    <field name="tipo" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

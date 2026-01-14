@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_currency" model="ir.actions.act_window">
+            <field name="name">Currency</field>
+            <field name="res_model">aurb.hdt.currency</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_currency" model="ir.ui.view">
+            <field name="name">Currency List</field>
+            <field name="model">aurb.hdt.currency</field>
+            <field name="arch" type="xml">
+                <tree string="Currency List">
+                    <field name="moneda" />
+                    <field name="descripcion" />
+                    <field name="descripcion_ab" />
+                    <field name="n_decimales"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

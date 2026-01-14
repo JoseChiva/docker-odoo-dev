@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_accounting_entries" model="ir.actions.act_window">
+            <field name="name">Accounting Entries</field>
+            <field name="res_model">aurb.hdt.accounting.entries</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_accounting_entries" model="ir.ui.view">
+            <field name="name">Accounting Entries List</field>
+            <field name="model">aurb.hdt.accounting.entries</field>
+            <field name="arch" type="xml">
+                <tree string="Accounting Entries List">
+                    <field name="empresa_id"/>
+                    <field name="ejercicio_id"/>
+                    <field name="asiento"/>
+                    <field name="orden" />
+                    <field name="fecha_entrada" />
+                    <field name="fecha_contable" />
+                    <field name="subcta_id" />
+                    <field name="importe_debe" />
+                    <field name="importe_haber" />
+                    <field name="tipo" />
+                    <field name="moneda_id" />
+                    <field name="concepto" />
+                    <field name="descripcion_1" />
+                    <field name="descripcion_2" />
+                </tree>
+            </field>
+        </record>
+        <record id="frm_hdt_accounting_entries" model="ir.ui.view">
+            <field name="name">aur.hdt.accounting.entries.form</field>
+            <field name="model">aurb.hdt.accounting.entries</field>
+            <field name="arch" type="xml">
+                <form string="Accounting Entries Form">
+                    <sheet>
+                        <group name="accounting_entries">
+                            <group name="datos_genericos" string="Datos genéricos del asiento">
+                                <field name="fecha_entrada" string="Fecha entrada"/>
+                                <field name="fecha_contable" string="Fecha contable"/>
+                                <field name="ejercicio_id" string="Ejercicio fiscal" />
+                                <field name="diario" string="Diario"/>
+                                <field name="asiento" string="Asiento"/>
+                            </group>
+                        </group>
+                        <table>
+                            <tr>
+                                <th>Ord</th>
+                                <th>Partida</th>
+                                <th>Concepto</th>
+                                <th>Descripción</th>
+                                <th>Moneda</th>
+                                <th>Debe</th>
+                                <th>Haber</th>
+                                <th>Doc</th>
+                                <th>Contrato</th>
+                            </tr>
+                            <tr>
+                                <td><field name="orden" string="Orden"/></td>
+                                <td><field name="subcta_id" string="Partida"/></td>
+                                <td><field name="concepto" string="Concepto"/></td>
+                                <td><field name="descripcion_1" string="Descripción"/></td>
+                                <td><field name="moneda_id" string="Moneda"/></td>
+                                <td><field name="importe_debe" string="Debe"/></td>
+                                <td><field name="importe_haber" string="Haber"/></td>
+                                <td><field name="documento" string="Nº Doc"/></td>
+                                <td><field name="subcta_contrap_id" string="Contrapartida"/></td>
+                            </tr>
+                        </table>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="src_hdt_accounting_entries" model="ir.ui.view">
+            <field name="name">Accounting entries Search</field>
+            <field name="model">aurb.hdt.accounting.entries</field>
+            <field name="arch" type="xml">
+                <search string="Accounting entries Search">
+                    <field name="ejercicio_id"/>
+                    <field name="asiento"/>
+                    <field name="subcta_id"/>
+                    <field name="importe_debe"/>
+                    <field name="importe_haber"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

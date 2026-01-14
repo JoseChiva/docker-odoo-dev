@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_items_batch_piece" model="ir.actions.act_window">
+            <field name="name">items batch piece</field>
+            <field name="res_model">aurb.hdt.items.batch.piece</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_items_batch_piece" model="ir.ui.view">
+            <field name="name">items batch piece List</field>
+            <field name="model">aurb.hdt.items.batch.piece</field>
+            <field name="arch" type="xml">
+                <tree string="items List">
+                    <field name="empresa_id" />
+                    <field name="almacen_id" />
+                    <field name="codigo_id" />
+                    <field name="lote_interno_id"/>
+                    <field name="npieza"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

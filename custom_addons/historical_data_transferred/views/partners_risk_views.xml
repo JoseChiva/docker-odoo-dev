@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_partners_risk" model="ir.actions.act_window">
+            <field name="name">Partners Risk</field>
+            <field name="res_model">aurb.hdt.partners.risk</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_partners_risk" model="ir.ui.view">
+            <field name="name">Partners Risk List</field>
+            <field name="model">aurb.hdt.partners.risk</field>
+            <field name="arch" type="xml">
+                <tree string="Partners Risk List">
+                    <field name="empresa_id" />
+                    <field name="subcta_id" />
+                    <field name="linea_producto" />
+                    <field name="clv_sub"/>
+                    <field name="moneda_id"/>
+                    <field name="limite_credito"/>
+                    <field name="riesgo_cartera"/>
+                    <field name="riesgo_pedidos"/>
+                    <field name="fecha_u_compra"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

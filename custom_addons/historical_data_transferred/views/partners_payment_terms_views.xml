@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_partners_payment_terms" model="ir.actions.act_window">
+            <field name="name">Partners Payment Terms</field>
+            <field name="res_model">aurb.hdt.partners.payment.terms</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_partners_payment_terms" model="ir.ui.view">
+            <field name="name">Partners Payment Terms List</field>
+            <field name="model">aurb.hdt.partners.payment.terms</field>
+            <field name="arch" type="xml">
+                <tree string="Partners Payment Terms List">
+                    <field name="empresa_id" />
+                    <field name="subcta_id" />
+                    <field name="linea_producto" />
+                    <field name="tipo_forma_pago"/>
+                    <field name="numero_recibos"/>
+                    <field name="primer_intervalo"/>
+                    <field name="otros_intervalos"/>
+                    <field name="dia_fijo_pago_1"/>
+                    <field name="dia_fijo_pago_2"/>
+                    <field name="iban"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

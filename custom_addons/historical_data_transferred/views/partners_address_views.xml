@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_partners_address" model="ir.actions.act_window">
+            <field name="name">Partners Address</field>
+            <field name="res_model">aurb.hdt.partners.address</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_partners_address" model="ir.ui.view">
+            <field name="name">Partners Address List</field>
+            <field name="model">aurb.hdt.partners.address</field>
+            <field name="arch" type="xml">
+                <tree string="Partners Address List">
+                    <field name="empresa_id" />
+                    <field name="subcta_id" />
+                    <field name="orden" />
+                    <field name="nombre_comercial"/>
+                    <field name="nombre_comercial2"/>
+                    <field name="dni_nif"/>
+                    <field name="direccion"/>
+                    <field name="direccion2"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

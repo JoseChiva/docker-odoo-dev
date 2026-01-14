@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_bank_entity" model="ir.actions.act_window">
+            <field name="name">Bank Entity</field>
+            <field name="res_model">aurb.hdt.bank.entity</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_bank_entity" model="ir.ui.view">
+            <field name="name">Bank Entity List</field>
+            <field name="model">aurb.hdt.bank.entity</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Entity List">
+                    <field name="ccc1"/>
+                    <field name="nombre"/>
+                    <field name="swift" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

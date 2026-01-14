@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_hdt_delivery_sales" model="ir.actions.act_window">
+            <field name="name">Sales Delivery Filter</field>
+            <field name="res_model">aurb.hdt.delivery</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_tipo_doc_sv': True}</field>
+        </record>
+        <record id="act_hdt_delivery_purchase" model="ir.actions.act_window">
+            <field name="name">Purchase Delivery Filter</field>
+            <field name="res_model">aurb.hdt.delivery</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_tipo_doc_ec': True}</field>
+        </record>
+        <record id="lst_hdt_delivery" model="ir.ui.view">
+            <field name="name">aurb.hdt.delivery.tree</field>
+            <field name="model">aurb.hdt.delivery</field>
+            <field name="arch" type="xml">
+                <tree string="Delivery List" >
+                    <field name="empresa_id" />
+                    <field name="documento"/>
+                    <field name="factura" />
+                    <field name="ejercicio" />
+                    <field name="subcta"/>
+                    <field name="almacen_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="frm_hdt_delivery" model="ir.ui.view">
+            <field name="name">aur.hdt.delivery.form</field>
+            <field name="model">aurb.hdt.delivery</field>
+            <field name="arch" type="xml">
+                <form string="Delivery Form">
+                    <header>
+                        <field name="status_doc" widget="statusbar" readonly="true" statusbar_visible="borrador,enviado,facturado"/>
+                    </header>
+                    <sheet>
+                        <group name="delivery_header">
+                            <group>
+                                <field name="empresa_id" string="Empresa"/>
+                                <field name="almacen_id" string="Almacén"/>
+                                <field name="ejercicio" string="Ejercicio" />
+                                <field name="documento" string="Documento"/>
+                                <field name="moneda_id" string="Moneda"/>
+                                <field name="referencia" string="Referencia"/>
+                                <field name="tarifa" string="Tarifa"/>
+                                <field name="vendedor_1" string="Vendedor"/>
+                                <field name="agencia_transporte" string="Agencia"/>
+                            </group>
+                            <group>
+                                <field name="subcta" string="Cliente"/>
+                                <field name="tipo_forma_pago" string="F.Pago"/>
+                                <field name="fecha_documento" string="Fecha"/>
+                                <field name="fecha_valor" string="Fecha valor"/>
+                                <field name="tipo_iva" string="Tipo IVA"/>
+                                <field name="documento" string="Pedido"/>
+                                <field name="categoria" string="Categoria"/>
+                                <field name="albaran_factura" string="Albarán"/>
+                                <field name="factura" string="Factura"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="delivery_lines" string="Delivery lines">
+                                <group>
+                                    <field name="lines_ids">
+                                        <tree>
+                                            <field name="articulo" string="Artículo"/>
+                                            <field name="bultos" string="Bultos"/>
+                                            <field name="cantidad" string="Peces"/>
+                                            <field name="precio" string="Precio"/>
+                                            <field name="descuento_1" string="Dto.1"/>
+                                            <field name="descuento_2" string="Dto.2"/>
+                                            <field name="descuento_3" string="Dto.3"/>
+                                            <field name="total_linea" string="Importe"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="total_bruto" string="Total Bruto:"/>
+                                    </group>
+                                    <group>
+                                        <field name="total_descuentos" string="Descuentos:"/>
+                                    </group>
+                                    <group>
+                                        <field name="total_impuestos" string="Impuestos:"/>
+                                    </group>
+                                    <group>
+                                        <field name="total_neto_euros" string="TOTAL NETO EUR"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="src_hdt_delivery" model="ir.ui.view">
+            <field name="name">Albaran Search</field>
+            <field name="model">aurb.hdt.delivery</field>
+            <field name="arch" type="xml">
+                <search string="Albaran Search">
+                    <field name="name"/>
+                    <field name="tipo_doc"/>
+                    <filter string="Albaran venta" name="tipo_doc_sv" domain="[('tipo_doc', '=', 'SV')]"/>
+                    <filter string="Albaran compra" name="tipo_doc_ec" domain="[('tipo_doc', '=', 'EC')]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

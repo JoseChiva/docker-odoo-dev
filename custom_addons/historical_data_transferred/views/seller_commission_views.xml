@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_seller_commission" model="ir.actions.act_window">
+            <field name="name">Seller commision</field>
+            <field name="res_model">aurb.hdt.seller.commission</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_seller_commission" model="ir.ui.view">
+            <field name="name">Seller Commission List</field>
+            <field name="model">aurb.hdt.seller.commission</field>
+            <field name="arch" type="xml">
+                <tree string="Seller Commisssion List">
+                    <field name="empresa_id" />
+                    <field name="subcta_id" />
+                    <field name="linea_producto" />
+                    <field name="clv_sub"/>
+                    <field name="codigo"/>
+                    <field name="clv_art"/>
+                    <field name="comision"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

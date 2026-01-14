@@ -1,0 +1,140 @@
+<odoo>
+    <data>
+    <!--Definición página-->
+        <record id="paperformat_lowmargin" model="report.paperformat">
+            <field name="name">European A4 low margin</field>
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+
+    
+    <!--Fin definición pagina-->
+        <template  id="report_aurb_hdt_invoice">
+            <t t-call="web.html_container"/>
+                <t t-foreach="docs" t-as="o">
+                   <t t-call="web.external_layout">
+                        <div class="page">
+                            <head>
+                                
+                                <link rel="stylesheet" href="/historical_data_transferred/static/src/css/aurb_hdt_invoice_style.css"/>
+                                <div class = "company-data" style="float: left; width: 50%;">
+                                         
+                                          <p><strong t-field="o.empresa_id.titulo"/></p>
+                                          <p><strong t-field="o.empresa_id.direccion"/></p>
+                                          <p><strong t-esc="str(o.empresa_id.provincia).zfill(2) + str(o.empresa_id.cp) + '-' + o.empresa_id.poblacion"/></p>
+                                          <p><strong t-field="o.empresa_id.pais_id.nombre"/></p>
+                                          <p><strong t-esc="'cif: ' + o.empresa_id.nif"/></p>
+                                          <p><strong t-esc="'Tél: ' + o.empresa_id.telefono"/></p>
+                                
+                                </div> 
+                                <!--Información del cliente y cabecera de factura-->
+                                <div class="client-data" style="clear: both; padding-top: 20px;">
+                                    <div class="left-section" style="float: left; width: 50%;">
+                                        <h3>Información de la Factura</h3>
+                                        <p><strong>Número de Factura:</strong> <span t-field="o.documento"/></p>
+                                        <p><strong>Fecha:</strong> <span t-field="o.fecha_documento"/></p>
+                                    </div>
+                                    <div class="right-section" style="float: right; width: 50%;">
+                                        <h3>Información del Cliente</h3>
+                                        <p t-esc="str(o.d_dni_nif)+ '-' + str(o.subcta)"/>
+                                        <p t-field="o.nombre_ic"/>
+                                        <p t-field="o.d_direccion"/>
+                                        <p t-field="o.d_direccion2"/>
+                                        <p t-esc="str(o.d_provincia).zfill(2)+str(o.address_id.codigo_postal) + '-' + o.address_id.poblacion"/>
+                                    </div>
+                                </div>
+
+                            </head>
+                           
+                           
+                           
+                            
+                            <tbody>
+                                <!-- Aquí puedes continuar con el resto de la factura -->
+                                <table class="table table-sm table-borderless">
+                                        <tr>
+                                            <th class="alphabetic">Descripción</th>
+                                            <th class="numeric">Cantidad</th>
+                                            <th class="numeric">Precio unitario</th>
+                                            <th class="numeric">Impuesto</th>
+                                            <th class="numeric">Importe</th>
+                                        </tr>
+                                    <t t-foreach="o.lines_ids" t-as="l">    
+                                        <tr>
+                                            <td class="alphabetic">
+                                                <span t-esc= "str(l.articulo) + ' - ' + str(l.articulo_des)"/>
+                                            </td>
+                                            <td class="numeric">
+                                                <span t-field="l.cantidad"/>
+                                            </td>
+                                            <td class="numeric">
+                                                <span t-field="l.precio"/>
+                                            </td>
+                                            <td class="numeric">
+                                                <span t-field="l.iva"/>
+                                            </td>
+                                            <td class="numeric">
+                                                <span t-field="l.total_linea"/>
+                                            </td>
+                                     
+                                        </tr>
+                                    </t>    
+                                </table>
+
+
+                                
+                            </tbody>
+                            
+                            
+                             <footer class="footer">
+                                <table class="table table-sm table-borderless">
+                                     <tr>
+                                         <th class="numeric">Base imponible</th>
+                                         <th class="numeric">Tipo imp.</th>
+                                         <th class="numeric">Cuota</th>
+                                         <th class="numeric">Total Factura</th>
+                                         
+                                     </tr>
+                                    <t t-foreach="o.total_documento_ids" t-as="l">    
+                                            <tr>
+                                                <td class="numeric">
+                                                   <p> <span t-field="l.ri_base1"/> </p>
+                                                   <p t-if="l.ri_base2 != 0"> <span t-field="l.ri_base2"/> </p>
+                                                   <p t-if="l.ri_base3 != 0"> <span t-field="l.ri_base3"/> </p>
+                                                </td>
+                                                <td class="numeric">
+                                                   <p> <span t-field="l.ri_tipo1"/> </p>
+                                                   <p t-if="l.ri_tipo2 != 0"> <span t-field="l.ri_tipo2"/> </p> 
+                                                   <p t-if="l.ri_tipo3 != 0"> <span t-field="l.ri_tipo3"/> </p> 
+                                                </td>
+                                                <td class="numeric">
+                                                   <p> <span t-field="l.ri_cuota1"/> </p>
+                                                   <p t-if="l.ri_cuota2 != 0"> <span t-field="l.ri_cuota2"/> </p>
+                                                   <p t-if="l.ri_cuota3 != 0"> <span t-field="l.ri_cuota3"/> </p>
+                                                </td>
+                                                <td class="numeric">
+                                                   <p> <span t-field="l.b_total_doc"/> </p>
+                                                   <p t-if="l.ri_base2 != 0"> <span t-field="l.b_total_doc"/> </p>
+                                                   <p t-if="l.ri_base3 != 0"> <span t-field="l.b_total_doc"/> </p>
+                                                </td>
+                                                
+                                            </tr>
+                                        </t>                                    
+                                </table>
+                            </footer>
+                        </div> 
+                    </t> 
+                </t>   
+        </template>
+    </data>
+</odoo>

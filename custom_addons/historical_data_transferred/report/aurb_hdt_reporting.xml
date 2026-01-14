@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Análisis de ventas por cliente -->
+    <record id="act_aurb_hdt_view_delivery_partner_amount_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_hdt_view_delivery_partner_graph</field>
+        <field name="res_model">aurb.hdt.delivery</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['subcta'],'graph_measure': ['total_neto_euros'], 'pivot_measures': ['total_neto_euros']}</field>
+    </record>
+    <!-- Análisis de ventas por artículo -->
+    <record id="act_aurb_hdt_view_delivery_item_amount_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_hdt_view_delivery_item_graph</field>
+        <field name="res_model">aurb.hdt.delivery.lines</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['articulo'],'graph_measure': ['total_linea'], 'pivot_measures': ['total_linea']}</field>
+    </record>
+    <!-- Análisis de importe debe por cuenta contable -->
+    <record id="act_aurb_hdt_view_accounting_entry_debit_amount_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_hdt_view_accounting_entry_debit_amount_graph</field>
+        <field name="res_model">aurb.hdt.accounting.entries</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['subcta_id'],'graph_measure': ['importe_debe'], 'pivot_measures': ['importe_debe']}</field>
+    </record>
+    <!-- Análisis de importe haber por cuenta contable -->
+    <record id="act_aurb_hdt_view_accounting_entry_credit_amount_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_hdt_view_accounting_entry_credit_amount_graph</field>
+        <field name="res_model">aurb.hdt.accounting.entries</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['subcta_id'],'graph_measure': ['importe_haber'], 'pivot_measures': ['importe_haber']}</field>
+    </record>
+    <!-- Análisis de movimientos de stock -->
+    <record id="act_aurb_hdt_view_stock_movements_graph" model="ir.actions.act_window">
+        <field name="name">act_aurb_hdt_view_stock_movements_graph</field>
+        <field name="res_model">aurb.hdt.delivery.lines</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['articulo'],'graph_measure': ['cantidad'], 'pivot_measures': ['cantidad']}</field>
+    </record>
+
+
+
+    <record id="grp_aurb_hdt_view_delivery_graph" model="ir.ui.view">
+         <field name="name">grp_aurb_hdt_view_delivery_graph</field>
+         <field name="model">aurb.hdt.delivery</field>
+         <field name="arch" type="xml">
+            <graph string="Sales Analysis" stacked="False" type="bar" sample="1">
+                 <field name="subcta" type="row"/>
+            </graph>
+         </field>
+    </record>
+     <record id="pvt_aurb_hdt_view_delivery_pivot" model="ir.ui.view">
+        <field name="name">pvt_aurb_hdt_view_delivery_pivot</field>
+        <field name="model">aurb.hdt.delivery</field>
+        <field name="arch" type="xml">
+            <pivot string="Sales Analysis" sample="1">
+                <field name="subcta" type="row"/>
+                <field name="fecha_documento" interval="month" type="col"/>
+            </pivot>
+        </field>
+   </record> 
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_categories" model="ir.actions.act_window">
+            <field name="name">Categories</field>
+            <field name="res_model">aurb.hdt.categories</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_categories" model="ir.ui.view">
+            <field name="name">Categories List</field>
+            <field name="model">aurb.hdt.categories</field>
+            <field name="arch" type="xml">
+                <tree string="Categories List">
+                    <field name="empresa_id" />
+                    <field name="categoria" />
+                    <field name="nombre" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

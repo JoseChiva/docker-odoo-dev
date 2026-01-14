@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--comentario-->
+    <record id="report_event_registration_badge_account_move" model="ir.actions.report">
+        <field name="name">Formato factura</field>
+        <field name="model">aurb.hdt.invoice</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">historical_data_transferred.report_aurb_hdt_invoice</field>
+        <field name="report_file">historical_data_transferred.report_aurb_hdt_invoice</field>
+        <field name="print_report_name">'factura'</field>
+        <field name="binding_model_id" ref="historical_data_transferred.model_aurb_hdt_invoice"/> 
+        <field name="paperformat_id" ref="paperformat_lowmargin"/>
+    </record>
+</odoo>

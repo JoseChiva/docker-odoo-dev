@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_vehicle" model="ir.actions.act_window">
+            <field name="name">Vehicle</field>
+            <field name="res_model">aurb.hdt.vehicle</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_vehicle" model="ir.ui.view">
+            <field name="name">Vehicle List</field>
+            <field name="model">aurb.hdt.vehicle</field>
+            <field name="arch" type="xml">
+                <tree string="Vehicle List">
+                    <field name="codigo"/>
+                    <field name="marca"/>
+                    <field name="matricula" />
+                    <field name="chofer"/>
+                    <field name="fecha_alta"/>
+                    <field name="fecha_baja"/>
+                    <field name="km_inicio"/>
+                    <field name="fecha_ult_itv"/>
+                    <field name="fecha_prox_itv"/>
+                    <field name="fecha_ult_matp"/>
+                    <field name="fecha_prox_matp"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

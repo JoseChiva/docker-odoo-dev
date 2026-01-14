@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_pos_payment_method_by_pos" model="ir.actions.act_window">
+            <field name="name">POS payment method by POS</field>
+            <field name="res_model">aurb.hdt.pos.payment.method.by.pos</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_pos_payment_method_by_pos" model="ir.ui.view">
+            <field name="name">POS payment method by POS List</field>
+            <field name="model">aurb.hdt.pos.payment.method.by.pos</field>
+            <field name="arch" type="xml">
+                <tree string="POS payment method by POS List">
+                    <field name="empresa_id"/>
+                    <field name="tpv"/>
+                    <field name="codigo_pago_id" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

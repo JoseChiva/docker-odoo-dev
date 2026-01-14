@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_outcoming_payments_traceability" model="ir.actions.act_window">
+            <field name="name">outcoming Payments Traceability</field>
+            <field name="res_model">aurb.hdt.outcoming.payments.traceability</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_outcoming_payments_traceability" model="ir.ui.view">
+            <field name="name">outcoming Payments Traceability List</field>
+            <field name="model">aurb.hdt.outcoming.payments.traceability</field>
+            <field name="arch" type="xml">
+                <tree string="outcoming Payments List">
+                    <field name="name" />
+                    <field name="empresa_id"/>
+                    <field name="ejercicio_id" />
+                    <field name="subcta"/>
+                    <field name="documento"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

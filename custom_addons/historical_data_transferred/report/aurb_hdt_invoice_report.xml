@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <template  id="report_aurb_hdt_invoice">
+            <t t-call="web.html_container"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="mt-5">
+                            <div class="page">
+                                <h2>
+                                   <span t-field="o.name"/>
+                                </h2>
+                                <div id="informations" class="row mt-4 mb-4">
+                                    <div class="col-auto col-3">
+                                        <strong>Cliente:</strong>
+                                            <p class="m-0" t-field="o.nombre_ic"/>
+                                    </div>
+                                    <div class="col-auto col-3">
+                                        <strong>Fecha factura:</strong>
+                                        <p class="m-0" t-field="o.fecha_documento"/>
+                                    </div>
+                                    <div class="col-auto col-3">
+                                        <strong>Fecha vencimiento:</strong>
+                                        <!--<p class="m-0" t-field="o.date_availability"/>-->
+                                    </div>
+                                </div>
+                                    
+                                <table class="table table-sm table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-start">Descripción</th>
+                                            <th class="text-start">Cantidad</th>
+                                            <th class="text-start">Precio unitario</th>
+                                            <th class="text-start">Iva</th>
+                                            <th class="text-end">Importe</th>
+                                        </tr>
+                                            <tbody>
+                                                <t t-foreach="o.lines_ids" t-as="l">
+                                                    <tr>
+                                                        <td class="text-start">
+                                                            <span t-field="l.articulo"/>
+                                                        </td>
+                                                        <td class="text-start">
+                                                            <span t-field="l.cantidad"/>
+                                                        </td>
+                                                        <td class="text-start">
+                                                            <span t-field="l.precio"/>
+                                                        </td>
+                                                        <td class="text-start">
+                                                            <span t-field="l.iva"/>
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <span t-field="l.total_linea"/>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                                
+                                            </tbody>
+                                    </thead>
+                                </table>
+                            
+                            
+                                     
+ 
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            
+        </template>
+    </data>
+</odoo>

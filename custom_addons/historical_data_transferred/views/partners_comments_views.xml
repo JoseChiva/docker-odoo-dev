@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_partners_comments" model="ir.actions.act_window">
+            <field name="name">Partners Comments</field>
+            <field name="res_model">aurb.hdt.partners.comments</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_partners_comments" model="ir.ui.view">
+            <field name="name">Partners Comments List</field>
+            <field name="model">aurb.hdt.partners.comments</field>
+            <field name="arch" type="xml">
+                <tree string="Partners Comments List">
+                    <field name="empresa_id" />
+                    <field name="subcta_id" />
+                    <field name="tipo_obs" />
+                    <field name="numero_obs"/>
+                    <field name="observacion"/>
+                    <field name="dataalta"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

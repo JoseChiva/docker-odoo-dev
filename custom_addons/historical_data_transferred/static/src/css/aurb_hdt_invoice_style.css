@@ -1,0 +1,34 @@
+    @page {
+        margin-bottom: 5000px; /* Ajusta este valor según tus necesidades */
+    }
+
+    .footer {
+        position: running(footer);
+        bottom: 0;
+        width: 100%;
+    }
+    
+    
+    .numeric {
+    text-align: right;
+    width: 100px;
+    }
+    .alphabetic {
+    text-align: left;
+    width: 200px;
+    }
+    .client-data {margin-top: 150px;}
+    .client-data p {
+    margin: 0;
+    padding: 0;
+    }
+    .company-data p {
+    margin: 0;
+    padding: 0;
+    }
+   
+   
+   
+   
+   
+   

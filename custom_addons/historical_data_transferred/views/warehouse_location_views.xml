@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_warehouse_location" model="ir.actions.act_window">
+            <field name="name">Warehouse location</field>
+            <field name="res_model">aurb.hdt.warehouse.location</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_warehouse_location" model="ir.ui.view">
+            <field name="name">Warehouse Location List</field>
+            <field name="model">aurb.hdt.warehouse.location</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouse List">
+                    <field name="empresa_id" />
+                    <field name="almacen_id" />
+                    <field name="ubicado" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

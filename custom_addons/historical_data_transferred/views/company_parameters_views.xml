@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_company_parameters" model="ir.actions.act_window">
+            <field name="name">Parameters per company</field>
+            <field name="res_model">aurb.hdt.company.parameters</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_company_parameters" model="ir.ui.view">
+            <field name="name">Parameters per company List</field>
+            <field name="model">aurb.hdt.company.parameters</field>
+            <field name="arch" type="xml">
+                <tree string="Parameters per company List">
+                    <field name="empresa_id" />
+                    <field name="codigo" />
+                    <field name="descripcion_1" />
+                    <field name="descripcion_2" />
+                    <field name="parametro" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

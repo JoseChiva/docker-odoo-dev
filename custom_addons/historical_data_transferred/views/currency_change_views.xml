@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="act_hdt_currency_change" model="ir.actions.act_window">
+            <field name="name">Currency change</field>
+            <field name="res_model">aurb.hdt.currency.change</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_hdt_currency_change" model="ir.ui.view">
+            <field name="name">Currency change List</field>
+            <field name="model">aurb.hdt.currency.change</field>
+            <field name="arch" type="xml">
+                <tree string="Currency Change List">
+                    <field name="moneda_ref" />
+                    <field name="moneda_id" />
+                    <field name="fecha_inicio" />
+                    <field name="valor_c"/>
+                    <field name="valor_v"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

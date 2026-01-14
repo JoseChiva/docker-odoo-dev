@@ -1,0 +1,12 @@
+empresa,usuario,codigo,descripcion_1,descripcion_2,v_int,v_dec1,v_dec2,v_char,parametro,empresa_id,name
+999,grafic,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_grafic_30002
+999,ina3,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_ina3_30002
+999,ina4,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_ina4_30002
+999,inagasa1,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_inagasa1_30002
+999,inagasa2,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_inagasa2_30002
+999,inagasa3,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_inagasa3_30002
+999,inagasa4,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_inagasa4_30002
+999,inagasa5,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_inagasa5_30002
+999,inagasa6,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_inagasa6_30002
+999,inagasa7,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_inagasa7_30002
+999,xsinfo,30002,"***** GESTION DE VENTAS ***** Permite o no modificar albaranes (SV,NF)",de dias anteriores. 0 - Desactivado 1 - Activado ,0,0.000000,0.000000,,0,999,999_xsinfo_30002
