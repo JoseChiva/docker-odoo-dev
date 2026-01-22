@@ -2,6 +2,7 @@
     'name': "suconspa_adapt",
     'version': '18.1.5',
     'depends': ['base',
+                'product',
                 'sale',
                 'sale_management',
                 'account_batch_payment',
@@ -14,9 +15,6 @@
     'auto_install': False,
     'data': [
         'security/ir.model.access.csv',
-        'views/suco_sale_order_view.xml',
-        'views/suco_purchase_order_view.xml',
-        'views/suco_account_batch_payment_view.xml',
         'report/suco_report_base.xml',
         'report/suco_sale_order_with_out_disc.xml',
         'report/suco_sale_order_report_with_out_disc.xml',
@@ -26,6 +24,9 @@
         'report/suco_stock_picking_report.xml',
         'report/suco_account_move.xml',
         'report/suco_account_move_report.xml',
+        'views/suco_sale_order_view.xml',
+        'views/suco_purchase_order_view.xml',
+        'views/suco_account_batch_payment_view.xml',
     ],
     'license': 'LGPL-3',
 }
