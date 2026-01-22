@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_fedor_log_export_import" model="ir.actions.act_window">
+            <field name="name">Log importación/exportación</field>
+            <field name="res_model">fedor.export.import.log</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_fedor_log_export_import" model="ir.ui.view">
+            <field name="name">Lista de Log importación/exportación</field>
+            <field name="model">fedor.export.import.log</field>
+            <field name="arch" type="xml">
+                <tree >
+                    <field name="name"/>
+                    <field name="date_time" widget="datetime"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+        <record id="src_fedor_log_export_import" model="ir.ui.view">
+            <field name="name">Busqueda de Log importación/exportación</field>
+            <field name="model">fedor.export.import.log</field>
+            <field name="arch" type="xml">
+                <search >
+                    <field name="name"/>
+                    <field name="date_time"/>
+                    <separator/>
+                    <filter name="filter_date_time" date="date_time"/>
+                    <filter name="iactive" string="Archived" domain="[('active','=',False)]"/>
+                    <filter name="iexport" string="Exportación" domain="[('type','=','export')]"/>
+                    <filter name="iimport" string="Importación" domain="[('type','=','import')]"/>
+                    <separator/>
+                    <group expand="0" >
+                        <filter  name="type" context="{'group_by':'type'}"/>
+                        <filter name="date_time" context="{'group_by':'date_time'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="frm_fedor_log_export_import" model="ir.ui.view">
+            <field name="name">Log importación/exportación</field>
+            <field name="model">fedor.export.import.log</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="download_file" string="Descargar" type="object"
+                            class="btn btn-success text-uppercase" />
+                    </header>
+                    <sheet>
+                        
+                        <div class="oe_title">
+                            <h1><field name="name" readonly="1"/></h1>
+                        </div>
+                        
+                        <group>
+                            <group col="2">
+                                <field name="date_time"  widget="datetime" readonly="1"></field>
+                                <field name="type" readonly="1"></field>
+                                
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Ficheros" name="attribute_values">
+                                <field name="fedor_export_import_log_ids" readonly="1">
+                                    <tree>
+                                        <field name="name"/>
+                                        <button name="download_file" string="Descargar" type="object"
+                                        class="btn btn-success text-uppercase" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Pedidos" name="attribute_values" invisible="type=='export'">
+                                <field name="order_ids" readonly="1"/>
+                            </page>
+                        </notebook>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

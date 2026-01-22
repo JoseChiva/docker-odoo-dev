@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fedor_product_template_form" model="ir.ui.view">
+            <field name="name">fedor_product_template_form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="product_family_id"/>
+                    <field name="is_item_catalogue"/>
+                    <field name="type_id"/>
+                    <field name="sale_minim_qty"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="fedor_product_supplierinfo_tree_view2" model="ir.ui.view">
+            <field name="name">fedor_product_supplierinfo_tree_view2</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="type_change"/>
+                    <field name="expenses_percent"/>
+                    <field name="expenses_fixed"/>
+                    <field name="cost_product"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

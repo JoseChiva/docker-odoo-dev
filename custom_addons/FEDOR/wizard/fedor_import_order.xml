@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_fedor_import_order" model="ir.actions.act_window">
+            <field name="name">Importación de pedidos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fedor.import.order</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="frm_fedor_import_order" model="ir.ui.view">
+            <field name="name">frm_fedor_import_order</field>
+            <field name="model">fedor.import.order</field>
+            <field name="arch" type="xml">
+                <form>
+                        <group name="general_info" >
+                            <field name="text_file_head" invisible="1" />
+                            <field name="file_head" filename="text_file_head" widget="binary" />
+                            <field name="text_file_line" invisible="1"/>
+                            <field name="file_line" filename="text_file_line" widget="binary" />
+                            
+                        </group>
+                        <footer>
+                            <button name="action_import_order" string="Importar pedido" type="object"
+                            confirm="Se procederá a la creación de pedidos de venta, está seguro que desea continuar?"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

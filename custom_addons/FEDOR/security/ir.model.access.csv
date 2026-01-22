@@ -1,0 +1,16 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_fedor_product_family,access_fedor_product_family,model_fedor_product_family,base.group_user,1,1,1,1
+
+access_fedor_type,access_fedor_type,model_fedor_type,base.group_user,1,1,1,1
+
+
+access_fedor_export_import_log,access_fedor_export_import_log,model_fedor_export_import_log,base.group_user,1,1,0,0
+access_fedor_export_import_log_line,access_fedor_export_import_log_line,model_fedor_export_import_log_line,base.group_user,1,0,0,0
+
+access_fedor_export_cron,access_fedor_export_cron,model_fedor_export_cron,base.group_user,1,1,1,1
+
+
+access_fedor_import_order,access_fedor_import_order,model_fedor_import_order,base.group_user,1,1,1,1
+
+
+

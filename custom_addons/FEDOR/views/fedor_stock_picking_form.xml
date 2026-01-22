@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fedor_stock_picking_form" model="ir.ui.view">
+            <field name="name">fedor_stock_picking_form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']"
+                position="after">
+                   <field name="fedor_product_packaging_qty" invisible="True" />
+                   <field name="fedor_product_man_packaging_qty" />
+               </xpath>
+                <xpath expr="//field[@name='move_ids_without_package']/tree//field[@name='product_packaging_id']"
+                 position="after">
+                    <field name="fedor_location_id" column_invisible="True"/>
+                    <field name="fedor_location_store_id" readonly="True"/>
+                    <field name="fedor_product_packaging_qty" readonly="not is_quantity_done_editable"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

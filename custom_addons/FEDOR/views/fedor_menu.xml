@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="mn_fedor_main" name="Adaptación Fedor">
+        <menuitem id="menu_fedor_log_export_import"
+            name="Log Export Import"
+            action="act_fedor_log_export_import"
+            sequence="102" />
+        <menuitem id="menu_fedor_import_order"
+            name="Importación de pedidos"
+            action="act_fedor_import_order"
+            sequence="103" />
+
+
+    </menuitem>
+</odoo>

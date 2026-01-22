@@ -1,0 +1,3 @@
+False;1;Azure Interior;US12345677;4557 De Silva St;US;CA;94538;Fremont;+58 212 681 0538;vauxoo@yourcompany.example.com;;2;0;0;;;;;;;2;;;;;;;9;;
+False;1;Deco Addict;US12345673;77 Santa Barbara Rd;US;CA;94523;Pleasant Hill;+32 10 588 558;info@agrolait.com;;2;30;0;;;5390;0754;70;34;2;;;;;;;9;;
+False;1;Joel Willis;False;858 Lynn Street;US;NJ;07002;Bayonne;(683)-556-5104;joel.willis63@example.com;;1;0;0;;;;;;;2;;;;;;;9;;

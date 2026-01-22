@@ -112,39 +112,35 @@ class AurbaStoreAccountPaymentRegister(models.TransientModel):
     def action_create_payments(self):
         """
         Sobrescribe el método estándar para actualizar el preferred_payment_method_line_id
-        de la factura con el pos_method_payment_id seleccionado en el wizard antes de crear el pago.
+        de la factura y el payment_method_line_id del wizard antes de crear el pago.
         Así el pago se crea con el método de pago correcto.
         """
         import logging
         _logger = logging.getLogger(__name__)
         
-        # Actualizar el preferred_payment_method_line_id de las facturas vinculadas al wizard
-        if self.pos_method_payment_id and self.pos_method_payment_id.payment_method_id:
-            # Obtener el journal del método de pago seleccionado
-            journal = self.pos_method_payment_id.payment_method_id.journal_id
+        # Actualizar el preferred_payment_method_line_id de las facturas y el payment_method_line_id del wizard
+        if self.pos_method_payment_id and self.pos_method_payment_id.payment_method_id and self.pos_method_payment_id.payment_method_id.payment_method_id:
+            # Obtener el payment_method_id del método de pago seleccionado
+            payment_method_line = self.pos_method_payment_id.payment_method_id.payment_method_id
+            
+            # Actualizar el payment_method_line_id del wizard para que el pago se cree con el método correcto
+            _logger.info(f"Actualizando wizard - payment_method_line_id antes: {self.payment_method_line_id.name if self.payment_method_line_id else 'Vacío'}")
+            _logger.info(f"Actualizando wizard - payment_method_line_id después: {payment_method_line.name}")
+            self.payment_method_line_id = payment_method_line
             
             # Obtener las facturas desde el contexto activo
             active_ids = self.env.context.get('active_ids', [])
             
-            if active_ids and journal:
+            if active_ids:
                 invoices = self.env['account.move'].browse(active_ids)
                 
-                # Buscar el account.payment.method.line correcto para este journal
-                # Filtrar por el tipo de pago (inbound para facturas de cliente, outbound para facturas de proveedor)
-                payment_type = 'inbound' if invoices[0].move_type in ['out_invoice', 'out_refund'] else 'outbound'
-                
-                payment_method_line = self.env['account.payment.method.line'].search([
-                    ('journal_id', '=', journal.id),
-                    ('payment_type', '=', payment_type)
-                ], limit=1)
-                
                 # Actualizar el método de pago preferido en cada factura
-                if payment_method_line:
-                    for invoice in invoices:
-                        _logger.info(f"Actualizando factura {invoice.name} - preferred_payment_method_line_id antes: {invoice.preferred_payment_method_line_id.name if invoice.preferred_payment_method_line_id else 'Vacío'}")
-                        invoice.write({
-                            'preferred_payment_method_line_id': payment_method_line.id
-                        })
+                for invoice in invoices:
+                    _logger.info(f"Actualizando factura {invoice.name} - preferred_payment_method_line_id antes: {invoice.preferred_payment_method_line_id.name if invoice.preferred_payment_method_line_id else 'Vacío'}")
+                    invoice.write({
+                        'preferred_payment_method_line_id': payment_method_line.id
+                    })
+                    _logger.info(f"Actualizando factura {invoice.name} - preferred_payment_method_line_id después: {invoice.preferred_payment_method_line_id.name}")
         # Llamar al método padre para crear los pagos con el método estándar
         return super(AurbaStoreAccountPaymentRegister, self).action_create_payments()
 

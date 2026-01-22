@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="act_fedor_product_family" model="ir.actions.act_window">
+            <field name="name">Familia de producto</field>
+            <field name="res_model">fedor.product.family</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="lst_fedor_product_family" model="ir.ui.view">
+            <field name="name">Lista de Familia de producto</field>
+            <field name="model">fedor.product.family</field>
+            <field name="arch" type="xml">
+                <tree >
+                    <field name="name"/>
+                    <field name="code" />
+                    <field name="is_family_catalogue"/>
+                </tree>
+            </field>
+        </record>
+        <record id="frm_fedor_product_family" model="ir.ui.view">
+            <field name="name">Familia de producto</field>
+            <field name="model">fedor.product.family</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1><field name="name"/></h1>
+                        </div>
+                        
+                        <group>
+                            <group col="2">
+                                <field name="code"/>
+                                <field name="is_family_catalogue"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <menuitem id="menu_fedor_product_family_action"
+        name="Familia de producto"
+        action="act_fedor_product_family"
+        parent="sale.product_menu_catalog"
+        sequence="101" />
+    </data>
+</odoo>
