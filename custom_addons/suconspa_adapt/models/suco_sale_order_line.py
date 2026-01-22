@@ -20,6 +20,13 @@ class SucoSaleOrderLine(models.Model):
                     self.price_unit = self.price_base + \
                         (self.add_price_unit)
 
+    @api.onchange('product_id')
+    def getpackingdefault(self):
+        if self.product_id and self.product_id.packaging_ids:
+            self.product_uom_qty = self.product_id.packaging_ids[0].qty
+            self.product_packaging_id = self.product_id.packaging_ids[0].id
+            self.product_packaging_qty = 1
+
     def _get_pricelist_price(self):
         for line in self:
             resultado = super()._get_pricelist_price()
