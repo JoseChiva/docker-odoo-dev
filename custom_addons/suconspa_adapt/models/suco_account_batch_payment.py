@@ -64,15 +64,20 @@ class SucoAccountBatchPayment(models.Model):
                         mandate = self.env['sdd.mandate'].search([('partner_id', '=', pay.partner_id.id)], limit=1)
                     except Exception:
                         mandate = None
-                    # Banco/deudor
+                    # Banco/deudor - Prioridad: mandate.partner_bank_id > pay.partner_bank_id > partner.bank_ids[0]
                     iban = ''
                     bic = ''
                     try:
-                        if 'partner_bank_id' in pay._fields and pay.partner_bank_id:
+                        # 1. Primero: intentar obtener del mandato SDD
+                        if mandate and hasattr(mandate, 'partner_bank_id') and mandate.partner_bank_id:
+                            iban = mandate.partner_bank_id.acc_number or ''
+                            bic = mandate.partner_bank_id.bank_bic or ''
+                        # 2. Segundo: usar partner_bank_id del pago
+                        elif 'partner_bank_id' in pay._fields and pay.partner_bank_id:
                             iban = pay.partner_bank_id.acc_number or ''
                             bic = pay.partner_bank_id.bank_bic or ''
+                        # 3. Tercero: intentar el primer banco del partner
                         else:
-                            # intentar partner bank
                             bank = pay.partner_id.bank_ids and pay.partner_id.bank_ids[0] or None
                             if bank:
                                 iban = bank.acc_number or ''
