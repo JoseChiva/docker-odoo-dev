@@ -6,6 +6,7 @@
                 'sale',
                 'sale_management',
                 'account_batch_payment',
+                'purchase',
                 ],
     'category': 'Category',
     'description': "Módulo de adaptaciones para Suconspa",
