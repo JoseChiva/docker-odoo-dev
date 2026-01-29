@@ -210,8 +210,13 @@ class SucoAccountBatchPayment(models.Model):
                 etree.SubElement(cdt, 'Nm').text = company.name
                 cdtacct = etree.SubElement(pmt, 'CdtrAcct')
                 idacc = etree.SubElement(cdtacct, 'Id')
-                # Company IBAN
-                comp_bank = company.partner_id.bank_ids and company.partner_id.bank_ids[0] or None
+                # Company IBAN - obtener del diario del lote de pagos
+                comp_bank = None
+                if rec.journal_id and hasattr(rec.journal_id, 'bank_account_id') and rec.journal_id.bank_account_id:
+                    comp_bank = rec.journal_id.bank_account_id
+                else:
+                    # Fallback: usar la primera cuenta bancaria del partner de la compañía
+                    comp_bank = company.partner_id.bank_ids and company.partner_id.bank_ids[0] or None
                 comp_iban = getattr(comp_bank, 'sanitized_acc_number', None) or getattr(comp_bank, 'acc_number', '') if comp_bank else ''
                 # Remove whitespace from IBAN for XML
                 comp_iban = re.sub(r'\s+', '', comp_iban or '')
