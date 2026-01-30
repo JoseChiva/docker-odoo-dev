@@ -58,33 +58,36 @@ class SucoAccountBatchPayment(models.Model):
                         due = pay.payment_date if 'payment_date' in pay._fields and getattr(pay, 'payment_date', False) else fields.Date.context_today(self)
                         due_source = 'payment.payment_date_or_today'
 
-                    # Mandato
+                    # Mandato - Usar el mandato específico del pago
                     mandate = None
                     try:
-                        mandate = self.env['sdd.mandate'].search([('partner_id', '=', pay.partner_id.id)], limit=1)
-                    except Exception:
+                        # Primero intentar obtener el mandato directamente del pago
+                        if hasattr(pay, 'sdd_mandate_id') and pay.sdd_mandate_id:
+                            mandate = pay.sdd_mandate_id
+                        # Fallback: buscar por partner_id si no está en el pago
+                        elif pay.partner_id:
+                            mandate = self.env['sdd.mandate'].search([('partner_id', '=', pay.partner_id.id)], limit=1)
+                    except Exception as e:
+                        _logger.error("Error al obtener mandato SDD para pago %s: %s", pay.name, str(e))
                         mandate = None
-                    # Banco/deudor - Prioridad: mandate.partner_bank_id > pay.partner_bank_id > partner.bank_ids[0]
+                    
+                    # Banco/deudor - Obtener exclusivamente del partner_bank_id del mandato SDD
                     iban = ''
                     bic = ''
-                    try:
-                        # 1. Primero: intentar obtener del mandato SDD
-                        if mandate and hasattr(mandate, 'partner_bank_id') and mandate.partner_bank_id:
-                            iban = mandate.partner_bank_id.acc_number or ''
-                            bic = mandate.partner_bank_id.bank_bic or ''
-                        # 2. Segundo: usar partner_bank_id del pago
-                        elif 'partner_bank_id' in pay._fields and pay.partner_bank_id:
-                            iban = pay.partner_bank_id.acc_number or ''
-                            bic = pay.partner_bank_id.bank_bic or ''
-                        # 3. Tercero: intentar el primer banco del partner
-                        else:
-                            bank = pay.partner_id.bank_ids and pay.partner_id.bank_ids[0] or None
-                            if bank:
-                                iban = bank.acc_number or ''
-                                bic = bank.bank_bic or ''
-                    except Exception:
-                        iban = ''
-                        bic = ''
+                    if mandate and hasattr(mandate, 'partner_bank_id') and mandate.partner_bank_id:
+                        iban = mandate.partner_bank_id.acc_number or ''
+                        bic = mandate.partner_bank_id.bank_bic or ''
+                        _logger.info(
+                            "Pago %s - Partner: %s, Mandato: %s, IBAN obtenido: %s",
+                            pay.name, pay.partner_id.name, mandate.name, iban
+                        )
+                    else:
+                        # Log warning si no hay mandato o no tiene cuenta bancaria asociada
+                        _logger.warning(
+                            "No se encontró mandato SDD con cuenta bancaria para el partner %s (pago %s). "
+                            "El IBAN del deudor quedará vacío. Mandato encontrado: %s",
+                            pay.partner_id.name, pay.name, mandate.name if mandate else 'None'
+                        )
 
                     items.append({
                         'payment': pay,
